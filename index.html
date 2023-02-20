@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ======== header starts ======== -->
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="css.html">css</a></li>
+            <li><a href="js.html">JS</a></li>
+            <li><a href="building-the-web.html">building the web</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ======== header ends ======== -->
+
+    <!-- ======== HTML tips starts ======== -->
+    <article>
+      <h2 class="main-heading">HTML</h2>
+      <div class="container">
+        <!-- tips & tricks starts -->
+        <section>
+          <h3 class="main-heading">tips & tricks</h3>
+          <ul>
+            <li>
+              <p>
+                to make <span class="second-col">download link</span> you add
+                <span class="code-btn">download</span> attribute to it and in
+                the <span class="code-b">href</span> you put the path of the
+                file to be downloaded/p>
+              </p>
+
+              <p>
+                you can change the name of the downlaoded file by typing
+                <span class="code-b">download='the_new_name'</span>
+              </p>
+              <p class="bg-second-color">
+                note: in the tutorial the guy said you can change even change
+                the type of the the file by adding the new type after the new
+                name but it didn't work with me it was downloaded in the same
+                type.
+              </p>
+            </li>
+            <li>
+              <p>
+                to make an element <span class="second-color">editable</span> by
+                users add the
+                <span class="code-btn">contenteditable</span> attribute to the
+                element
+              </p>
+            </li>
+            <li>
+              to make google (or other password managers) offer to
+              <span class="second-color">save password</span> add the
+              <span class="code-btn">autocomplete</span> attribute with value
+              of:
+              <ul>
+                <li>
+                  <span class="code-b">current-passowrd</span>: to save the the
+                  password
+                </li>
+                <li>
+                  <span class="code-b">new-passowrd</span>: to make browser
+                  offer passowrds for singing-up users
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <!-- tips & tricks ends -->
+
+        <!-- button vs link starts -->
+        <section class="button-vs-link">
+          <div class="container">
+            <h2 class="main-heading">button vs link</h2>
+            <p>
+              according to
+              <a
+                href="https://medium.com/@h_locke/links-vs-buttons-e8b523660fb3"
+              >
+                medium
+              </a>
+            </p>
+            <p class="bg-second-color">
+              a button says that you are going to change the state of the
+              website (either front or back end), whereas a link is going to
+              take you somewhere else (and doesn't change the state of the
+              website)
+            </p>
+            <p>
+              they also said that you shouldn't style a link to like like a
+              button or the other way around. And you can notice this phenomenon
+              (styling call to aciton links like buttons) in marketing websites
+              like playstation (so I decided to style call to actions like
+              buttons as this is what the user familiar with)
+            </p>
+          </div>
+        </section>
+        <!-- button vs link ends -->
+
+        <!-- images starts -->
+        <section>
+          <div class="container">
+            <h3 class="main-heading">images width and height attributes</h3>
+
+            <section>
+              <h3>why to add them</h3>
+              <p>
+                If you don't set the width and height attributes the browser
+                will wait unitl the image is loaded to calculate the dimentions
+                of the image and then make a space for it and
+                <b>it's bad for two reasons: </b>
+              </p>
+              <ul>
+                <li>
+                  layout shift: the text being suddenly pushed down when the
+                  image is loaded which is really annoying
+                </li>
+                <li>
+                  increasing the loading time and decreasing the performance of
+                  the page as the browser has to calculate the dimentions itself
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>what happens when you add them ?</h3>
+              <p>
+                the browser takes the width and the height and put them in an
+                <b>aspect-ratio</b> in the user agent so it makes a space for
+                the image without the need of waiting it to download.
+              </p>
+              <p>
+                <b>note:</b> when you set when dimention with css (width or
+                height) you should make sure you set the other dimention (height
+                or width) to <span class="code-btn">auto</span>.Otherwise the
+                value will still be taken the attriubte you specified before.
+                <b>when you set the other dimention to auto: </b> the browser
+                calculates it based on the aspect ratio it has (from the width
+                and the height attributes) without the need of waiting the image
+                to download
+              </p>
+            </section>
+
+            <section>
+              <div class="container">
+                <div class="h3">downsides</div>
+                <ul>
+                  <li>
+                    the implementation of the browser detecting the aspect-ratio
+                    based on the width and the height attriubtes is still new
+                    (around 2020). <br />
+                    the aspect-ratio css proprety for images itself is still new
+                  </li>
+                  <li>
+                    for responsive images like the code below
+                    <img src="images/responsive-img-codesnippt.png" alt="" />
+                    you can only set width and height attribute to the main
+                    image and you can't set them to the images in srcset. <br />
+                    the best solution so far is to make sure that all of them
+                    have the same aspect-ratio
+                  </li>
+                  <li>
+                    it doesn't work width <b>art direction</b> read about it if
+                    you want I want brief it here as it's not relavent to me at
+                    this time
+                  </li>
+                  <li>
+                    <b>ads: </b>
+                    During the ad lifecycle, many points can introduce layout
+                    shift:
+                    <ul>
+                      <li>When a site inserts the ad container in the DOM</li>
+                      <li>
+                        When a site resizes the ad container with first-party
+                        code
+                      </li>
+                      <li>
+                        When the ad tag library loads (and resizes the ad
+                        container)
+                      </li>
+                      <li>
+                        When the ad fills a container (and resizes if the final
+                        ad has a different size)
+                      </li>
+                    </ul>
+                    and the best solution introduced by web.dev is to
+                    pre-reserve a space to the ad by setting dimetinos for an ad
+                    container
+                    <b
+                      >and make sure it is in the page wheather the ad is loaded
+                      or not to avoid layout shift when the ad fails to load</b
+                    >. <br />
+                    This solution can have some downsides like the ad being
+                    smaller than the container you made which leades to blank
+                    spaces.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="bg-second-color">
+              <p>
+                <b>conclusion: </b> set width and height for img and video
+                elements as it increases performance and make sure when you
+                change one dimention by css you set the other one to auto to
+                allow it to be calculated by the browser and to avoid stretched
+                or squished images.
+              </p>
+            </section>
+          </div>
+        </section>
+        <!-- images ends -->
+      </div>
+    </article>
+    <!-- ======== HTML TIPS ENDS ======== -->
+
+    <!-- ======== Accessability STARTS ======== -->
+    <article class="access">
+      <div class="container">
+        <h2 class="main-heading">accessability</h2>
+        <section>
+          <p>
+            when putting more than one navigation in the site you should label
+            them using <span class="code-btn">aria-labelledby</span> attribute
+            to descripe the purpose of each one.
+          </p>
+        </section>
+      </div>
+    </article>
+    <!-- ======== Accessability ENDS ======== -->
+    <!-- ======== SEO STARTS ======== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">SEO</h2>
+        <p>
+          use key words in your heading as google gathers the context of your
+          page from headings.
+        </p>
+        <div class="bg-second-color">
+          <p>around 30% to 75% of your headings should contain the keyword.</p>
+          <p>but you use them wisely don't just stuff'em in there</p>
+        </div>
+        <p>Google can even make it's own list out of your headings</p>
+        <div class="img-container">
+          <img src="images/google-list-headings.png" alt="" />
+          <img src="images/google-list-headings-website.png" alt="" />
+        </div>
+      </div>
+    </article>
+    <!-- ======== SEO ENDS ======== -->
+    <!-- ======== interview STARTS ======== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">interview</h2>
+        <section>
+          <h3>What are void elements in HTML?</h3>
+          <p>
+            HTML elements which do not have closing tags or do not need to be
+            closed are Void elements. For Example &lt;br /&gt;, &lt;img /&gt;,
+            &lt;hr /&gt;
+          </p>
+        </section>
+        <section>
+          <h3>What is the advantage of collapsing white space?</h3>
+          <p>
+            In HTML, a blank sequence of whitespace characters is treated as a
+            single space character, Because the browser collapses multiple
+            spaces into a single space character and this helps a developer to
+            indent lines of text without worrying about multiple spaces and
+            maintain readability and understandability of HTML codes
+          </p>
+        </section>
+        <section>
+          <h3>What are HTML Entities?</h3>
+          <p>
+            In HTML some characters are reserved like &lt;, &gt; , '/', etc. To
+            use these characters in our webpage we need to use the character
+            entities called HTML Entities. Below are a few mapping between the
+            reserved character and its respective entity character to be used.
+          </p>
+          <img src="images/entities.png" alt="" />
+        </section>
+        <section>
+          <h3></h3>
+          <p></p>
+        </section>
+      </div>
+    </article>
+    <!-- ======== interview ENDS ======== -->
+  </body>
+</html>

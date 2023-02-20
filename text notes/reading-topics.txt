@@ -1,0 +1,82 @@
+- @supports in css
+-template engines (pug.js)
+-performance.now()
+-performance.mark()
+-year 2038 problem in computer since
+-leetcode tutrioals
+-algorithms
+- difference betewen Object.keys() & Object.entries()
+- web protocoles (http/https)
+-difference between append and appendChild
+- window open window features
+- object
+- difference between html collection & nodeList
+- difference between innerText & text-content
+- difference between createAttribute() then setAttributeNode & setAttribute
+- clean code
+- css,html,js bes practice tips
+- svg best practice
+- form validation
+- pattern attribute
+- accessability
+- difference between .addEventListener('click', ...) event and .onClick
+- clean up function with pure js
+- array methods
+- responsive img best practice
+- html headings best practice (website layout probably or hiracy)
+- hight preformance animation
+- codepin toturial
+- css order or html order ?
+- date in css
+- css filter
+- css pointer event
+- css methods
+- animatble css properties
+- css accent color
+- css verticle align
+- css cursor
+- why you have to set the position of the element in css in order for z-index to work
+- css display
+- css border-spacing and why to use it
+- setting <ol> start by css
+- js operators
+-autocomplete values in html inputs
+- js type coersion
+- interview quiestions
+- what are css/js bundels
+- css and js optimization
+- search engine ranking
+- @ supports
+- display:contents
+- web apis
+- why hyphens cause proplems in js
+- google's js style guide
+- difference between border raduis 50% and 100%
+- var fallbacks best pracitce
+- cross browser compatability
+- material design
+- npm toturial
+- pesudo classes
+- css counter-increment
+- 2 values for one corner in border raduis
+- box sizing
+- margin collapes
+- css variable naming
+- css text wrapping
+- css white-space
+- css word-break
+- difference between break word and break all
+- css text overflow
+- css vmin
+- why to use <dl>
+- dev tools
+- role attribute
+- area attribute
+- html tab index
+- stackoverflow tutorial
+- keyboard accessability
+- authentication
+- css overflow values and it's uses
+- js typed array (personal interest)
+
+- strict mode in react ? or js ? => js ============= done ===============

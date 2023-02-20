@@ -1,0 +1,17 @@
+ filter: blur(2px);
+  -webkit-filter: blur(2px);
+
+
+$().hover (function () {;}, function () {;});
+
+background: -webkit-linear-gradient(180deg,#d8695e 2%, #6f09be 82%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+background: center / contain no-repeat url("../../media/examples/firefox-logo.svg"),
+            #eee 35% url("../../media/examples/lizard.png");
+
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);

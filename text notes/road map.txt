@@ -1,0 +1,7 @@
+- finish js
+- learn three.js
+- re-code all portfolio websites
+- code the main portfolio site
+- react 
+- wordpress
+-next js

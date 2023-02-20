@@ -1,0 +1,12 @@
+https://virtual-gallery.okeystudio.com/
+
+MEGAONE 
+Restautan: 
+URL: https://megaone.acrothemes.com/index-restaurant.html;
+
+
+Food Deleivery:
+URL: https://megaone.acrothemes.com/index-food-delivery.html;
+HEADING FONT: grand hotel;
+font-family: roboto;
+icons: line awesome;

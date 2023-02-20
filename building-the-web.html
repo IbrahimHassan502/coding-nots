@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>building the web</title>
+    <!-- style -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========================
+         header
+     ========================== -->
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="index.html">HTML</a></li>
+            <li><a href="css.html">css</a></li>
+            <li><a href="building-the-web.html">building the web</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =========================
+         performance
+     ========================== -->
+    <article class="performance">
+      <div class="container">
+        <h2 class="main-heading">performance</h2>
+        <section class="fontello">
+          <h3>
+            use <a href="https://fontello.com/">fontello</a> instead of the
+            whole icon library
+          </h3>
+          <p>
+            fontello downloads only the css and the fonts of the icons you pick
+            from the website
+          </p>
+          <div class="img-container">
+            <img src="images/fontello-css.png" alt="" />
+            <img src="images/fontello-font.png" alt="" />
+          </div>
+          <p>
+            fontello font goes same as fontawesome
+            <span class="cb">webfonts</span> folder you should place it outside
+            of the css folder
+          </p>
+          <img src="images/fontello-font-face.png" alt="" />
+        </section>
+
+        <section class="enable-text-compression">
+          <h3 class="main-heading">enable text compression</h3>
+          <img src="images/enable-text-compression.png" alt="" />
+          <p>
+            it's backend stuff (something about adding header in the server
+            configuration) and there are toturials for wordpress and other
+            similiar platforms
+          </p>
+          <p>
+            but in our case <span class="second-color">github</span> takes care
+            of it
+          </p>
+          <div>
+            <h4>checking for text compression</h4>
+            <ul>
+              <li>
+                on the your website on the host (not locally) open console
+              </li>
+              <li>
+                go to <span class="cb">network</span> tab
+                <img src="images/checking-text-compression1.png" alt="" />
+              </li>
+              <li>
+                reload the website. Everything that has been requested from the
+                server will be shown
+              </li>
+              <li>click on the file you want to check it's text compression</li>
+              <li>go to the <span class="cb">response headers</span></li>
+              <li>
+                and see the <span class="cb">content-encoding</span>
+                <img src="images/checking-text-compression2.png" alt="" />
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </article>
+    <!-- =========================
+         accessability
+     ========================== -->
+    <article class="access">
+      <div class="container">
+        <h2 class="main-heading">accessability</h2>
+        <section>
+          <h3>Links do not have a discernible name</h3>
+          <img src="images/discernible-link-flag.avif" alt="" />
+          <div>
+            <p>
+              links should have descriptive text so users with screen readers
+              and assistive technologies understand what this link goes to. As
+              there is an option in screen readers to read just links (not sure)
+            </p>
+            <h4>the problem</h4>
+            <p>
+              the problem comes when the link goes to a social media website
+              (it's just an icon) or it's an article with "read more" or "see
+              full article here" or even just "here"
+            </p>
+          </div>
+          <div>
+            <h4>solution</h4>
+            <p>
+              put all your accessability text in a
+              <span class="cb">span</span> in the <span class="cb">a</span> and
+              give it the next properties in css
+            </p>
+            <ul>
+              <li><span class="cb">display:block;</span></li>
+              <li><span class="cb">width: 1px;</span></li>
+              <li><span class="cb">height: 1px;</span></li>
+              <li><span class="cb">overflow: hidden;</span></li>
+              <li><span class="cb">position: absolute;</span></li>
+              <li><span class="cb">top: -10px;</span></li>
+            </ul>
+            <p class="bg-second-color">
+              notice you don't need to give the links
+              <span class="cb">position: relative;</span>
+              as you actually want all the accessible text to be -10px from the
+              top of the document, so it's visually not there
+            </p>
+            <img src="images/discernible-link-html.png" alt="" />
+            <img src="images/discernible-link-css.png" alt="" />
+            <p>
+              and this technique is the one descriped by
+              <span class="second-color">WCAG</span> (my paper say it's from the
+              w3c (not the w3schools) but I remember that it was from WCAG)
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Make your links crawlable</h3>
+          <div>
+            <h4>problem</h4>
+            <p>
+              this flag appears when you leave the
+              <span class="cb">href=''</span> attribute empty
+            </p>
+          </div>
+          <div>
+            <h4>solution</h4>
+            <p>
+              simply either use <span class="cb">#</span> or real website link
+              in the <span class="cb">href</span>
+            </p>
+          </div>
+          <div>
+            <h4>
+              from
+              <a
+                href="https://developers.google.com/search/docs/advanced/guidelines/links-crawlable?visit_id=637981532233196085-2940949886&rd=1"
+              >
+                google Search Central
+              </a>
+            </h4>
+            <p>
+              Google can follow links only if they are an
+              <span class="cb">&lt;a&gt;</span> tag with an href attribute.
+              Links that use other formats won't be followed by Google's
+              crawlers. Google cannot follow
+              <span class="cb">&lt;a&gt;</span> links without an href tag or
+              other tags that perform a links because of script events. Here are
+              examples of links that Google can and can't follow:
+            </p>
+            <img src="images/crawble-links-uncrawble-lins.png" alt="" />
+            <p>
+              <b>Link to resolvable URLs:</b> Ensure that the URL linked to by
+              your <span class="cb">&lt;a&gt;</span> tag is an actual web
+              address that Googlebot can send requests to, for example:
+            </p>
+            <img src="images/resolvable-links-unresolvables-links.png" alt="" />
+          </div>
+        </section>
+      </div>
+    </article>
+    <!-- =========================
+         SEO
+     ========================== -->
+    <article class="seo">
+      <div class="container">
+        <section>
+          <h3>Tap targets are not sized appropriately</h3>
+          <img src="images/tap-size-flag.avif" alt="" />
+          <div>
+            <h4>problem</h4>
+            <p>
+              according to
+              <a
+                href="https://web.dev/tap-targets/?utm_source=lighthouse&utm_medium=devtools"
+              >
+                web.dev
+              </a>
+              Targets that are smaller than 48 px by 48 px or closer than 8 px
+              apart fail the audit. When the audit fails, Lighthouse lists the
+              results in a table with three columns:
+            </p>
+            <ul>
+              <li>
+                tap target ------------------> The tap target that is
+                inappropriately sized.
+              </li>
+              <li>
+                size ------------------------> The size of the target's bounding
+                rectangle in pixels.
+              </li>
+              <li>
+                Overlapping Target ----> Which other tap targets, if any, are
+                too close.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>solution</h4>
+            <p>
+              1.Increase the size of tap targets that are too small. Tap targets
+              that are 48 px by 48 px never fail the audit. If you have elements
+              that shouldn't appear any bigger (for example, icons), try
+              increasing the padding property:
+            </p>
+            <img src="images/target-tap-size-sol.avif" alt="" />
+            <p>
+              2.Increase the spacing between tap targets that are too close
+              together using properties like margin. There should be at least 8
+              px between tap targets.
+            </p>
+            <p class="bg-second-color">
+              notice that the two pargraphs above are not two options they are
+              two steps which means you should do both of them
+            </p>
+            <p class="bg-second-color">
+              as personally I changed the font-size a little bit and the margin
+              but the whole element height wasn't 48px it was actually 26px and
+              I still passed the audits
+            </p>
+            <img src="images/sweetHome-tap-size-link.png" alt="" />
+            <img src="images/sweetHome-tap-size-icon.png" alt="" />
+          </div>
+        </section>
+      </div>
+    </article>
+    <!-- =========================
+         general tips
+     ========================== -->
+    <article class="general-tips">
+      <div class="container">
+        <h2 class="main-heading">general tips</h2>
+        <ul class="big-items">
+          <li>
+            <h3>font awesome as pesoudo element</h3>
+            <p>
+              in the <span class="cb">::after</span> or
+              <span class="cb">::before</span> you add
+            </p>
+            <ul>
+              <li>
+                <span class="cb">font-family: 'Font Awesome 5 Free'</span>
+              </li>
+              <li>
+                <p class="cb">content: 'unicode from the site'</p>
+                ==> <span class="cb">content: '\f002'</span>
+                <img src="images/fontawesom-unicode.png" alt="" />
+              </li>
+              <li>
+                <span class="cb">font-weight: 900</span>
+              </li>
+              <p class="bg-second-color">
+                notice that some icons won't show if you don't add the
+                <span class="cb">font-weight</span>
+                proberty
+              </p>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <!-- =========================
+         weird solved problems
+     ========================== -->
+    <article class="weird-probs">
+      <h2>weird solved problems</h2>
+      <div class="container">
+        <section>
+          <h3>github push is stuck or fails</h3>
+          <p>
+            noticed that <span class="cb">.psd</span> files cause this kind of
+            behaviour
+          </p>
+          <p>with some small search still didn't get why this is happening</p>
+        </section>
+        <section>
+          <h3>nav buttons are hidden in owl carousel</h3>
+          <p>
+            despite specifing <span class="cb">nav: true</span> nav buttons are
+            still not visible
+          </p>
+          <p>
+            noticed this behaviour occures when you specify
+            <span class="cb">items: </span> number equal to the actual item
+            number in the html (if you place 3 items in the html and then
+            specify <span class="cb">items: 3</span> in owl carousel functino
+            buttons wont appear )
+          </p>
+        </section>
+      </div>
+    </article>
+  </body>
+</html>

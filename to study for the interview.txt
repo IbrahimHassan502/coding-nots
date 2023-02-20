@@ -1,0 +1,5 @@
+- css animation
+- js api
+- form verfication
+- regular experissions
+- upload your site to github

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>wordpress notes</title>
+  </head>
+  <body>
+    <article>
+      <div class="container">
+        <h2 class="main-heading">intro</h2>
+        <p>
+          wordpress is an open source software which means you can take a
+          version an customize it as you whish
+        </p>
+      </div>
+    </article>
+    <article>
+      <div class="container">
+        <h2 class="main-heading">two options</h2>
+        <p>
+          when it comes to making websites on wordpress you have two optoins:
+        </p>
+        <ul class="big-items">
+          <li>
+            <p>
+              first you can make it on
+              <a href="https://wordpress.com">wordpress.com</a>
+              which has the wordpress version setup, updated, secure and ready
+              to go. which means you don't have to see what are the security
+              problems and solve them and you don't need to check for updates.
+              Just pick your plan and go
+            </p>
+            <h3 class="second-heading">disadvantages</h3>
+            <p>
+              far less customizable compared with the second option which is
+              taking a version of wordpress on your machine and work it yourself
+              as at the end of the day in case of
+              <a href="https://wordpress.com">wordpress.com</a> they manage the
+              website not you
+            </p>
+          </li>
+          <li>
+            <p>
+              second option is as mentioned is to download the software from
+              <a href="https://wordpress.org/download/">
+                wordpress.org/download
+              </a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article>
+      <div class="container">
+        <h2 class="main-heading">wordpress.org</h2>
+        <p>where you can:</p>
+        <ul>
+          <li>download the software</li>
+          <li>find support</li>
+          <li>read documentation</li>
+          <li>download and upload themes</li>
+          <li>download plugines</li>
+        </ul>
+      </div>
+    </article>
+    <article class="elzero-2016">
+      <div class="container">
+        <h2 class="main-heading">elzero 2016</h2>
+        <p class="bg-second-color">note: i'm taking this course 14/11/2022</p>
+        <section>
+          <h3>05 - Setup WordPress On Localhost</h3>
+          <ol>
+            <li>
+              first you need to download local server like
+              <a href="https://www.apachefriends.org/download.html">XAMPP</a>
+            </li>
+            <li>
+              <p>after install is finished start both Apache and MySQL</p>
+              <p class="bg-second-color">
+                in the setup file of xampp wherever you chose it find
+                <b>htdocs</b> this is the folder where you put the websites you
+                want on the local server and it's the folder opened when you
+                type <b>Localhost</b> in the browser
+              </p>
+            </li>
+            <li>
+              <a href="https://wordpress.org/download/">download wordpress</a>.
+              not a click bait 😅
+            </li>
+            <li>
+              after un-zipping the file copy the wordpress folder (which came
+              from the zipped file) and past it in the <b>htdocs</b> folder
+            </li>
+            <li>
+              go to <a href="http://localhost/wordpress">localhost/wordpress</a>
+            </li>
+            <li>choose the language</li>
+            <li>
+              <ul>
+                <li>
+                  <p>database name: wordpress</p>
+                  <p class="bg-second-color">
+                    notice that you should create database with the name
+                    wordpress on your machine
+                  </p>
+                  <p>
+                    to create the database (in course elzero said go to
+                    localhost/phpMyAdmin but I fuond it outsite of htdocs (the
+                    localhost) so I simply copied and pasted it
+                  </p>
+                  <p>then go to database tap</p>
+                  <img src="images/phpMyAdmin-database.png" alt="" />
+                  <p>type the name you want</p>
+                  <p>choose utf8_general_ci for encription</p>
+                  <p class="bg-second-color">
+                    phpMyAdmin by default makes the user name root and no
+                    password (thats' why we put the same info in wordpress setup
+                    )
+                  </p>
+                  <p>
+                    to see the database user's in phpMyAdmin and their
+                    permissisons go to privilleges
+                  </p>
+                  <img src="images/phpMyAdmin-privilleges.png" alt="" />
+                </li>
+                <li>username: root</li>
+                <li>password: leave it empty</li>
+                <li>
+                  database host: 'localhost' (127.0.0.1 is the localhost) so you
+                  can type it as 'localhost' or as numbers as you wish
+                  <img src="images/phpMyAdmin-database-host.png" alt="" />
+                </li>
+                <li>
+                  prefix: leave it as: wp_ (wordpress uses this prefix before
+                  the name of its files in case of another files will be added
+                  from different wordpress or different party with the same file
+                  name they don't mix up)
+                </li>
+                <li>hit submit then 'run the install'</li>
+                <li>type the site title you like</li>
+                <li>
+                  type the username <b>of the website</b> he typed a different
+                  name than root so it's probably different username of the
+                  database username
+                </li>
+                <li>whatever the password you like</li>
+                <li>
+                  if the password is weak and you like that way check the
+                  confirm password checkbox
+                </li>
+                <li>type in the email you want to use for recovery cases</li>
+                <li>
+                  search engine visability: in case you <b>don't want</b> your
+                  site to be archived by search engines (no one can get to the
+                  website unless they have the link as it won't be visible in
+                  the search) then check it. if you want your website to be
+                  public just leave it unchecked
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <p>
+            he explained something about making another database and using the
+            encription in the image below instead of the utf8_general_ci in case
+            he wants to make another wordpress installation bu it didn't really
+            understand wtf he wants
+          </p>
+          <img src="images/phpMyAdmin-database-encription.png" alt="" />
+        </section>
+        <section>
+          <h3>06 - Setup WordPress On DirectAdmin</h3>
+          <p>no notes taken</p>
+        </section>
+        <section>
+          <h3>07 - Setup WordPress on cPanel Website</h3>
+          <p>no notes taken</p>
+        </section>
+        <section>
+          <h3>08 - WordPress in Your Language</h3>
+          <p>
+            to change the language simply go to sittings and you will find 'site
+            language' showing you the installed and available languages
+          </p>
+          <p>choose the language then hit save changes at the page</p>
+          <p>
+            you can find the installed language files by going to the wordpress
+            folder inside htdocs ===> wp-content ===> languages
+          </p>
+          <p class="bg-second-color">
+            notice that at first the folder languages won't exist unless you
+            change the site language one time at lease
+          </p>
+          <p class="bg-second-color">
+            also notice that here we're changing the panel and controls language
+            not the site content language (this is not how you make multilangual
+            website)
+          </p>
+        </section>
+        <section>
+          <h3>09 - Dig Deep Into WordPress Database</h3>
+          <p>
+            talking about each tabel in the wp database in case you needed to do
+            major changes like changing a certain phrase or link that exists in
+            hundreds of posts or in case you got hacked and don't have the admin
+            username and password. From the database you can enter on admins and
+            change the email and password
+          </p>
+          <ul class="big-items">
+            <li>
+              wp_commentmeta & wp_comments: are about the comments the visitors
+              leave on the site posts
+            </li>
+            <li>
+              wp_links: contains all the external links (elzero said it was
+              about comptability and should be removed in the future and today
+              is 17/11/2022 and it still here)
+            </li>
+            <li>
+              wp_options: contains all the chosen settings like the blog name,
+              the admin's email, etc...
+            </li>
+            <li>wp_posts: contains all the articles</li>
+            <li>wp_postmeta: I don't fully understand it now</li>
+            <li>wp_terms: contains the categories and tags of the posts</li>
+            <li>
+              wp_term_relationships: contains the relations between the database
+              tables linking tags with posts and categories
+            </li>
+            <li>
+              wp_term_taxonomy: contains the descreption of each catergory
+            </li>
+            <li>
+              wp_users: contains all website users (I guess, still not sure if
+              it's about just admins or all users)
+            </li>
+            <li>wp_usermeta: contains all info about all users</li>
+          </ul>
+        </section>
+        <section>
+          <h3>#10 - Tips to Secure Your WordPress Website</h3>
+          <p>
+            before securing wordpress you have to secure your machine (he won't
+            talk about securing your machine he will talk about wordpress)
+          </p>
+          <p>didn't continue the lessons cuz I don't give a fuck</p>
+        </section>
+        <section>
+          <h3></h3>
+        </section>
+      </div>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>

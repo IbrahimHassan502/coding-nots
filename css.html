@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ======== header starts ======== -->
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="index.html">HTML</a></li>
+            <li><a href="js.html">JS</a></li>
+            <li><a href="building-the-web.html">building the web</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ======== header ends ======== -->
+
+    <!-- ======== CSS TIPS starts ======== -->
+    <article class="css-notes">
+      <h2 class="main-heading">notes</h2>
+      <div class="container">
+        <section>
+          <h3>animatoin delay</h3>
+          suppose you have multiple elements (say 3) you want to animate them so
+          each one is delayed by some duration (say 2s) than the one before it.
+          <br />
+          instead of using <span class="code-btn">animation-delay</span> css to
+          delay each one which is not practical in case of big numners.You but
+          customized <span class="code-btn">data-*</span> (say data-delay) on
+          each one with the number of seconds (or milliseconds) delay you want
+          for thet particular element and then wirte the following css:
+          <span class="code-btn">animation-delay: attr(data-delay)</span>
+          and now you have as many animations as you want seperated by certain
+          cumulative duration with just one line of css 😃.
+        </section>
+
+        <section>
+          <h3>
+            justify self & justify items <b>work only with grid</b> and don't
+            work with <b>flexbox</b>
+          </h3>
+          <blockquote>
+            The <span class="code-btn"> justify-self and </span>
+            <span class="code-btn">justify-items</span> properties
+            <b>are not implemented in flexbox</b>. This is due to the
+            one-dimensional nature of flexbox, and that there may be multiple
+            items along the axis, making it impossible to justify a single item.
+            To align items along the main, inline axis in flexbox you use the
+            justify-content property.
+          </blockquote>
+          <b>
+            as in the flexbox (on the main axis) children are treated as a group
+          </b>
+        </section>
+
+        <section class="align">
+          <h3>align-items VS align-content</h3>
+          <div class="img-container">
+            <img src="images/align-items-start.png" alt="" />
+            <img src="images/align-content-start.png" alt="" />
+          </div>
+
+          <p>
+            <b>
+              note in order to be able to explain the difference we will talk
+              about grid element
+            </b>
+          </p>
+          <p>
+            <span class="second-color">visually: </span>
+            <span class="code-btn">align-item</span> aligns each item in its own
+            grid area.
+          </p>
+          <p>
+            while in <span class="code-btn">align-content</span> will pack them
+            in the top of the container. like shown in the pervious image.
+          </p>
+
+          <p>
+            example: <span class="code-btn">align-items: start</span> will
+            results in the image below.
+          </p>
+
+          <p>
+            <span class="second-color">under the hood: </span>
+            <span class="code-btn">align-items</span> sets the value of
+            <span class="code-btn">align-self</span> for all child elements at
+            once.
+          </p>
+
+          <p>
+            while <span class="code-btn">align-content</span> deals with the
+            grid lines itself.
+          </p>
+          <p>
+            <b>
+              the images below are for align-conetent start and align-conetent
+              end respectivly</b
+            >
+          </p>
+
+          <div class="img-container">
+            <img src="images/align-items-gridlines.png" alt="" />
+            <img src="images/align-items-gridlines2.png" alt="" />
+          </div>
+
+          <p>
+            <span class="second-color"> why the elements got taller ? </span>
+            <br />
+            in the code on mdn the first two elemnts were set to span to rows
+            <b>so</b> it's basically stretches from the beginning of the first
+            row to the end of the second row and since the space between the
+            rows got taller the end of the row got further resulting in the
+            elements got taller.
+          </p>
+        </section>
+
+        <section>
+          <h3>:focus-within</h3>
+          <p>
+            it applies style on the element if the element itself or any of its
+            children is focused
+          </p>
+          <p>
+            in the case with just <span class="code-btn">:focus</span> when you
+            focus on any of the elements children the focus on the elemenet is
+            lost
+          </p>
+        </section>
+
+        <section>
+          <h3>place-items</h3>
+          <p>
+            its a shorthand for <span class="code-b">align-items</span> and
+            <span class="code-btn">justify content</span> respectivly (align
+            value comes before justify value) <br />
+            <b>note</b> that in flexbox justify-items doesn't work as children
+            are treated as one on the main axis so in case of row is main axis
+            the second value will be ignored in flexbox. <br />
+            <b>
+              same explanation goes with
+              <span class="code-btn">place-content</span>
+              and
+              <span class="code-btn">place-self</span> <br />
+              note that <span class="code-btn">justify-slef</span> doesn't work
+              with flexbox
+            </b>
+          </p>
+        </section>
+
+        <section>
+          <h3>:after & :before don't work</h3>
+          <p>
+            according to answer on
+            <a
+              href="https://stackoverflow.com/questions/4574912/css-content-generation-before-or-after-input-elements"
+            >
+              stack overflow
+            </a>
+          </p>
+          <div class="img-container">
+            <img src="images/after-before-not-working-question.png" alt="" />
+            <img src="images/after-before-not-working-answer.png" alt="" />
+          </div>
+        </section>
+
+        <section>
+          <h3>gap is not working properly</h3>
+          <p>
+            I noticed in the section in the image below that the separator is
+            not exactly in the middle
+          </p>
+          <img src="images/gap-not-working-properly.png" alt="" />
+          <p>
+            the proplem was from the padding of the inputs was changing their
+            width and hence all the containers on them causing the gap to push
+            the form only
+          </p>
+          <p>solution was to explicitly set the width of the input to 100%</p>
+        </section>
+      </div>
+    </article>
+    <!-- ======== CSS TIPS ends ======== -->
+
+    <!-- ======== flex vs grid STARTS ======== -->
+    <article>
+      <h2 class="main-heading">css</h2>
+      <div class="container">
+        <section>
+          <h3 class="main-heading">flexbox VS grid</h3>
+          <div class="img-container">
+            <img src="images/flexwrap.png" alt="" />
+            <img src="images/gridwrap.png" alt="" />
+          </div>
+          <p>
+            the main difference between the two is that use felxbox if you want
+            to control the content in <b>one direction</b> (row or column) and
+            use grid if you want to control the content in
+            <b>both directions</b> (row and column).Like the pervious images may
+            illustrate.
+          </p>
+          <p>
+            another piece of advice to help you decide is to ask your self
+            <br />
+            <span class="second-color"
+              >Do you want your content to shape your layout ?</span
+            >
+            ==> use grid <br />
+            <span class="seocnd-color"
+              >Do you want your layout to shape your content ?</span
+            >
+            ==> use grid
+          </p>
+          <p>
+            finally one piece of adviece: In grid-layout there is no way to
+            change the size of <b>one single items</b> without changin the whole
+            column.
+          </p>
+          <p>
+            my opionion is
+            <span class="second-color"
+              >what ever gets the job done with less code you go with it</span
+            >
+            even if in your beginnings you write the same layout twice one with
+            grid and one with flex to help you decide it's okay.
+          </p>
+          <div class="bg-second-color">
+            <q class="text-bold">
+              I think the key phrase here is “distributing space and aligning
+              content”. Flexbox is all about taking a bunch of things (which
+              have varying sizes) and fitting them into a container (which
+              itself has a varying size).
+            </q>
+            <ul>
+              <li>
+                <q>
+                  When people find Flexbox hard and weird, it is often because
+                  they are trying to use Flexbox as a grid system — trying to
+                  take back control over sizing and space distribution. When you
+                  do this, Flexbox can seem weird and hard as you are fighting
+                  against the very thing that makes it Flexbox, i.e. that
+                  inherent flexibility. <br />
+                  Therefore, patterns which suit flex layout very well are those
+                  where we are not so interested in having a pixel-perfect size
+                  for each item. We just want those items to display well
+                  alongside each other.
+                </q>
+              </li>
+            </ul>
+            <b>
+              Remember that you can also switch layout methods, using Flexbox at
+              one breakpoint and Grid at another.
+            </b>
+          </div>
+        </section>
+      </div>
+    </article>
+    <!-- ======== flex vs grid ends ======== -->
+
+    <!-- ======== media queries starts ======== -->
+    <article>
+      <h2>media queries</h2>
+      <section>
+        <h3>media queries for touch screens</h3>
+        <p>
+          article from
+          <a href="https://web.dev/accessible-tap-targets/">web.dev</a>
+        </p>
+        <p>
+          One of the media features we can now test for with media queries is
+          whether the user's primary input is a touchscreen (<span class="cb"
+            >pointer</span
+          >) and whether any of the currently detected inputs is a touchscreen
+          (<span class="cb">any-pointer</span>). The
+          <span class="cb">pointer</span> and
+          <span class="cb">span>any-pointer</span>
+          features will return <span class="cb">fine</span> or
+          <span class="cb">coarse.</span>
+        </p>
+        <ul>
+          <li>
+            A fine pointer will be someone using a mouse or trackpad, even if
+            that mouse is connected via Bluetooth to a phone.
+          </li>
+          <li>
+            A coarse pointer indicates a touchscreen, which could be a mobile
+            device but may also be a laptop screen or large tablet.
+          </li>
+        </ul>
+        <p>the following code targets devices with touchscreen</p>
+        <img src="images/media-queries-touch.png" alt="" />
+      </section>
+    </article>
+    <!-- ======== media queries ends ======== -->
+
+    <script src="test.js"></script>
+  </body>
+</html>
