@@ -257,6 +257,20 @@
             </p>
             <img src="images/closest-method-example.png" alt="" />
           </li>
+          <li>
+            <h3>onChange on the parent</h3>
+            <p class="bg-second-color">
+              I figured out that you can apply
+              <span class="cb">addEventListner('change', () => {})</span>
+              on the parent of the input you want to monitor instead of the input itself
+            </p>
+            <p class="bg-second-color">
+              this is useful in the case in the image down below. At first I
+              made a forEach loop that assigns an eventlistener for each input
+              instead of applying it on the parent
+            </p>
+            <img src="images/onChange-on-parent.png" alt="" />
+          </li>
         </ul>
       </div>
     </article>
