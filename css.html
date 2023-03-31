@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +14,7 @@
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>css notes</title>
   </head>
   <body>
     <!-- ======== header starts ======== -->
@@ -307,6 +308,367 @@
       </section>
     </article>
     <!-- ======== media queries ends ======== -->
+
+    <!-- ======== tailwind starts ======== -->
+    <article class="tail-wind">
+      <div class="container">
+        <h2 class="main-heading">net ninja tailwind course</h2>
+        <section>
+          <h3>
+            Tutorial #1 - Intro & Setup
+            <a
+              href="https://www.youtube.com/watch?v=bxmDnn7lrnk&list=PL4cUxeGkcC9gpXORlEHjc5bgnIi5HEGhw&index=2"
+              >see video</a
+            >
+          </h3>
+          <ul class="big-items">
+            <li>
+              <p>
+                we install tailwind using
+                <span class="cb">npm install tailwindcss</span>
+              </p>
+            </li>
+            <li>
+              <p>
+                but first if you wanna keep track on the depndencies you install
+                in your project you have to make a node
+                <span class="cb">package.json</span>file using
+                <span class="cb">npm init -y</span>
+              </p>
+              <p>
+                and when you install any dependency it will be shown in here
+              </p>
+              <img src="images/node-package-dependencies.png" alt="" />
+            </li>
+            <li>
+              <p>using tailwind in your page is like using sass:</p>
+              <ol>
+                <li>
+                  you make a src stylesheet where you import everything belongs
+                  to tailwind
+                </li>
+                <li>
+                  then you run a tailwind script that process this style sheet
+                  into a final style sheet which you link to your html
+                </li>
+              </ol>
+              <img src="images/tailwind-stylesheet.png" alt="" />
+              <p>now why would we do that?</p>
+              <p>first you can use tailwind itself (don't know how yet)</p>
+              <p>
+                and second the good thing with the method is you can add your
+                own custom css althogh the purpose of the framework is to not
+                type any custom css but sometimes you have to add your own color
+                or your own size of font or whatever
+              </p>
+              <p>
+                and from what I know about tailwind so far is that at the build
+                it elemenates all unuesd css so maybe thats why we use this
+                method
+              </p>
+            </li>
+            <li>
+              <h3>file mangement</h3>
+              <p>
+                all the final page files go in a
+                <span class="cb">public</span> folder (it is not mandatory but
+                it's best practice I guess)
+              </p>
+              <p>
+                and we make a <span class="cb">src</span> folder to put the src
+                stylesheet that tailwind gonna process into the final stylesheet
+              </p>
+            </li>
+            <li>
+              to import tailwind into the src stylesheet you type this at the
+              very begining of the page:
+              <span class="cb">
+                @tailwind base; <br />
+                @tailwind components; <br />
+                @tailwind utilities;
+              </span>
+            </li>
+            <li>
+              <p>
+                to set the script that converts the src stylesheet into the
+                final one:
+              </p>
+              <ol>
+                <li>go to package.json</li>
+                <li>
+                  at the "scripts" object you gonna find a test script you can
+                  delete that if you want
+                </li>
+                <li>
+                  inside the scripts object you gonna type the name of the
+                  script you want lets call "build-css"
+                </li>
+                <li>
+                  <p>
+                    then in its value you gonna type
+                    <span class="cb">
+                      "tailwindcss build (the src stylesheet path in here) -o
+                      (the public stylesheet path in here)
+                    </span>
+                  </p>
+                  <p>so it's gonna look like this</p>
+                  <img
+                    src="images/tailwind-stylesheet-process-script.png"
+                    alt=""
+                  />
+                  <p class="bg-second-color">
+                    notice that you have to make the folder public but you don't
+                    have neccessarly to make the style.css in the public folder
+                    as tailwind can make it itslef when it proccess the src
+                    stylesheet
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    so when you make changes that require re-processing of the
+                    src you type this in the termnal
+                    <span class="cb">npm run buil-css</span>
+                    (and you gonna know about what requires re-processing later
+                    in the course)
+                  </p>
+                  <p class="bg-second-color">
+                    notice that in the <a href="">tailwind docs</a> there is a
+                    different script that looks like it re-processes
+                    automatically, I didn't use it know as I wanna follow
+                    exactly what the course does, so give it a look
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="main-heading">tailwind installation problem</h2>
+          <p class="second-color">warn no utility classes were detected</p>
+          <p>
+            to understand this error you need to know how tailwind works under
+            the hood
+          </p>
+          <p>
+            according to
+            <a href="https://tailwindcss.com/docs/content-configuration">
+              tailwind content configuration
+            </a>
+          </p>
+          <p class="bg-second-color">
+            Tailwind CSS works by scanning all of your HTML, JavaScript
+            components, and any other template files for class names, then
+            generating all of the corresponding CSS for those styles.
+          </p>
+          <p>
+            which means you have to provide tailwind the path of the files that
+            use its class
+          </p>
+          <img src="images/tailwind-content-path.png" alt="" />
+          <ul>
+            <li>Use * to match anything except slashes and hidden files</li>
+            <li>Use ** to match zero or more directories</li>
+            <li>
+              Use comma separate values between {} to match against a list of
+              options
+            </li>
+          </ul>
+          <p class="bg-second-color">
+            notice that I followed the exact instructions on the
+            <a href="https://tailwindcss.com/docs/installation">
+              installation docs
+            </a>
+            not the ones mentioned in net ninja course
+          </p>
+          <p class="bg-second-color">
+            more instructions and info in the
+            <a href="https://tailwindcss.com/docs/content-configuration">
+              tailwind content configuration
+            </a>
+            give it a look
+          </p>
+        </section>
+        <section>
+          <h3>#5 - Tailwind Config</h3>
+          <p>
+            to generate a tailwind config file with all the utilities in it go
+            to the termnal and type
+            <span class="cb">npx tailwindcss init --full</span>
+          </p>
+          <p>
+            but if you want to add your own or modify on tailwind you don't deal
+            with this config file instead you generate a blank config file that
+            has all your modification in order not to mess anything in the
+            frameword and in order to be able to distinguish between your own
+            css and tailwind's css
+          </p>
+          <p>
+            to generate tailwind blank config file you type in the termnal
+            <span class="cb">px tailwindcss init</span>
+          </p>
+          <p>if you want to add your own css like your theme colors</p>
+          <ul>
+            <li>
+              <p>
+                first you can visit these
+                <a href="https://tailwindcss.com/docs/theme">docs</a> to know
+                the rules of adding your own css
+              </p>
+              <img src="images/tailwind-customization.png" alt="" />
+            </li>
+            <li>go to your <span class="cb">tailwind.config.js</span></li>
+            <li>you will find an <span class="cb">extend</span> object</li>
+            <li>
+              <p>
+                and you add whatever you want following the rules shown in the
+                image above. Like if you want to add a new color you type
+                <span class="cb">
+                  colors: {"the color you want": "the value",}
+                </span>
+              </p>
+              <p>
+                I noticed in the docs that every color has different shadows
+              </p>
+              <img src="images/tailwind-color-shades.png" alt="" />
+              <p>
+                but some how couldn't find them in the full config file to try
+                to mimc them
+              </p>
+              <p>but when hovering on a color they start to show</p>
+              <img src="images/tailwind-color-shades-config.png" alt="" />
+              <p>and that's how to memic them</p>
+              <img src="images/tailwind-extend-color-shades.png" alt="" />
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>#6 - Custom Fonts</h3>
+          <p>to add your custom font</p>
+          <ol>
+            <li>
+              include the font in your project either by using the css rule
+              <span class="cb">@import</span> or HTML
+              <span class="cb">link</span>
+            </li>
+            <li>
+              <p>
+                then go to extend in the
+                <span class="cb">tailwind.config.js</span>
+                and type
+                <span class="cb">
+                  fontFamily: {"whatever the name you want": ["value", "value"]
+                </span>
+              </p>
+              <img src="images/tailwind-fontFamily-customization.png" alt="" />
+            </li>
+            <li>
+              then you can use by simply adding the class
+              <span class="cb">font-</span>followed by the name you choosed for
+              the font (heading in the image above)
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h3>#8 - Responsive Classes</h3>
+          <ul>
+            <li>
+              <p>
+                any class in tailwind can be responive or used condtionally by
+                adding the size of the screen you want, column and the the class
+                you want <span class="cb">sm:</span>
+              </p>
+              <p>
+                say you want the element to be displayed flex from the meduim
+                size screens and up you type it like this
+                <span class="cb">md:flex</span>
+              </p>
+              <p>
+                this can be used with
+                <span class="second-color">any</span> tailwind class
+              </p>
+              <img src="images/tailwind-screen-sizes.png" alt="" />
+              <p class="bg-second-color">
+                as you can notice in the media queries the sizes are used with
+                <span class="cb">min-width</span> which is the mobile first
+                approach
+              </p>
+            </li>
+            <li>
+              <h3>Targeting a breakpoint range</h3>
+              <p>
+                By default, styles applied by rules like md:flex will apply at
+                that breakpoint and stay applied at larger breakpoints.
+              </p>
+              <p>
+                If you'd like to apply a utility only when a specific breakpoint
+                range is active, stack a responsive modifier like md with a
+                <span class="cb">max-*</span> modifier to limit that style to a
+                specific range like: <span class="cb">md:max-xl:flex</span>
+              </p>
+              <p>
+                Tailwind generates a corresponding max-* modifier for each
+                breakpoint, so out of the box the following modifiers are
+                available:
+              </p>
+              <img src="images/tailwind-screen-size-ranges.png" alt="" />
+              <p>
+                read about
+                <a
+                  href="https://tailwindcss.com/docs/responsive-design#targeting-a-breakpoint-range"
+                >
+                  targeting break point ranges
+                </a>
+                to learn more
+              </p>
+            </li>
+            <li>
+              <h3>Customizing your theme</h3>
+              <img src="images/tailwind-screen-size-customiztion.png" alt="" />
+              Learn more in the
+              <a href="https://tailwindcss.com/docs/breakpoints">
+                customizing breakpoints documentation.
+              </a>
+            </li>
+            <li>
+              <h3>Arbitrary values</h3>
+              <p>
+                If you need to use a one-off breakpoint that doesn't make sense
+                to include in your theme, use the
+                <span class="cb">min-[the screen size you want]</span> or
+                <span class="cb">max-[the screen size you want]</span> modifiers
+                to generate a custom breakpoint on the fly using any arbitrary
+                value. like <span class="cb">min-[320px]:text-center</span>
+              </p>
+              <p>
+                Learn more about arbitrary value support in the
+                <a
+                  href="https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values"
+                >
+                  arbitrary values
+                </a>
+                documentation.
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>#11 - @apply Directive</h3>
+          <p>
+            to add your own css like adding a background-image to a certain
+            section you add it to the src style not the proccessed one as if you
+            add it in the proccessed one while be overridden
+          </p>
+          <p>
+            in case you have some componenet that is repeated across the website
+            like a card or button. Instead of copying and pasting the classes
+            around you add these classes to a single class using the
+            <span class="cb">@apply</span> rule
+          </p>
+          <p>in the src style file:</p>
+        </section>
+      </div>
+    </article>
+    <!-- ======== tailwind ends ======== -->
 
     <script src="test.js"></script>
   </body>

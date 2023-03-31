@@ -1,7 +1,11 @@
 "use strict";
-function longestCommonPrefix(strs) {
-  let prefix = new RegExp(strs[0], "gi");
-  strs.forEach((word) => console.log(word.match(prefix)));
-  console.log(prefix);
+function arrayDiff(a, b) {
+  let numArr = [];
+  a.forEach((aNum) => {
+    let add = 1;
+    b.forEach((bNum) => (aNum === bNum ? (add = 0) : ""));
+    add ? numArr.push(aNum) : "";
+  });
+  return numArr;
 }
-longestCommonPrefix(["flower", "flow", "flight"]);
+console.log(arrayDiff([1, 2, 2], [1]));
