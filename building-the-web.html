@@ -291,7 +291,7 @@
      ========================== -->
     <article class="weird-probs">
       <div class="container">
-        <h2>weird solved problems</h2>
+        <h2 class="main-heading">weird solved problems</h2>
         <div class="container">
           <section>
             <h3>github push is stuck or fails</h3>
@@ -326,6 +326,43 @@
               capitalized and I was trying to match it with a text from database
               which is normally all-lower-case text and kept not matching
             </p>
+          </section>
+
+          <section>
+            <h3>tailwind stopped processing style</h3>
+            <p>
+              tailwind was working prefectly and suddenly stopped modifying the
+              output style file
+            </p>
+            <p>
+              the problem was that I added a wrong class name in the
+              <span class="cb">@apply</span> rule
+            </p>
+            <p>
+              so the <span class="cb">@apply</span> rule is a custom rule made
+              by tail wind so if you add the wrong class name (a class that
+              doesn't exist neither in their utility classes or the classes you
+              add in the src style file) like
+              <span class="cb">item-center</span> instead of
+              <span class="cb">items-center</span> the "s" difference between
+              the two appearantly treggered error in the framework that stopped
+              it from proccessing
+            </p>
+            <p>
+              it's not just the wrong class that can tregger that error.
+              Forgetting to add the ";" at the end of the line (and for some
+              reasons the editor doesn't added for you ) can tregger and error
+              too
+            </p>
+            <h3>how you know you messed up ?</h3>
+            <p>
+              if you have the <span class="cb">--watch</span> termnal you notice
+              with every modification you make you see it typing
+              <span class="cb">rebuilding...</span> then
+              <span class="cb">done in ...ms</span> but when you mess up you see
+              green text like in the image below
+            </p>
+            <img src="images/tailwind-no-process-error.png" alt="" />
           </section>
         </div>
       </div>
