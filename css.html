@@ -175,8 +175,8 @@
             </a>
           </p>
           <div class="img-container">
-            <img src="images/after-before-not-working-question.png" alt="" />
-            <img src="images/after-before-not-working-answer.png" alt="" />
+            <img src="images/after-before-not-working-question.webp" alt="" />
+            <img src="images/after-before-not-working-answer.webp" alt="" />
           </div>
         </section>
 
@@ -309,8 +309,8 @@
     </article>
     <!-- ======== media queries ends ======== -->
 
-    <!-- ======== tailwind starts ======== -->
-    <article class="tail-wind">
+    <!-- ======== tailwind course starts ======== -->
+    <article class="tailwind-course">
       <div class="container">
         <h2 class="main-heading">net ninja tailwind course</h2>
         <section>
@@ -669,7 +669,110 @@
         </section>
       </div>
     </article>
-    <!-- ======== tailwind ends ======== -->
+    <!-- ======== tailwind course ends ======== -->
+
+    <!-- ======== tailwind notes starts ======== -->
+    <article class="tailwind-notes">
+      <div class="container">
+        <h2 class="main-heading">tailwind notes</h2>
+
+        <section>
+          <h3>quick tips</h3>
+          <ul class="big-items">
+            <li>
+              did you know you can assign pseudo element content using tailwind
+              <img src="images/tailwind-pesudo-element-content.png" alt="" />
+            </li>
+            <li>
+              tailwind made a prettier plugin to sort tailwind classes in your
+              project based on their recommendation
+              <a
+                href="https://github.com/tailwindlabs/prettier-plugin-tailwindcss"
+              >
+                give it a look
+              </a>
+              <p class="bg-second-color">
+                scroll a little in the github repo to see the instructions
+              </p>
+            </li>
+            <li>
+              <h3>to minify your output file</h3>
+              <p>
+                according to their
+                <a
+                  href="https://tailwindcss.com/docs/optimizing-for-production"
+                >
+                  docs
+                </a>
+                <span class="bg-second-color"
+                  >For the smallest possible production build, we recommend
+                  minifying your CSS with a tool like
+                  <a href="https://cssnano.co/">cssnano</a>, and compressing
+                  your CSS with
+                  <a href="https://en.wikipedia.org/wiki/Brotli">Brotli</a
+                  >.</span
+                >
+              </p>
+              <p>
+                or you can simply add the <span class="cb">--minify</span> flag
+                when compiling your src style with tailwind CLI
+              </p>
+              <span class="cb">npx tailwindcss -o build.css --minify</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>repeated styles</h3>
+          <p>
+            most of the time you have the same element repeated in the section
+            like nav links or 3 card section where you want to add the same
+            style classes for all of them. tailwind provided 3 ways to do that
+          </p>
+          <ol>
+            <li>
+              <h4>Multi-cursor editing</h4>
+              <img src="images/tailwind-multi-cursor.png" alt="" />
+            </li>
+            <li>
+              <h4>Loops</h4>
+              <p>
+                you can have the info of the elements stored in a text form
+                (like an api) and you loop through the element info typing the
+                html structure once
+              </p>
+              <p>
+                you can loop over the info using regular
+                <span class="cb">js</span> or I lately learned about
+                <span class="cb">pug.js</span>
+              </p>
+              <img src="images/tailwind-loop.png" alt="" />
+            </li>
+            <li>
+              <h4>making an actual component</h4>
+              <p>
+                the two solutinos above or good for elements that repeat in the
+                same section but what if you have an element (component) that
+                repeats across the whole website like a button
+              </p>
+              <p>
+                you can either make a template for it using vue or
+                <span class="cb">styled</span> element using react
+              </p>
+              <p>
+                or (and I really don't recommend this) you can use the
+                <span class="cb">@apply</span> rule
+              </p>
+              <p class="bg-second-color">
+                but notice that the apply rule is straight css which defeates
+                the purpose of using tailwind
+              </p>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </article>
+    <!-- ======== tailwind notes ends ======== -->
 
     <script src="test.js"></script>
   </body>
