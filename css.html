@@ -738,6 +738,15 @@
                 <img src="images/tailwind-state-classes2.png" alt="" />
               </div>
             </li>
+            <li>
+              <img src="images/tailwind-css-variables.png" alt="" />
+            </li>
+            <li>
+              <img src="images/tailwind-space.png" alt="" />
+            </li>
+            <li>
+              <img src="images/tailwind-base-style.png" alt="" />
+            </li>
           </ul>
         </section>
 
@@ -788,6 +797,43 @@
               </p>
             </li>
           </ol>
+        </section>
+
+        <section>
+          <h3>custom styles</h3>
+          <p>
+            every custom css you add has a layer to go whether it's in the
+            <span class="second-color">base, components</span> or
+            <span class="second-color">utilites</span> or even just adding it to
+            the <span class="cb">src style</span>
+          </p>
+          <h3>when and why to use these layers</h3>
+          <p>let's start with the <span class="second-color">why</span>:</p>
+          <ol>
+            <li>
+              tailwind organizes the classes in layers where base layer comes
+              first then components then utilities where utilities overrides the
+              first two layers and components overrides the base styles so
+              explicitly categorizing your style helps in override and avoiding
+              conflicts
+            </li>
+            <li>
+              when you add your style in a layer it can be used with tailwind
+              modifiers like <span class="cb">hover:</span>,
+              <span class="cb">md:</span> and so on
+            </li>
+            <li>
+              on build time tailwind removes all unused classes so if you just
+              add your style in the src style without putting it in a layer it
+              stayes even if it's unused
+            </li>
+          </ol>
+          <p class="bg-second-color">
+            for more info visit
+            <a href="https://tailwindcss.com/docs/adding-custom-styles"
+              >adding custom styles docs</a
+            >
+          </p>
         </section>
       </div>
     </article>

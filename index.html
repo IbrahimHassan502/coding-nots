@@ -245,6 +245,7 @@
       </div>
     </article>
     <!-- ======== Accessability ENDS ======== -->
+
     <!-- ======== SEO STARTS ======== -->
     <article>
       <div class="container">
@@ -265,6 +266,7 @@
       </div>
     </article>
     <!-- ======== SEO ENDS ======== -->
+
     <!-- ======== interview STARTS ======== -->
     <article>
       <div class="container">
@@ -304,5 +306,106 @@
       </div>
     </article>
     <!-- ======== interview ENDS ======== -->
+
+    <!-- ======== pugjs starts ======== -->
+    <article class="pugjs">
+      <div class="container">
+        <h2>pug.js</h2>
+        <section>
+          <h3>install</h3>
+          <p class="cb">npm install pug</p>
+          <p class="cb">npm install pug-cli -g</p>
+          <p class="bg-second-color">
+            as far as I know the flag <span class="cb">-g</span> installs the
+            packages globally which I didn't want so I didn't put it at first
+            put whenever I tried to type some pug code in the powershell like
+            <span class="cb">pug --hlep</span> it didn't recognize pug so I
+            tried adding the <span class="cb">-g</span> flag and it worked
+          </p>
+          <p class="bg-second-color">
+            after that I ran into an error saying "pug: {the path of my file}
+            ps1 cannot be loaded because running scripts is disabled on this
+            system", and after some seartch I found the answer on
+            <a
+              href="https://stackoverflow.com/questions/41117421/ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system"
+            >
+              stack overflow
+            </a>
+            which was putting this code
+            <span class="cb">
+              Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy
+              Unrestricted
+            </span>
+            in the powershell
+          </p>
+        </section>
+        <section>
+          <h3>watch</h3>
+          <p class="cb">
+            pug the path of the folder of the index.pug -w -o the path of the
+            folder you want pug to output the index.html in --pretty
+          </p>
+          <p>
+            notice that you don't have to type
+            <span class="cb">--pretty</span> put it will not format the html
+            code for you
+          </p>
+          <p>
+            also if you don't type
+            <span class="cb">
+              -o the path of the folder you want pug to output the index.html in
+            </span>
+            it will simply output the html in the same place of the index.pg
+          </p>
+          <p class="bg-second-color">
+            when I was trying to type the watch code for the first time I
+            accidentally added the path of the folder which contains the folder
+            of the index.pug (one level up of the right folder) it gave me an
+            error so make sure you provide the right path
+          </p>
+        </section>
+        <section>
+          <h3>emmet with pug</h3>
+          <p>
+            I realized that emmet is built-in VS code no need for extension put
+            it didn't work with pug so you have to go to
+            <span class="cb">settings.json</span>
+          </p>
+          <h3>how to open settings.json</h3>
+          <p>
+            honstely I don't know a direct way but I searched in the settings
+            for emmet and there was this section offering to open settings.json
+          </p>
+          <img src="images/vscode-settingsjson.png" alt="" />
+          <p>
+            I searched for "emmet.includeLanguages" and added the following line
+          </p>
+          <img src="images/adding-pug-to-emmet.png" alt="" />
+          <p class="bg-second-color">
+            despite that vscode say that emmet support pug on their
+            <a href="https://code.visualstudio.com/docs/editor/emmet">
+              emmet docs
+            </a>
+            but it didn't work before I added myself
+          </p>
+          <p class="bg-second-color">
+            also they say you can identify pug as pug or jade but it didn't work
+            so I tried jade and it worked
+          </p>
+          <p class="bg-second-color">
+            in adding new language to emmet the left side is the extenstion of
+            the file like .pug, .html, etc... and the right side is the language
+            so lets say you have a language emmet doesn't know like
+            <span class="cb">.razor</span> but it's actually html you type
+            "razor": "html"
+          </p>
+          <p>
+            you could also add language to emmet from the settings interface
+          </p>
+          <img src="emmet-add-language-interface.png" alt="">
+        </section>
+      </div>
+    </article>
+    <!-- ======== pugjs  ENDS ======== -->
   </body>
 </html>
