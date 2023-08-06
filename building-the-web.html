@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/ih-logo.svg" type="image/x-icon" />
     <title>building the web</title>
     <!-- style -->
     <link rel="stylesheet" href="style.css" />
@@ -365,6 +366,162 @@
             <img src="images/tailwind-no-process-error.png" alt="" />
           </section>
         </div>
+      </div>
+    </article>
+    <!-- =========================
+         webflow
+     ========================== -->
+    <article class="webflow">
+      <div class="container">
+        <h2 class="main-heading">webflow</h2>
+        <!-- general tips and tricks -->
+        <section>
+          <h3>tips and tricks</h3>
+          <ul class="big-items">
+            <li>make a class for paragraphs</li>
+            <li>
+              paragraphs line height is 0 by default, as a quick fix a set it 1
+              em and I don't know if this is right
+            </li>
+            <li>
+              <h4>margin center an element</h4>
+              <p>
+                on the top of the box model showing the marign and the padding
+                of the element you can find a button that sets the right and the
+                left margins of the elmenet to auto which centers it
+              </p>
+              <img src="images/webflow-margin-center.png" alt="" />
+            </li>
+          </ul>
+        </section>
+        <!-- adding google fonts to webflow -->
+        <section>
+          <h3>add google fonts</h3>
+          <ol>
+            <li>click on the "w" icon from the top left</li>
+            <li>
+              <p>click on site settings</p>
+              <img src="images/webflow-site-settings.png" alt="" />
+            </li>
+            <li>
+              <p>from the upper bar choose fonts</p>
+              <img src="images/webflow-add-fonts.png" alt="" />
+            </li>
+            <li>
+              <p>
+                type the font you want, press enter and choose the variants you
+                want
+              </p>
+              <img src="images/webflow-add-fonts2.png" alt="" />
+            </li>
+            <li>
+              finally click add font at the bottom and the font will be added to
+              the font list in webflow editor
+            </li>
+          </ol>
+        </section>
+        <!-- adding font icons to webflow -->
+        <section>
+          <h3>adding font icons to webflow</h3>
+          <ol>
+            <li>download the files of the library</li>
+            <li>
+              upload the font files (.woff, .woff2, etc...) from the site
+              sittings on webflow (to know how to add fonts go to adding google
+              fonts to webflow section)
+            </li>
+            <li>go back to the designer of webflow</li>
+            <li>add text block</li>
+            <li>
+              <p>copy the icon glyf</p>
+              <p>like in font-awesome:</p>
+              <img src="images/fontawesome-glyph.png" alt="" />
+              <p>
+                in case of fontello you find in a comment on the side of the
+                unicode of the icon in the fontello.css file
+              </p>
+              <img src="images/fontello-glyph.png" alt="" />
+              <p>
+                note they are in the form of ? as the computer doesn't have
+                fontello font on it
+              </p>
+            </li>
+            <li>paste the glyph in the text block</li>
+            <li>
+              set the font family of the text block to the font you uploaded
+              (awesome, fontello, etc...)
+            </li>
+          </ol>
+        </section>
+      </div>
+    </article>
+
+    <!-- =========================
+         figma
+     ========================== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">figma</h2>
+        <!-- general tips and tricks -->
+        <section>
+          <h3>quick tips</h3>
+          <ul>
+            <li>
+              <h4>css in figma</h4>
+              <p>
+                you can see the css of the element in figma by clicking on the
+                dev mood icon in the far top right
+              </p>
+              <img src="images/figma-dev-mood.png" alt="" />
+              <p>
+                it will open the inspect panel where you'll find all the css
+                properties of the selected element
+              </p>
+              <p>
+                it also shows you the different dimensions like padding and
+                margin and if you select an element and hover over to another
+                element it will show you the space between them
+              </p>
+            </li>
+
+            <li>
+              <h3>show dimensions between elements</h3>
+              <ol>
+                <li>select the element you want</li>
+                <li>hold alt</li>
+                <li>
+                  then hover over the element you want to measure the space
+                  between it and the other element
+                </li>
+              </ol>
+            </li>
+
+            <li>
+              <h4>px or rems</h4>
+              <p>
+                in the develper mood you can choose between showing dimentions
+                with pixels or rems, I saw couple a videos talking about putting
+                all dimentions in rems when working with webflow but not sure
+                yet
+              </p>
+              <img src="images/figma-dimentions.png" alt="" />
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>converting figma into web</h3>
+          <ul>
+            <li>
+              you have to know the font size you working with (to set a class
+              for it in webflow), and the color
+            </li>
+            <li>
+              you have to know the padding of the sections in order to unite
+              them
+            </li>
+            <li>export all the images and convert them into webp</li>
+          </ul>
+        </section>
       </div>
     </article>
   </body>

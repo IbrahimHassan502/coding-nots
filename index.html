@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="images/ih-logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -367,7 +367,7 @@
           </p>
         </section>
 
-        <section>
+        <section id="emmet-with-pug">
           <h3>emmet with pug</h3>
           <p>
             I realized that emmet is built-in VS code no need for extension put
@@ -428,7 +428,7 @@
     <!-- ======== pugjs course starts ======== -->
     <article class="pugjs-course">
       <div class="container">
-        <h2 class="main-heading">pugjs course</h2>
+        <h2 class="main-heading">pug course</h2>
         <p>
           presented by
           <a
@@ -436,17 +436,330 @@
             >Richard Stibbard Web Development Tutorials</a
           >
         </p>
+        <p class="bg-second-color">
+          note that the lesson numbers are less than the youtube video number by
+          one so lesson-2 is video number 3
+        </p>
+        <!-- lesson 2 -->
         <section>
           <h3>lesson-2: multiline content</h3>
           <pre class="cb">h1<br>  |  this   <br>  |  is multiline</pre>
           <pre class="cb">h1.<br>  this   <br>  is multiline</pre>
         </section>
-
+        <!-- lesson 3 -->
         <section>
           <h3>lesson-3: assignment</h3>
           <p class="bg-second-color">
             the instructor mentioned that there is an extention for vs code that
             converts html files into pug
+          </p>
+        </section>
+
+        <!-- lesson 4 -->
+        <section>
+          <h3>lesson-4: go through assignments</h3>
+          <p>no notes needed</p>
+        </section>
+
+        <!-- lesson 5 -->
+        <section>
+          <h3>Lesson-5: Emmet in Pug</h3>
+          <p>
+            just introduction to emmet if you want to know how to make emmet
+            work with pug see <a href="#emmet-with-pug">emmet with pug</a>
+          </p>
+        </section>
+
+        <!-- lesson 6 -->
+        <section>
+          <h3>lesson-6: includes</h3>
+          <p>
+            includes can be useful with the components that are repeated in
+            every page of the website like the navbar and footer
+          </p>
+          <p>to include a navbar in your page:</p>
+          <ol>
+            <li>
+              make a pug file (navbar.pug) and put the structure you want in it
+            </li>
+            <li>
+              in the place you want to deploy the navbar at type
+              <span class="cb">include</span> followed by space then the
+              relative path of your navbar pug file
+              <img src="images/pug-includes.png" alt="" />
+              <p class="bg-second-color">
+                notice that you don't need to type
+                <span class="cb">.pug</span> incase of including pug files
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- lesson 7 -->
+        <section class="pug-extend">
+          <h3>Lesson 7 - Extends and blocks</h3>
+          <p>
+            while <span class="cb">include</span> is used with the static
+            content that is repeated <span class="cb">extend</span> is used for
+            dynamic repeated content like:
+          </p>
+          <p>every html page of your website have the same structure</p>
+          <ol>
+            <li>head with the same links and google fonts</li>
+            <li>
+              body with header, main(and that one is different in every page),
+              and footer
+            </li>
+          </ol>
+          <p>
+            so instead of coping and pasting all that structure among the pages
+            only to change the main section of every page you can store the
+            structure in a pug file, <span class="cb">extend</span> it, and
+            override the main section
+          </p>
+          <p>steps:</p>
+          <ol>
+            <li>make a pug file (structure.pug)</li>
+            <li>
+              for the basic stuff like the links in the html starter code (the
+              meta tags, etc...) and the links we paste it as is
+              <img src="images/pug-extend-head.png" alt="" />
+            </li>
+            <li>
+              as for the main three parts we mentioned in the example above (the
+              navbar or header, the main, and the footer) we use
+              <span class="cb">block</span> before each one to let pug konw that
+              they're modifiable
+              <img src="images/pug-extend-body.png" alt="" />
+              <p class="bg-second-color">
+                notice that the paths in the layout pug file are relative to it
+                not to the file it will be extended in
+              </p>
+              <p class="bg-second-color">
+                also notice that the names after the
+                <span class="cb">block</span> keyword are not necessarily the
+                html element names (the element names are below the block
+                statement line)
+              </p>
+            </li>
+            <li>
+              now you can go to any page of your website and delete every thing
+              in it and have only <span class="cb">extened</span> followed by
+              space then the path of the layout pug file
+              <img src="images/pug-extend.png" alt="" />
+            </li>
+            <li>
+              now to override the default layout we've created to add the
+              content of the page in the main section we type
+              <span class="cb">block</span> followed by space then the name we
+              specified to the main (which was main too), hit enter, hit tab,
+              then put the content you want
+              <img src="images/pug-extend-override.png" alt="" />
+            </li>
+          </ol>
+          <p class="bg-second-color">
+            notice that according to the instructor of the course "you can only
+            have one extend line the page because it provides the structure of
+            page and each page can have only one structure"
+          </p>
+          <p class="bg-second-color">
+            also notice that the extend line must be the first line of the file
+          </p>
+        </section>
+
+        <section>
+          <h3>Assignment - Create other pages</h3>
+          <p>no notes needed</p>
+        </section>
+
+        <!-- lesson 8 -->
+        <section>
+          <h3>Lesson-8: JavaScript in Pug: Variables</h3>
+          <p>to declair a variable:</p>
+          <p>
+            type dash (-) followed by space then let or const, the variable name
+            <span class="cb">- let myFirstVar = 'hola'</span>
+          </p>
+          <p>how to use the variable in pug:</p>
+          <ul>
+            <li>
+              using <span class="cb">#{the variable}</span> like p #{myFirstVar}
+              which yields in => &lt;p&gt;hola&lt;p&gt;
+            </li>
+            <li>
+              using the (=) sign immediately after html element then the
+              variable name <span class="cb">p= myFirstVar</span> which yeilds
+              in => &lt;p&gt;hola&lt;p&gt;
+              <p class="bg-second-color">
+                notice that it's a must not to have any spaces between the html
+                element and the equal sign for the code to run as wanted
+              </p>
+            </li>
+            <li>
+              you can use variables in template literatures just like in
+              javascript
+              <span class="cb">p= `my first variable is ${myFirstVar}`</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- lesson 9 -->
+        <section>
+          <h3>Lesson-9: JavaScript: Arrays, Objects and Iteration</h3>
+          <div>
+            <p>
+              if you try to add an array with each element on a separate line
+              like:
+            </p>
+            <pre class="cb">
+  - const names = [
+              'mohamed',
+              'ali',
+              'john',
+              ]
+            </pre>
+            <p>
+              you will get an error to solve the problem you need to make the
+              const statment in the next line of the dash with one level in
+            </p>
+            <pre class="cb">
+              -
+                const names = [
+                'mohamed',
+                'ali',
+                'john',
+                ]
+            </pre>
+            <p class="bg-second-color">same goes with objects</p>
+          </div>
+          <div>
+            <p>
+              you can use <span class="cb">each</span> keyword to iterate over
+              an array
+            </p>
+            <img src="images/pug-each.png" alt="" />
+          </div>
+          <div>
+            <p class="bg-second-color">
+              you can use <span class="cb">else</span> with the
+              <span class="cb">each</span> statement in pug, here is how:
+            </p>
+            <p>
+              after typing the code you want inside the each level on a new line
+              at the <span class="cb">each level</span> type
+              <span class="cb">else</span>, hit enter, tab then the code you
+              want
+            </p>
+            <img src="images/pug-each-else.png" alt="" />
+            <p>
+              and the <span class="cb">else</span> statement will be used in
+              case of an empty array
+            </p>
+          </div>
+        </section>
+
+        <!-- lesson 10 -->
+        <section>
+          <h3>Lesson 10 - Mixins</h3>
+          <p>
+            a mixin is like a function in js (instead it probably only returns
+            values and doesn't excute any code):
+          </p>
+          <img src="images/pug-mixin.png" alt="" />
+          <p>
+            to use a mixin inside the page type the plus sign followed by the
+            mixin <span class="cb">+friendCard(friend)</span>
+          </p>
+          <img src="images/pug-calling-mixin.png" alt="" />
+        </section>
+
+        <!-- lesson 11 (1) -->
+        <section>
+          <h3>Lesson 11 (1) - Go through final project: Static Pug file</h3>
+          <p>
+            he added the static code of the page and used the
+            <a href="https://validator.w3.org/">w3 validator</a> to make sure
+            there were no errors in the nesting or any other errors in the html
+            code
+          </p>
+        </section>
+
+        <!-- lesson 11 (2) -->
+        <section>
+          <h3>
+            Lesson 11 (2) - Go through final project: Includes, Extends, Blocks
+          </h3>
+          <p>no notes needed</p>
+        </section>
+
+        <!-- lesson 11 (3) -->
+        <section>
+          <h3>
+            Lesson 11 (3) - Go through final project: Mixins, Data, Iteration
+            and Tidy Up
+          </h3>
+          <p>
+            in case you want to use a variable for the page title that is inside
+            the head tag you can use the <span class="cb">include</span> the
+            first thing in the code without affecting the page
+          </p>
+          <img src="imaegs/pug-include-first.png" alt="" />
+          <p class="bg-second-color">
+            when the instructor wanted to include the mixin pug file he included
+            it in the layout pug file (we talked about it in the
+            <a href="#pug-extend">extend lesson</a>) not in the page
+          </p>
+        </section>
+
+        <!-- lesson 12 -->
+        <section>
+          <h3>Add-on Lesson - PHP in Pug</h3>
+          <ol>
+            <li>
+              <p>
+                the example he used in the lesson was a form that sends its data
+                using the <span class="cb">post</span> method to thank-you.php
+                page
+              </p>
+              <img src="images/pug-form.png" alt="" />
+            </li>
+            <li>
+              <p>
+                then he created a thank-you.pug page and added the php code in
+                it
+              </p>
+              <img src="images/pug-php.png" alt="" />
+              <p class="bg-second-color">
+                notice he add a dot after the div with class thank you to be
+                able to write multi line code. Review multi line code in lesson
+                2
+              </p>
+            </li>
+            <li>
+              he wanted to complie the thank-you.pug into php so he used
+              <span class="cb">pug -w thank-you.pug -o ./ -P -E php</span>
+              <p class="bg-second-color">
+                notice to sepcify the format (extenstion) of the output file in
+                pug you use dash capital e <span class="cb">-E</span> followed
+                by the format without dot
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <!--  -->
+        <section>
+          <h3>Add-on Lesson 2 - Automated Pug file compilation with Gulp</h3>
+          <p>
+            the instructor illustrated that not all the time we will be watching
+            only one pug file and in case of multiple file we will need to stop
+            the watch on one file then switch to the other and this of course a
+            tedious process so for that task we use gulp with pug
+          </p>
+          <p>
+            I didn't feel like watching steps I don't understand a thing of so I
+            didn't continue watching the video but maybe I come back later after
+            I study gulp
           </p>
         </section>
       </div>
