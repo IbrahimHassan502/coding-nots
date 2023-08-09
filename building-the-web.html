@@ -185,6 +185,44 @@
             <img src="images/resolvable-links-unresolvables-links.png" alt="" />
           </div>
         </section>
+
+        <!-- using colors to express meaning -->
+        <section>
+          <h3>using colors to express meaning</h3>
+          <p>
+            you can't relay on colors only to express somthing like a red circle
+            for an error or green one for a success as people with visual
+            imparements like color blind can't tell the difference
+          </p>
+          <p>
+            <span class="second-color">solution: </span> use sympoles like x and
+            check mark or up arrow and down one
+          </p>
+        </section>
+
+        <!-- background videos -->
+        <section>
+          <h3>background videos</h3>
+          <p>
+            if you use a video as a background it may cause motion or cyper
+            sickness so make sure to put a way for the user to pause, stop or
+            hide it, a button some where in the section where the video is being
+            used (probably in the right bottom corner is a good place) would be
+            a good idea, also make sure it's noticable
+          </p>
+          <p class="bg-second-color">
+            notice that the paragraph above applies For any moving, blinking or
+            scrolling information that (1) starts automatically, (2) lasts more
+            than five seconds, and (3) is presented in parallel with other
+            content, there is a mechanism for the user to pause, stop, or hide
+            it unless the movement, blinking, or scrolling is part of an
+            activity where it is essential; according to
+            <a
+              href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html"
+              >wacg 2.2</a
+            >
+          </p>
+        </section>
       </div>
     </article>
     <!-- =========================
@@ -394,7 +432,7 @@
             </li>
           </ul>
         </section>
-        <!-- adding google fonts to webflow -->
+        <!-- adding google fonts -->
         <section>
           <h3>add google fonts</h3>
           <ol>
@@ -420,7 +458,7 @@
             </li>
           </ol>
         </section>
-        <!-- adding font icons to webflow -->
+        <!-- adding font icons -->
         <section>
           <h3>adding font icons to webflow</h3>
           <ol>
@@ -452,6 +490,206 @@
               (awesome, fontello, etc...)
             </li>
           </ol>
+        </section>
+        <!-- animation -->
+        <section>
+          <h3>animation</h3>
+          <p>to add an animation</p>
+          <ol>
+            <li>select the element you want to animate</li>
+            <li>
+              <p>
+                click on the thunder icon on the right panel at the end of the
+                line of style icon
+              </p>
+              <img src="images/webflow-animation-icon.png" alt="" />
+              <p>
+                as you can see there are two types of triggers: element trigger
+                (like mouse click, mouse hover, mouse over element, scroll into
+                view, and while scrolling in view)
+              </p>
+            </li>
+            <li>
+              <p>
+                click on the plus icon beside the type you want to show you the
+                optoins and choose the option you want
+              </p>
+              <img src="images/webflow-animation-options.png" alt="" />
+            </li>
+            <li>
+              <p>the follwing dialog will appear</p>
+              <img src="images/webflow-animation-dialog.png" alt="" />
+              <p>
+                click on <span class="cb">select action</span> drop menu to
+                choose action
+              </p>
+              <p>
+                some times there are actions like fade in and fade out, etc...
+                and some other time the only aciton is custom animation
+              </p>
+            </li>
+            <li>
+              <p>
+                if you choose custom animation (say we chose the custom
+                animation in page scroll in the page trigger type), additional
+                line will appear (scroll animations) showing you the animations
+                you already have (our animation) and offering you to add another
+                animation by clicking the plus icon beside the scoll animtion
+                word
+              </p>
+              <img src="images/webflow-adding-animation.png" alt="" />
+              <p>click it to add a new animation and choose a name for it</p>
+            </li>
+            <li>
+              <p>
+                now you can choose actions to animate from the plus icon beside
+                the (scroll actions) word
+              </p>
+              <img src="images/webflow-animation-actions.png" alt="" />
+            </li>
+            <li>
+              <p>
+                once you choose the action you want two keyframes will appear
+                one at 0% and the other at 100%, you can drag them along the
+                timeline to choose where every keyframe starts
+              </p>
+              <img src="images/webflow-animation-timeline.png" alt="" />
+              <p>
+                as long as there is a yellow triangle on a frame it means
+                there's something wrong with and sometimes hovering over the
+                triangle can help you solve the problem
+              </p>
+            </li>
+            <li>
+              <p>under the timeline you find the other options of the action</p>
+              <img src="images/webflow-animation-timeline.png" alt="" />
+            </li>
+          </ol>
+          <p class="bg-second-color">
+            when adding an animation make sure that you're using the same unites
+            in both the starting and the ending animation <br />
+            like in the move animation if you use vh in the x-axis in one of
+            them you'll have to use vh in the x-axis in the other one other wise
+            it keeps showing you the yellow triangle
+          </p>
+        </section>
+        <!-- audits -->
+        <section>
+          <h3>audits</h3>
+          <p>
+            to show the audits panel clikc on the check icon on the far left
+            bottom corner of the screen
+          </p>
+          <img src="images/webflow-audits.png" alt="" />
+          <p>
+            sometimes you passed all the audits like in the image above and
+            sometimes it will show you the errors like the image below:
+          </p>
+          <img src="images/webflow-audits-error.png" alt="" />
+          <p>
+            click on the arrow on the right of the error to show you the
+            elmenets that have that error
+          </p>
+          <img src="images/webflow-audits-error-elements.png" alt="" />
+          <p>when hover on the element two options will show on the right</p>
+          <ol>
+            <li>show me how to fix it which is the arrow icon</li>
+            <li>ignore this which is the slashed bell icon</li>
+          </ol>
+          <p>
+            if you click ignore this the element will be added in the ignored at
+            the bottom of the elements
+          </p>
+          <img src="images/webflow-audits-ignored.png" alt="" />
+          <p>
+            you can remove an element from the ignored by openning the ignored
+            list, hover on the element click on the bell icon and it will be
+            added back to the error element list
+          </p>
+        </section>
+
+        <!-- adding alt text -->
+        <section>
+          <h3>adding alt (alternative) text to images</h3>
+          <ul class="big-items">
+            <li>
+              <p>
+                one way to add alt text is to go to assets panel on the left
+                colmun of the desginer, hover over the image and click on the
+                gear icon on the top right corner of the image, then add the
+                description you see fit
+              </p>
+              <p>
+                this way can be practical in case you're using the image in
+                multiple place in the website as all the images will have an alt
+                text at once
+              </p>
+            </li>
+            <li>
+              <p>
+                another way to do it is to change the alt text for a specific
+                image by clicking on the image in the website, click the gear
+                icon that shows at the top of it, click the alt text drop down
+                menu, and then choose custom description
+              </p>
+              <p>
+                of course this way will change only this sepcific image you
+                selected
+              </p>
+            </li>
+            <li>
+              he talked about adding alt text to a rich text and I don't
+              understand that for the moment
+            </li>
+            <li>then he talked about cms and I didn't dig deep in that too</li>
+            <li>
+              he also talked about adding alt text to multi image field in cms
+            </li>
+          </ul>
+          <p>
+            so when the image is considered decorative ? if the image is an icon
+            or icon-like, like if you showing stats and numbers; it doesn't add
+            meaning to the content of the website
+          </p>
+        </section>
+
+        <section>
+          <h3>vision preview</h3>
+          <p>
+            to open vision preview panel click on the screen size beside the
+            different screens that are at the top of the designer, then find the
+            vision preivew section in the menu then choose the option you want
+          </p>
+          <img src="images/webflow-vision-preview.png" alt="" />
+        </section>
+
+        <section>
+          <h3>states</h3>
+          <p>
+            to set styling for the different states of an element click on the
+            small down arrow icon beside the class list of the element in the
+            styling panel and you will see the different states like hover focus
+            and focus keyboard
+          </p>
+          <p>
+            the difference between focus and focus(keyboard) that focus is
+            applied either if you click the element, tap on touch screens or
+            press tab on the keyboard and it uses the css selector
+            <span class="cb">:focus</span> while the focus(keyboard) is only
+            applied when selecting elements with the keyboard tab and uses the
+            css selector <span class="cb">:focus-visible</span> I recommend you
+            to read
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible"
+            >
+              MDN article
+            </a>
+            about it
+          </p>
+          <p>
+            it can be useful in setting the outline of the elements when tab
+            focused in order to enhance accessability
+          </p>
         </section>
       </div>
     </article>
