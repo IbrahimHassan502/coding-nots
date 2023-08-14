@@ -20,6 +20,7 @@
             <li><a href="index.html">HTML</a></li>
             <li><a href="css.html">css</a></li>
             <li><a href="building-the-web.html">building the web</a></li>
+            <li><a href="#webflow">webflow</a></li>
           </ul>
         </nav>
       </div>
@@ -409,7 +410,7 @@
     <!-- =========================
          webflow
      ========================== -->
-    <article class="webflow">
+    <article class="webflow" id="webflow">
       <div class="container">
         <h2 class="main-heading">webflow</h2>
         <!-- general tips and tricks -->
@@ -430,8 +431,70 @@
               </p>
               <img src="images/webflow-margin-center.png" alt="" />
             </li>
+            <li>
+              <h4>adjusting margin and padding multiple directions at once</h4>
+              <p>
+                to adjust to opposed directions of the padding or the maring
+                hold <span class="cb">alt</span> while moving your cursor
+              </p>
+              <p>
+                and to adjust all directions at once hold
+                <span class="cb">ctrl</span>
+              </p>
+            </li>
+            <li>
+              <h4>konw from where the property is inhertied</h4>
+              <p>
+                if a property name is light orange it means it's inherited if
+                you click on the property name it will show the element which
+                your selected element has inhertied the property from and beside
+                the parent element you will also see an icon for the breakpoint
+                where the property was set; for example if you change the font
+                size on mobile landscap then go to the mobile portrait and click
+                on font size you will see the mobil landscape icon beside the
+                name of the element from which the selected element inherit from
+              </p>
+              <img src="images/webflow-inherit.png" alt="" />
+            </li>
+            <li>
+              <h4>collapse or expand all</h4>
+              <p>
+                in the navigator you can collapse or exapnd all the elements in
+                the navigator by clicking the two-arrow icon on the top right of
+                the navigator
+              </p>
+              <img src="images/webflow-collapse-expand-all.png" alt="" />
+            </li>
+            <li>
+              <h4>adding elements by command line</h4>
+              <p>
+                <span class="cb">ctrl + E</span> to open the command line then
+                type whatever element you want press enter and it will be added
+                at the current selected element
+              </p>
+            </li>
+            <li>
+              <h4>add variable color</h4>
+              <p>
+                click on the color in the styling panel, then at the bottom left
+                you will find a plus icon click on it and it will add the color
+                and let you choose the name of it
+              </p>
+              <img src="images/webflow-add-color.png" alt="" />
+            </li>
+            <li>
+              <h4>adding grid withing grid</h4>
+              <p>
+                if you try to just drag a grid elmenet inside one of the cells
+                of another grid element the editor will repalce the cell with
+                the new grid element to overcome that
+                <span class="cb">ctrl(hold) + drag</span> and then the editor
+                will allow you to place the new grid element inside the cells
+              </p>
+            </li>
           </ul>
         </section>
+
         <!-- adding google fonts -->
         <section>
           <h3>add google fonts</h3>
@@ -458,6 +521,7 @@
             </li>
           </ol>
         </section>
+
         <!-- adding font icons -->
         <section>
           <h3>adding font icons to webflow</h3>
@@ -491,6 +555,7 @@
             </li>
           </ol>
         </section>
+
         <!-- animation -->
         <section>
           <h3>animation</h3>
@@ -573,6 +638,7 @@
             it keeps showing you the yellow triangle
           </p>
         </section>
+
         <!-- audits -->
         <section>
           <h3>audits</h3>
@@ -653,6 +719,7 @@
           </p>
         </section>
 
+        <!-- vision preview -->
         <section>
           <h3>vision preview</h3>
           <p>
@@ -663,6 +730,7 @@
           <img src="images/webflow-vision-preview.png" alt="" />
         </section>
 
+        <!-- element stats -->
         <section>
           <h3>states</h3>
           <p>
@@ -689,6 +757,163 @@
           <p>
             it can be useful in setting the outline of the elements when tab
             focused in order to enhance accessability
+          </p>
+        </section>
+
+        <!-- figma to webflow -->
+        <section>
+          <h3>figma to webflow</h3>
+          <p>an extention that can be added to figma you better look that up</p>
+        </section>
+
+        <!-- unitless properties -->
+        <section>
+          <h3>unitless proberites</h3>
+          <p>
+            to set a unitless number like in line height in the typography
+            section of the element style you simply add hyphen after the number
+            <span class="cb">-</span> like if you want the line height to be 1
+            you type 1- and that sets the line height the same as the font size
+          </p>
+        </section>
+
+        <!-- text blocks vs paragraphs -->
+        <section>
+          <h3>text blocks vs paragraphs</h3>
+          <p>
+            according to
+            <a
+              href="https://university.webflow.com/lesson/use-text-blocks-in-webflow"
+            >
+              webflow university
+            </a>
+            text blocks should be used when using any other element is not
+            logical in that situation like the copyright text at the footer we
+            shouldn't use a paragraph for that I just found out this info right
+            now
+          </p>
+          <blockquote class="bg-second-color">
+            <i>
+              A text block is a generic text element, best used for text that
+              isn't a heading, paragraph, or link. A good example of this would
+              be a copyright notice.
+            </i>
+          </blockquote>
+          <p>
+            text blocks are just divs with text in them this should help you
+            understand how to use them but now since we just found out there are
+            places where paragraphs are not suitable where else shouldn't use
+            paragraph
+          </p>
+        </section>
+
+        <!-- adding a new break point -->
+        <section>
+          <h3>adding a new break point</h3>
+          <p>to add a new break point:</p>
+          <ol>
+            <li>
+              click on the three dots beside the screens (break points) at the
+              top of the designer
+            </li>
+            <li>
+              choose the break point you want from the drop list that's gonna be
+              showed
+            </li>
+          </ol>
+        </section>
+
+        <!-- duplicate class -->
+        <section>
+          <h3>duplicate class</h3>
+          <p>
+            if you right click a class in the style selector section in the
+            style panel and click duplicate it will allow you to make a whole
+            new class but with the same styling as the class you just
+            duplicated, which makes you able to change one thing or two things
+            without affecting the original class
+          </p>
+        </section>
+
+        <!-- blending -->
+        <section>
+          <h3>blending</h3>
+          <p>
+            in
+            <a
+              href="https://university.webflow.com/courses/figma-to-webflow?video=OF97sIGkYec"
+              >figma to webflow</a
+            >
+            tutorial the instructor found that one of the images (plane view of
+            three bottles) had a different color than the background and he
+            wanted it to look like a png (just the bottels without the color) so
+            he selected it and scrolled down in the styling panel to
+            <span class="cb">effects</span> and the first property was blending
+            from the dorpdown menu he chose screen
+          </p>
+          <p>
+            it's a css property I didn't dig into yet so I recommend reading
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode"
+            >
+              MDN article
+            </a>
+            about it
+          </p>
+        </section>
+
+        <!-- adding page title and description -->
+        <section>
+          <h3>adding page title and description</h3>
+          <p>
+            to add a page title and description click on pages icon on the left
+            rebion then click on the gear icon on the right of home word it will
+            open a panel where you can add page title and description as in the
+          </p>
+        </section>
+
+        <!-- sticky navbar -->
+        <section>
+          <h3>sticky navbar</h3>
+          <p>
+            if you make the postion of the navbar sticky you will notice that
+            the link colors in the navbar (if they are connceted to sections of
+            the page) change when the link's section is in the viewport
+          </p>
+          <p>
+            to customize this style click on the link with the different color
+            you'll find a class <span class="cb">current</span> added to it you
+            can style that
+          </p>
+        </section>
+
+        <!-- publish -->
+        <section>
+          <h3>publish</h3>
+          <p>
+            you don't neccessarly have to have a custom domain to publish your
+            website you can publish it on webflow
+          </p>
+          <img src="images/webflow-publish.png" alt="" />
+        </section>
+
+        <!-- quick stack -->
+        <section>
+          <h3>quick stack</h3>
+          <p>
+            quick stack is powerful grid element where you have more freedom
+            merging cells and doing all kinds of layouts
+          </p>
+          <p>
+            quick stack is basically a grid element with it's cells as divs set
+            to flex
+          </p>
+          <p>
+            for more info have a look at
+            <a
+              href="https://university.webflow.com/courses/figma-to-webflow?video=6C3YF9zulTg"
+              >webflow quick stack video</a
+            >
           </p>
         </section>
       </div>
