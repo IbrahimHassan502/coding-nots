@@ -90,6 +90,7 @@
         </section>
       </div>
     </article>
+
     <!-- =========================
          accessability
      ========================== -->
@@ -226,6 +227,7 @@
         </section>
       </div>
     </article>
+
     <!-- =========================
          SEO
      ========================== -->
@@ -291,6 +293,7 @@
         </section>
       </div>
     </article>
+
     <!-- =========================
          general tips
      ========================== -->
@@ -326,6 +329,7 @@
         </ul>
       </div>
     </article>
+
     <!-- =========================
          weird solved problems
      ========================== -->
@@ -407,6 +411,40 @@
         </div>
       </div>
     </article>
+
+    <!-- =========================
+        problems solved
+     ========================== -->
+    <article class="problems-solved">
+      <h2 class="main-heading">problems solved</h2>
+      <section>
+        <h3 class="main-heading">
+          input date (input datetime) placeholder doesn't show
+        </h3>
+        <p>
+          according to
+          <a
+            href="https://www.geeksforgeeks.org/how-to-set-placeholder-value-for-input-type-date-in-html-5/"
+          >
+            geeks for geeks
+          </a>
+          and
+          <a
+            href="https://stackoverflow.com/questions/20321202/not-showing-placeholder-for-input-type-date-field"
+          >
+            stackover flow
+          </a>
+          you place an input:type="text" and attach the following function to it
+          <span class="cb">onfocus="(this.type='date')"</span>
+          <img src="images/input-date-placeholder-not-showing.png" alt="" />
+        </p>
+        <p>
+          in case you want the input to be back to text (which I don't
+          recommend) you can attach
+          <span class="cb">onblur="(this.type='text')"</span> to it
+        </p>
+      </section>
+    </article>
     <!-- =========================
          webflow
      ========================== -->
@@ -422,6 +460,7 @@
               paragraphs line height is 0 by default, as a quick fix a set it 1
               em and I don't know if this is right
             </li>
+
             <li>
               <h4>margin center an element</h4>
               <p>
@@ -431,6 +470,7 @@
               </p>
               <img src="images/webflow-margin-center.png" alt="" />
             </li>
+
             <li>
               <h4>adjusting margin and padding multiple directions at once</h4>
               <p>
@@ -442,6 +482,7 @@
                 <span class="cb">ctrl</span>
               </p>
             </li>
+
             <li>
               <h4>konw from where the property is inhertied</h4>
               <p>
@@ -456,6 +497,7 @@
               </p>
               <img src="images/webflow-inherit.png" alt="" />
             </li>
+
             <li>
               <h4>collapse or expand all</h4>
               <p>
@@ -465,6 +507,7 @@
               </p>
               <img src="images/webflow-collapse-expand-all.png" alt="" />
             </li>
+
             <li>
               <h4>adding elements by command line</h4>
               <p>
@@ -473,6 +516,7 @@
                 at the current selected element
               </p>
             </li>
+
             <li>
               <h4>add variable color</h4>
               <p>
@@ -482,6 +526,7 @@
               </p>
               <img src="images/webflow-add-color.png" alt="" />
             </li>
+
             <li>
               <h4>adding grid withing grid</h4>
               <p>
@@ -490,6 +535,54 @@
                 the new grid element to overcome that
                 <span class="cb">ctrl(hold) + drag</span> and then the editor
                 will allow you to place the new grid element inside the cells
+              </p>
+            </li>
+
+            <li>
+              <h4>object fit cover</h4>
+              <p>
+                in
+                <a
+                  href="https://university.webflow.com/courses/grid?video=1ViSR5fSDwg"
+                  >webflow grid course</a
+                >
+                the instructor wanted the images to fill the cells of the grid
+                so he set the width and the height of them to 100% then he went
+                to the bottom of <span class="cb">size</span> section chose
+                cover from the <span class="cb">fill</span> dropdown menu
+              </p>
+            </li>
+
+            <!-- background overlay -->
+            <li>
+              <h4>adding background overlay</h4>
+              <ol>
+                <li>go to the background section in the styling panel</li>
+                <li>
+                  on the right of
+                  <span class="cb">images & gradient</span> click the plus icon
+                </li>
+                <li>
+                  in the <span class="cb">type</span> row you will find 4
+                  options choose the last option which is
+                  <span class="cb">color overlay</span>
+                </li>
+              </ol>
+              <img src="images/webflow-background-overlay.png" alt="" />
+            </li>
+
+            <!-- create a restore point -->
+            <li>
+              <h4>create a restore point</h4>
+              <p>
+                to create a restore point for your website to get back to in
+                case you messed up your website press
+                <span class="cb">ctrl + shift + s</span>
+              </p>
+              <p>
+                and you can find your points from
+                <span class="cb">backups</span> in the website settings that is
+                the "w" symbol in the top left corner of the editor
               </p>
             </li>
           </ul>
@@ -916,6 +1009,143 @@
             >
           </p>
         </section>
+
+        <!-- grid -->
+        <section>
+          <!-- tips and tricks -->
+          <ul class="big-items">
+            <li>
+              grid cells hold only one element by default to overcome this you
+              can add a dive inside the cell to group multiple elements inside
+              one cell or hold control then drag the each element into the cell
+            </li>
+            <li>
+              to make a cell span more columns or more row simply click and drag
+              the small ball on the right bottom corner of the cell
+            </li>
+          </ul>
+          <!-- manually postion grid element -->
+          <div>
+            <h3>manually dragging a grid element</h3>
+            <p>
+              if you try to manually drag a grid element from cell to cell
+              you'll find that it doesn't move
+            </p>
+            <p>
+              to overcome this simply go to the postion section that is under
+              grid child deopdown in the style panel and set the position to
+              manual
+            </p>
+            <img src="images/webflow-grid-manual-postion.png" alt="" />
+            <p class="bg-second-color">
+              notice that when you manually postion an element that doesn't
+              change it's order in the actual DOM so screen readers will still
+              see it in it's original postion before you manually moved it
+            </p>
+          </div>
+          <!-- automatically fill empty grid cells -->
+          <div>
+            <h3>automatically fill empty grid cells</h3>
+            <p>
+              In some cases when designing a grid you might encounter an empty
+              cell of course you can drag an element in there to fill the gap
+              but a more quick way is to go to
+              <span class="cb">edit grid</span> section with the grid element
+              (the parent with display grid) selected and check the
+              <span class="cb">dense</span> option
+            </p>
+            <img src="images/webflow-grid-dense.png" alt="" />
+            <img src="images/webflow-grid-dense2.png" alt="" />
+            <p>
+              so basically dense will fill the gap with the next available child
+              as long as the child fits in the gap
+            </p>
+          </div>
+
+          <!-- auto fill -->
+          <div>
+            <h3>auto fill (or auto fit)</h3>
+            <p>
+              to make grid auto fill the instructor made a grid of one column,
+              clicked on that column and from the top where there are the sizing
+              options he chose <span class="cb">MinMax</span> and at the bottom
+              of the panel checked the <span class="cb">auto-fit</span> option,
+              and finally set the minmum width he wanted, and the maximum width
+              left it at 1 fr
+            </p>
+            <img src="images/webflow-auto-fit.png" alt="" />
+          </div>
+
+          <!-- overlapping grid content -->
+          <div>
+            <h3>overlapping grid content</h3>
+            <p>
+              in order to span content freely without moving the other grid
+              children around you should set the positioning of the children to
+              <span class="cb">manual</span> instead of auto and in case you
+              face a problem with the z-index just change the postion of the
+              element you want at the top to <span class="cb">relative</span>
+            </p>
+            <p>
+              for more info you can revisit the
+              <a
+                href="https://university.webflow.com/courses/grid?video=09wolz1jaqE"
+              >
+                webflow grid course
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <!-- slider -->
+        <section>
+          <h3>slider</h3>
+          <!-- add more slides -->
+          <div>
+            <h4>add more slides</h4>
+            <p>
+              to add more slides select the slider go the settings panel and the
+              first row you will find the
+              <span class="cb">+ add slides</span> button on the left
+            </p>
+            <img src="images/webflow-slider-add-slides.png" alt="" />
+            <p>
+              as for the two arrows beside the add slides button they're for
+              changing the slides and the list beside them is for going to a
+              praticular slide
+            </p>
+          </div>
+        </section>
+
+        <!-- cursor -->
+        <section>
+          <h3>cursor</h3>
+          <p>
+            to change the cursor on any element go to the very bottom of the
+            style panel and you will find
+            <span class="cb">cursor</span> dropdown menu
+          </p>
+        </section>
+
+        <!-- aspect ratio -->
+        <section>
+          <h3>aspect ratio</h3>
+          <p>
+            accoring to
+            <a
+              href="https://webflow.com/made-in-webflow/website/aspect-ratio-boxes"
+            >
+              webflow
+            </a>
+            to make a div aspect ratio of 1:1 give it a padding-top of 100%
+          </p>
+          <ul>
+            <li>1:1 => padding-top: 100%;</li>
+            <li>4:3 => padding-top: 75%;</li>
+            <li>3:2 => padding-top: 66.666%;</li>
+          </ul>
+          and alot of other aspect ratios check from the link above
+        </section>
       </div>
     </article>
 
@@ -983,6 +1213,123 @@
               them
             </li>
             <li>export all the images and convert them into webp</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+    <!-- =========================
+         psd to html
+     ========================== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">psd to html (photopea documentation)</h2>
+        <!-- extract image from psd -->
+        <section>
+          <h3>extract images from the psd</h3>
+          <p>there are two ways to do this:</p>
+          <ol>
+            <li>
+              the first way in photopea: (with the move tool active) simply make
+              sure the image you want to extract or download is selected, then
+              at the top right at the end of the second row of the editor you
+              will find a down arrow to download the image
+              <img src="images/photopea-download-image.png" alt="" />
+              click on it, choose the format you want, and it will be downloaded
+              in the downloades
+              <p class="bg-second-color">
+                notice that you can actually download any element using this
+                method just the select the element you want and download it
+              </p>
+            </li>
+            <li>
+              the second way:
+              <ol>
+                <li>select the image or the element you want to extract</li>
+                <li>right click and choose duplicate into</li>
+                <li>
+                  in the <span class="cb">destination</span> drop down menu
+                  choose new project
+                  <p class="bg-second-color">
+                    I've seen some indian guy do a short cut to isolate the
+                    image (everything else disappeared form the canvas) but I
+                    don't know the shortcut as he was speaking indian and there
+                    was no subtitles
+                  </p>
+                </li>
+                <li>
+                  in the new project go to the
+                  <span class="cb">
+                    image menu from the upper bar of the editor
+                  </span>
+                  and choose trim
+                </li>
+                <li>
+                  from the file menu from the upper bar of the editor choose
+                  export as then choose the format you want
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </section>
+
+        <!-- show distances/spaces/dimensions/measurements -->
+        <section>
+          <h3>show distances/spaces/dimensions/measurements in psd</h3>
+          <ul>
+            <li>
+              <p>
+                one way is: in photopea in the second row of the editor you will
+                find checkbox called distances beside the transform control
+                checkbox
+              </p>
+              <img src="images/photopea-distances.png" alt="" />
+              <p>
+                and this shows the distance from the edges of the canvas or the
+                design to the selected elements, also with the element selected
+                if you hover over another element it shows the distances between
+                the selected and the hovered element
+              </p>
+            </li>
+            <li>
+              <p>
+                another way is to open the info tab with the element selected it
+                will show you the width, height, x, and y values of the selected
+                element.
+              </p>
+              <p>
+                the x and y are the distances from the edges of the canvas to
+                the element
+              </p>
+              <img src="images/photopea-info-panel.png" alt="" />
+            </li>
+            <li>
+              <p>
+                another way would be to use the
+                <span class="cb">ruler tool</span>
+              </p>
+              <p>
+                you will find it by right clicking the eyedropper tool in the
+                tool bar on the left
+              </p>
+              <img src="images/photopea-ruler-tool.png" alt="" />
+              <p>
+                just click any way in the canvas and drag to the point you want
+                to measure the distance to. You can
+                <span class="cb">hold shift</span> if you want to go in a
+                staright line and the measurements will be shown in the option
+                bar at the top
+              </p>
+              <p class="bg-second-color">
+                to have a better experience using this tool you can show grid on
+                the canvas
+              </p>
+              <img src="images/photopea-view-grid.png" alt="" />
+            </li>
+            <li>
+              you can also use the
+              <span class="cb">rectangular select</span> tool and it works just
+              like the ruler tool
+            </li>
           </ul>
         </section>
       </div>
