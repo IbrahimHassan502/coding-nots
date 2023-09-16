@@ -6883,13 +6883,14 @@
         <h3 class="main-heading">
           <a
             href="https://www.youtube.com/playlist?list=PLQtNtS-WfRa9LbmD8ON7rWhn-AtKTGdkn"
-            >codeZone</a
           >
+            codeZone
+          </a>
           course
         </h3>
 
         <section>
-          <h4>installation (session:1)</h4>
+          <h3>installation (session:1)</h3>
           <ol>
             <li>go to the folder you want to make the project folder in</li>
             <li>open windows powershell</li>
@@ -6904,10 +6905,243 @@
             but I doubt that since it told me that a certain package needs to be
             installed when I ran it so give it a search
           </p>
+          <p class="bg-second-color">
+            weirdly enough the instructions of
+            <span class="cb">npx create-react-app your-project-name</span> are
+            not on the
+            <a href="https://react.dev/learn/installation">installation</a> site
+          </p>
+        </section>
+
+        <section>
+          <h3>start your project in the browser (session:1)</h3>
+          open a commandline in the project folder and type
+          <span class="cb">npm start</span>
+        </section>
+
+        <section>
+          <h3>starting downloaded react project (seccion:1 => 00:30:30)</h3>
+          <p>
+            react projects are downloaded without their dependances to reduce
+            the size to install all the dependancies all you have to do is to go
+            to the commandline inside the project folder and type
+            <span class="cb">npm install</span> or
+            <span class="cb">npm i</span> and all the dependancies will be
+            installed
+          </p>
+          <p>
+            npm knows the dependancies of the project form the
+            <span class="cb">dependancies</span> object in the
+            <span class="cb">package.json</span>
+          </p>
+        </section>
+
+        <section>
+          <h3>uninstalling dependancies</h3>
+          <span class="cb">npm unistall bootstrap</span>
+          <p class="bg-second-color">
+            note that this command uninstalls only the main dependancy not it's
+            dependancies
+          </p>
+        </section>
+
+        <section>
+          <h3>npm info</h3>
+          <ul class="big-items">
+            <li>
+              the <span class="cb">--save</span> flag you might see in some
+              library docs is now the default behaviour and it means to save the
+              dependancy in the <span class="cb">package.json</span> file
+            </li>
+            <li>
+              in the <span class="cb">packages.json</span> you will find
+              <ol>
+                <li>dependancies</li>
+                <li>
+                  scripts: they're aliases for longer scripts, and you can also
+                  add custom scripts of your own
+                  <img src="images/package-json-scripts" alt="" />
+                  as you can see you just type npm start instead of
+                  react-scirpts start
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h4>package-lock.json</h4>
+              <p>
+                it saves the exact vestions of each dependancy you have in your
+                project
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>
+            single page application (spa) meaning (session:1 => 00:40:30:)
+          </h3>
+          <p>
+            it means you have only one html page (index.html) and all the
+            content is being changes and modified by javascript without the need
+            for reload, even when changing the url it doesn't really change as
+            react intercepts the browser and does the routing itself
+          </p>
+        </section>
+
+        <!-- =================== react docs starts =================================== -->
+        <h3 class="main-heading">react docs</h3>
+        <section>
+          <h3>tools and extenstions</h3>
+          <ul>
+            <li>
+              <p>
+                according to the
+                <a
+                  href="https://react.dev/learn/editor-setup#recommended-text-editor-features"
+                >
+                  recommended text editor features
+                </a>
+                section of the editor setup react recommend to use
+                <span class="cb">eslint</span>
+              </p>
+
+              <p>
+                when I searched about it I found that you can either configure
+                it your self through npm and makaing your own eslint config
+                file. You can find the rules to include in the config file at
+                esling website or you can just add it as an extension in vs code
+                check
+                <a href="https://youtu.be/fslNny60HzI?si=BFOyQCkIqK4XRKg6"
+                  >this video</a
+                >
+              </p>
+              <h4>why use eslint ?</h4>
+              <p>
+                it throws warnings and errors about syntax and logical errors
+                the ordinary editor won't alret you about (like re-declaring
+                varibales or re-assigining constants etc...)
+              </p>
+            </li>
+            <li>
+              <a
+                href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en"
+              >
+                react developer tool extension
+              </a>
+              <p>
+                according to the
+                <a href="https://react.dev/learn/react-developer-tools"
+                  >docs (react developer tools)</a
+                >
+              </p>
+              <i class="bg-second-color">
+                "Use React Developer Tools to inspect React components, edit
+                props and state, and identify performance problems."
+              </i>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>tips and tricks</h3>
+          <ul class="big-items">
+
+            <li>
+              <p>
+                when passing a function as a prop make sure you don't include
+                its parenthese as that would call it once the component is
+                rendered
+              </p>
+              <img src="images/react-passing-function-as-props.png" alt="" />
+              <p>
+                and if you have to pass some variables to it so now you have to
+                include the parenthese you can pass it in an anonymous like
+                <span class="cb">onComponentClick={() => myFun(someVar)}</span>
+              </p>
+              <p>
+                tip from react docs
+                <a href="https://react.dev/learn/tutorial-tic-tac-toe"
+                  >tutorial: tic-tac-toe</a
+                >
+              </p>
+            </li>
+
+            <li></li>
+            
+          </ul>
+        </section>
+
+        <section>
+          <h4><a href="https://react.dev/learn">quick start</a></h4>
+          <ul class="big-items">
+            <li>
+              <p>
+                according to react
+                <a href="https://react.dev/learn">quick start</a>
+                <i class="bg-second-color">
+                  React components are JavaScript functions that return markup
+                </i>
+                (markup = html)
+              </p>
+            </li>
+            <li>
+              <a href="https://react.dev/learn#components">components:</a>
+              <i class="bg-second-color">
+                React component names must always start with a capital letter,
+                while HTML tags must be lowercase.
+              </i>
+              <p>
+                and that's for not conflicting with html elements like if you
+                have component called button if you type it like
+                <span class="cb">&lt;button&gt; &lt;/button&gt;</span> instead
+                of <span class="cb">&lt;Button&gt; &lt;/Button&gt;</span> it
+                will just render you a regular html button not the component you
+                have
+              </p>
+              <p>
+                so you must name your component Button and call it as
+                &lt;Button&gt;
+              </p>
+            </li>
+            <li>
+              <h4>className not class</h4>
+              <p>
+                in jsx if you want to add a class to an element it must be added
+                like <span class="cb">className=""</span> not class="" to
+                prevent the conflict with javascript
+                <span class="cb">class ... {}</span>
+              </p>
+            </li>
+          </ul>
+          <div>
+            <h4>jsx</h4>
+            <p>when you return html elements from javascript funcion</p>
+            <img src="images/jsx.png" alt="" />
+            <p>
+              <a href="https://react.dev/learn#writing-markup-with-jsx"
+                >markup with jsx:</a
+              >
+              <i class="bg-second-color">
+                JSX is stricter than HTML. You have to close tags like &lt;br
+                /&gt;. Your component also can't return multiple JSX tags. You
+                have to wrap them into a shared parent, like a
+                &lt;&gt;...&lt;/div&gt; or an empty &lt;&gt;...&lt;/&gt;
+                wrapper:
+              </i>
+            </p>
+            <p>
+              <i>
+                If you have a lot of HTML to port to JSX, you can use an
+                <a href="https://transform.tools/html-to-jsx"
+                  >online converter.</a
+                >
+              </i>
+            </p>
+          </div>
         </section>
       </div>
     </article>
-    <!-- ======== React ends ======== -->
+    <!-- ======== react docs ends ======== -->
 
     <script src="script.js"></script>
   </body>
