@@ -42,6 +42,7 @@ h3,
 h4,
 h5,
 h6 {
+  margin-block: 100px 50px;
   text-transform: capitalize;
 }
 .main-heading {

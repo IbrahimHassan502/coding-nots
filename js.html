@@ -16,6 +16,7 @@
 
     <title>javascript notes</title>
   </head>
+
   <body>
     <!-- ======== header starts ======== -->
     <header>
@@ -6991,7 +6992,7 @@
         <!-- =================== react docs starts =================================== -->
         <h3 class="main-heading">react docs</h3>
         <section>
-          <h3>tools and extenstions</h3>
+          <h3 class="main-heading">tools and extenstions</h3>
           <ul>
             <li>
               <p>
@@ -7043,8 +7044,33 @@
         </section>
 
         <section>
-          <h3>tips and tricks</h3>
+          <h3 class="main-heading">tips and tricks</h3>
           <ul class="big-items">
+            <li>
+              <p>when updateing a component state that is an array you:</p>
+              <ol>
+                <li>
+                  make a copy of the array (using
+                  <span class="cb">.slice()</span>) or any method you see fit
+                </li>
+                <li>modify the element you want</li>
+                <li>set the state to the new array you modified</li>
+              </ol>
+              <p>
+                as using <span class="cb">setState</span> what makes react
+                re-render the component as it's state changed, but if you try to
+                directly change the state without using the setState (which I
+                didn't try yet) it might not have any effect
+              </p>
+              <p>
+                also react explained their reasons in the docs
+                <a
+                  href="https://react.dev/learn/tutorial-tic-tac-toe#why-immutability-is-important"
+                  >tutorial: tic-tac-toe</a
+                >
+              </p>
+              <img src="images/react-setState-vs-direct-change.png" alt="" />
+            </li>
 
             <li>
               <p>
@@ -7054,7 +7080,7 @@
               </p>
               <img src="images/react-passing-function-as-props.png" alt="" />
               <p>
-                and if you have to pass some variables to it so now you have to
+                and if you have to pass arguments to it so now you have to
                 include the parenthese you can pass it in an anonymous like
                 <span class="cb">onComponentClick={() => myFun(someVar)}</span>
               </p>
@@ -7066,13 +7092,51 @@
               </p>
             </li>
 
-            <li></li>
-            
+            <li>
+              <p>
+                when a component's state is changed react re-redners this
+                component and its childs
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <i class="bg-second-color">
+                  In React, it's conventional to use
+                  <span class="cb">onSomething</span> (like onButtonClick) names
+                  for props which represent events and
+                  <span class="cb">handleSomething</span> for the function
+                  definitions which handle those events.
+                </i>
+              </p>
+              <p>
+                tip from react docs
+                <a href="https://react.dev/learn/tutorial-tic-tac-toe">
+                  tutorial: tic-tac-toe
+                </a>
+              </p>
+              <h4>why using a key ?</h4>
+              check out <a href="#react-key">react key</a>
+            </li>
+
+            <li>
+              To collect data from multiple children, or to have two child
+              components communicate with each other, declare the shared state
+              in their parent component instead. The parent component can pass
+              that state back down to the children via props. This keeps the
+              child components in sync with each other and with their parent.
+            </li>
+
+            <li>
+              regular HTML won't always work in react or JSX so you can use a <a href="https://transform.tools/html-to-jsx">converter</a> this converter can convert way more than just html to jsx give it a look every now and then
+            </li>
           </ul>
         </section>
 
         <section>
-          <h4><a href="https://react.dev/learn">quick start</a></h4>
+          <h3 class="main-heading">
+            <a href="https://react.dev/learn">quick start</a>
+          </h3>
           <ul class="big-items">
             <li>
               <p>
@@ -7138,6 +7202,447 @@
               </i>
             </p>
           </div>
+        </section>
+
+        <section id="react-key">
+          <h3 class="main-heading">react key</h3>
+          <p>
+            from react docs
+            <a href="https://react.dev/learn/tutorial-tic-tac-toe#picking-a-key"
+              >tic tac toe: picking a key</a
+            >
+          </p>
+          <p>
+            When you update a list, React needs to determine what has changed.
+            You could have added, removed, re-arranged, or updated the list's
+            items.
+          </p>
+          <img src="images/react-key-why-use-1.png" alt="" />
+          to
+          <img src="images/react-key-why-use-2.png" alt="" />
+          <p>
+            In addition to the updated counts, a human reading this would
+            probably say that you swapped Alexa and Ben's ordering and inserted
+            Claudia between Alexa and Ben. However, React is a computer program
+            and does not know what you intended, so you need to specify a key
+            property for each list item to differentiate each list item from its
+            siblings. If your data was from a database, Alexa, Ben, and
+            Claudia's database IDs could be used as keys.
+          </p>
+          <h4>key mechanism</h4>
+          <p>
+            When a list is re-rendered, React takes each list item's key and
+            searches the previous list's items for a matching key. If the
+            current list has a key that didn't exist before, React creates a
+            component. If the current list is missing a key that existed in the
+            previous list, React destroys the previous component. If two keys
+            match, the corresponding component is moved.
+          </p>
+          <p>
+            Keys tell React about the identity of each component, which allows
+            React to maintain state between re-renders. If a component's key
+            changes, the component will be destroyed and re-created with a new
+            state.
+          </p>
+          <p>
+            key is a special and reserved property in React. When an element is
+            created, React extracts the key property and stores the key directly
+            on the returned element. Even though key may look like it is passed
+            as props, React automatically uses key to decide which components to
+            update. There's no way for a component to ask what key its parent
+            specified.
+          </p>
+          <h4>key rules</h4>
+          <p>
+            It's strongly recommended that you assign proper keys whenever you
+            build dynamic lists.
+          </p>
+          <p class="bg-second-color">
+            If you don't have an appropriate key, you may want to consider
+            restructuring your data so that you do.
+          </p>
+          <p>
+            If no key is specified, React will report an error and use the array
+            index as a key by default.
+          </p>
+          <p class="bg-second-color">
+            Using the array index as a key is problematic when trying to
+            re-order a list's items or inserting/removing list items. Explicitly
+            passing key={i} silences the error but has the same problems as
+            array indices and is not recommended in most cases.
+          </p>
+          <p class="bg-second-color">
+            Keys do not need to be globally unique; they only need to be unique
+            between components and their siblings.
+          </p>
+        </section>
+
+        <section>
+          <h3 class="main-heading">
+            <a href="https://react.dev/learn/thinking-in-react"
+              >thinking in react</a
+            >
+          </h3>
+          <ol>
+            <li>break the UI apart into pieces called components</li>
+            <li>
+              describe the different visual states for each of your components
+            </li>
+            <li>
+              connect your components together so that the data flows through
+              them.
+            </li>
+          </ol>
+
+          <div>
+            <h4>Step 1: Break the UI into a component hierarchy</h4>
+            <ul>
+              <li>
+                <p>
+                  Start by drawing boxes around every component and subcomponent
+                  in the mockup and naming them
+                </p>
+                <div class="img-container">
+                  <img src="images/react-thinking-in-react-mockup.png" alt="" />
+                  <img
+                    src="images/react-thinking-in-react-mockup-analyzed.png"
+                    alt=""
+                  />
+                </div>
+                <ol>
+                  <li>
+                    FilterableProductTable (grey) contains the entire app.
+                  </li>
+                  <li>SearchBar (blue) receives the user input.</li>
+                  <li>
+                    ProductTable (lavender) displays and filters the list
+                    according to the user input.
+                  </li>
+                  <li>
+                    ProductCategoryRow (green) displays a heading for each
+                    category
+                  </li>
+                  <li>ProductRow (yellow) displays a row for each product.</li>
+                </ol>
+                <p class="bg-second-color">
+                  notice that in <span class="cb">product table</span> the
+                  header which conatins the <span class="cb">name</span> and
+                  <span class="cb">price</span> isn't a sperate component and
+                  according to the docs
+                  <i
+                    >This is a matter of preference, and you could go either
+                    way</i
+                  >
+                  , in some cases the header can be more complex and have more
+                  features (e.g., if you add sorting) you can then move to
+                  seperate component
+                </p>
+              </li>
+              <li>
+                <p>
+                  arrange them into a hierarchy, Components that appear within
+                  another component in the mockup should appear as a child in
+                  the hierarchy
+                </p>
+                <ul>
+                  <li>
+                    <p>FilterableProductTable</p>
+                    <ul>
+                      <li>SearchBar</li>
+                      <li>
+                        <p>ProductTable</p>
+                        <ul>
+                          <li>ProductCategoryRow</li>
+                          <li>ProductRow</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Step 2: Build a static version in React</h4>
+            <p>
+              now implement the app
+              <i class="bg-secon-color">
+                The most straightforward approach is to build a static version
+                that renders the UI from your data model without adding any
+                interactivity
+              </i>
+            </p>
+            <p>
+              (If you're familiar with the concept of state, don't use state at
+              all to build this static version. State is reserved only for
+              interactivity, that is, data that changes over time. Since this is
+              a static version of the app, you don't need it.)
+            </p>
+            <p>
+              You can either build “top down” by starting with building the
+              components higher up in the hierarchy (like
+              FilterableProductTable) or “bottom up” by working from components
+              lower down (like ProductRow)
+              <i class="bg-second-color">
+                In simpler examples, it's usually easier to go top-down, and on
+                larger projects, it's easier to go bottom-up
+              </i>
+            </p>
+            <p>
+              according to the docs the rule of thump when sharing data among
+              components:
+              <i class="bg-second-color">
+                the data flows down from the top-level component to the ones at
+                the bottom of the tree.
+              </i>
+            </p>
+          </div>
+
+          <div>
+            <h4>
+              Step 3: Find the minimal but complete representation of UI state
+            </h4>
+            <p>
+              To make the UI interactive, you need to let users change your
+              underlying data model. You will use state for this.
+            </p>
+            <p>
+              <i>
+                Think of state as the minimal set of changing data that your app
+                needs to remember
+              </i>
+            </p>
+            <p>
+              For example, if you're building a shopping list, you can store the
+              items as an array in state. If you want to also display the number
+              of items in the list, don't store the number of items as another
+              state value—instead, read the length of your array.
+            </p>
+            <h5>how to make your states</h5>
+            <ol>
+              <li>
+                <b>
+                  think of all of the pieces of data in this example
+                  application:
+                </b>
+                <ul>
+                  <li>The original list of products</li>
+                  <li>The search text the user has entered</li>
+                  <li>The value of the checkbox</li>
+                  <li>The filtered list of products</li>
+                </ul>
+              </li>
+              <li>
+                <b>identify the pieces that are not states:</b>
+                <ul>
+                  <li>
+                    Does it
+                    <span class="second-color">remain unchanged</span> over
+                    time? If so, it isn't state.
+                  </li>
+                  <li>
+                    Is it
+                    <span class="second-color">passed in from a parent</span>
+                    via props? If so, it isn't state.
+                  </li>
+                  <li>
+                    <span class="second-color">Can you compute it</span> based
+                    on existing state or props in your component? If so, it
+                    definitely isn't state!
+                  </li>
+                </ul>
+                <p>What's left is probably state.</p>
+                <p>for our example:</p>
+                <ul>
+                  <li>
+                    he original list of products is
+                    <span class="second-color">passed in as props</span> , so
+                    it's not state.
+                  </li>
+                  <li>
+                    The search text seems to be state since it changes over time
+                    and can't be computed from anything.
+                  </li>
+                  <li>
+                    The value of the checkbox seems to be state since it changes
+                    over time and can't be computed from anything.
+                  </li>
+                  <li>
+                    The filtered list of products isn't state because
+                    <span class="second-color">it can be computed</span> by
+                    taking the original list of products and filtering it
+                    according to the search text and value of the checkbox.
+                  </li>
+                </ul>
+                <p>
+                  This means only the search text and the value of the checkbox
+                  are states
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h4>Step 4: Identify where your state should live</h4>
+            <p>
+              After identifying your app's minimal state data, you need to
+              identify which component is responsible for changing this state,
+              or <i>owns</i> the state
+            </p>
+            <p>
+              in case you can't identify which component should own the state
+              here are some steps:
+            </p>
+            <ol>
+              <li>
+                Identify every component that renders something based on that
+                state.
+              </li>
+              <li>
+                Find their closest common parent component—a component above
+                them all in the hierarchy.
+              </li>
+              <li>
+                <p>Decide where the state should live:</p>
+                <ol>
+                  <li>
+                    Often, you can put the state directly into their common
+                    parent.
+                  </li>
+                  <li>
+                    You can also put the state into some component above their
+                    common parent.
+                  </li>
+                  <li>
+                    If you can't find a component where it makes sense to own
+                    the state, create a new component solely for holding the
+                    state and add it somewhere in the hierarchy above the common
+                    parent component.
+                  </li>
+                </ol>
+                <p>now as for our example</p>
+                <ol>
+                  <li>
+                    <p>Identify components that use state:</p>
+                    <ul>
+                      <li>
+                        ProductTable needs to filter the product list based on
+                        that state (search text and checkbox value).
+                      </li>
+                      <li>
+                        SearchBar needs to display that state (search text and
+                        checkbox value).
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span class="second-color">Find their common parent:</span>
+                    The first parent component both components share is
+                    FilterableProductTable.
+                  </li>
+                  <li>
+                    <span class="second-color">
+                      Decide where the state lives:
+                    </span>
+                    We'll keep the filter text and checked state values in
+                    FilterableProductTable.
+                  </li>
+                </ol>
+                <p>So the state values will live in FilterableProductTable.</p>
+              </li>
+            </ol>
+            <p>
+              in the example (which is explained in details in the doc link
+              thinking in react) there is search which is an input text inside a
+              form when the input value is set to a state variable react threw
+              that erorr
+            </p>
+            <p class="bg-second-color">
+              Warning: You provided a `value` prop to a form field without an
+              `onChange` handler. This will render a read-only field. If the
+              field should be mutable use `defaultValue`. Otherwise, set either
+              `onChange` or `readOnly`.
+            </p>
+            <p>
+              which means that by setting the value of the input without
+              providing a function to change it's value on input react will
+              ignore the user input the input value will remain the same
+            </p>
+            <p>
+              <i>
+                If you try to type or check the box in the example above, you'll
+                see that React ignores your input. This is intentional
+              </i>
+            </p>
+            <p>but why is that ? I got to search about it</p>
+            <p>
+              so the way to make this work right is to add a function on input
+              change that changes the state which the input value shows so the
+              input value changes with the user input
+            </p>
+          </div>
+          <p class="bg-second-color">
+            but now there is one weird thing in this tutorial: when we needed
+            the input to change the search text state we passed the
+            <span class="cb">setSearchText</span> to it as a prop but in
+            <a href="https://react.dev/learn/tutorial-tic-tac-toe"
+              >tic tac toe tutorial</a
+            >
+            the docs literally stated that
+            <i
+              >Since state is private to a component that defines it, you cannot
+              update the Board's state directly from Square</i
+            >
+            and the way they did that: they created a function in the board (the
+            state owner) that changes the state and passed this funciton to the
+            square (the state owner's child) as a prop
+          </p>
+          <p>images below are from tic tac toe tutorial</p>
+          <img
+            src="images/react-tic-tac-toe-passing-state-as-props.png"
+            alt=""
+          />
+          <img
+            src="images/react-tic-tac-toe-passing-state-as-props-2.png"
+            alt=""
+          />
+          <img
+            src="images/react-tic-tac-toe-passing-state-as-props-3.png"
+            alt=""
+          />
+          <img
+            src="images/react-tic-tac-toe-passing-state-as-props-4.png"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <h3 class="main-heading">props vs state</h3>
+          <p>
+            according to the
+            <a href="https://react.dev/learn/thinking-in-react#props-vs-state"
+              >docs</a
+            >
+          </p>
+          <ul>
+            <li>
+              <span class="second-color"
+                >Props are like arguments you pass</span
+              >
+              to a function. They let a parent component pass data to a child
+              component and customize its appearance. For example, a Form can
+              pass a color prop to a Button.
+            </li>
+            <li>
+              <span class="second-color">
+                State is like a component's memory.
+              </span>
+              It lets a component keep track of some information and change it
+              in response to interactions. For example, a Button might keep
+              track of isHovered state.
+            </li>
+          </ul>
         </section>
       </div>
     </article>
