@@ -7128,7 +7128,19 @@
             </li>
 
             <li>
-              regular HTML won't always work in react or JSX so you can use a <a href="https://transform.tools/html-to-jsx">converter</a> this converter can convert way more than just html to jsx give it a look every now and then
+              regular HTML won't always work in react or JSX so you can use a
+              <a href="https://transform.tools/html-to-jsx">converter</a> this
+              converter can convert way more than just html to jsx give it a
+              look every now and then
+            </li>
+
+            <li>
+              according to react
+              <a
+                href="https://react.dev/learn/describing-the-ui#passing-props-to-a-component"
+                >descriping ui: passing props to a component</a
+              >
+              you can pass jsx as a prop
             </li>
           </ul>
         </section>
@@ -7647,6 +7659,444 @@
       </div>
     </article>
     <!-- ======== react docs ends ======== -->
+
+    <!-- ======== vue quick notes ======== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">vue elzero quick notes</h2>
+        <p class="bg-second-color">
+          this section is for quick notes as I have a deadline of few hours to
+          learn vue and deliver a project so it's gonna be shallow quick fix
+          section this is not the full documentation of the elzero's coures
+        </p>
+        <ul class="big-items">
+          <li>
+            <span class="cb">npm install -g @vue/cli</span> to install vue
+            command line
+          </li>
+          <li>
+            <div>
+              <span class="cb">vue create your-app-name</span> to create a vue
+              app with the name "your-app-name"
+              <p class="bg-second-color">
+                note that in the
+                <a href="https://vuejs.org/guide/quick-start.html">docs</a>
+                there is a different way of installing, I also documented it in
+                the <a href="#vue-docs-install">vue docs install</a>
+              </p>
+            </div>
+            <div>
+              after entering the previous command you'll have to set some
+              options
+              <ul>
+                <li>
+                  <h3>Please pick a preset</h3>
+                  <p>
+                    elzero said to never go with the default so choose
+                    <span class="cb">manually select features</span>
+                  </p>
+                </li>
+                <li>
+                  then check for <span class="cb">babel</span>
+                  <span class="cb">router</span>
+                  <span class="cb">vuex</span>
+                  <span class="cb">css pre-processors</span> (if you gonna use
+                  sass or less)
+                  <span class="cb">linter/formatter</span>
+                </li>
+                <li>
+                  <h3>choose vue version</h3>
+                  <p>
+                    that wasn't on the elzero's course so I chose
+                    <span class="cb">3x</span>
+                  </p>
+                </li>
+                <li>
+                  <h3>use history mode for router</h3>
+                  <p>
+                    this is for having the same url in the browser while routing
+                    through the different parts of the application if you say no
+                    hastags will appear in the url like
+                    "https://www.mainpage#first-compenent"
+                  </p>
+                  <p>choose <span class="cb">yes</span></p>
+                </li>
+                <li>
+                  <h3>pick a pre-processor</h3>
+                  <p><span class="cb">sass</span></p>
+                </li>
+                <li>
+                  <h3>pick a linter/formatter</h3>
+                  <p class="bg-second-color">
+                    make sure to use the same linter as the team working on the
+                    project with you and if you're the first one remember your
+                    settings to pass it to them
+                  </p>
+                  <p>choose <span class="cb">ESlint + prettier</span></p>
+                </li>
+                <li>
+                  <h3>pick additional lint feature</h3>
+                  <p><span class="cb">lint on save</span></p>
+                </li>
+                <li>
+                  <h3>pick a unit testing solutino</h3>
+                  <p><span class="cb">jest</span></p>
+                </li>
+                <li>
+                  <h3>
+                    Where do you prefer placing config for Babel, ESLint, etc.?
+                  </h3>
+                  <p>
+                    <span class="cb">in dedicated config files</span> but I'm
+                    not sure I want to choose the same choice
+                  </p>
+                </li>
+                <li>
+                  when it's done installing type the command
+                  <span class="cb">cd your-app-name</span> then
+                  <span class="cb">npm run serve</span>
+                </li>
+                <li>
+                  copy the local host with port link it gives you after the
+                  installation, paste it in the browser, and have fun!
+                </li>
+                <li>
+                  this is the link it gave me for the
+                  <a href="http://localhost:8080/">local host</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <h3>in case you're taking the project from another one</h3>
+            <p>
+              make sure to command <span class="cb">npm install</span> to
+              install all the app dependancies
+            </p>
+          </li>
+          <li>
+            the file called <span class="cb">readme.md</span> contains all vue
+            commands you might need
+          </li>
+          <li>
+            <h3>when you're done developing the project</h3>
+            <p>command <span class="cb">npm build</span></p>
+            <p>
+              you will find the final production version in a folder called
+              <span class="cb">dist</span>
+            </p>
+            <p class="bg-second-color">
+              note that the build version needs an http server to be shown (if
+              you try to just open the index.html like a normal static website
+              it won't show anything)
+            </p>
+            <p>
+              to solve that command
+              <span class="cb">npm install -g serve</span> then
+              <span class="cb">serve -s dist</span> noting that dist is the
+              folder you want the server to start on
+            </p>
+            <p>copy the link with the port and paste in the borwser</p>
+          </li>
+        </ul>
+        <section>
+          <h3>vue project structre</h3>
+          <ul class="big-items">
+            <li>
+              <p>
+                <span class="cb">src</span> where all the work is done it
+                contains the vue components the scss components
+              </p>
+              <p>basically it's the behind the scienes of the front-end</p>
+              <ul>
+                <li>
+                  <span class="cb">assests</span> where the images, fonts, or
+                  any static fils go
+                </li>
+                <li><span class="cb">components</span></li>
+                <li><span class="cb">router</span></li>
+                <li>
+                  <span class="cb">views</span> where the different pages of
+                  your application go (like about us, register, etc...)
+                </li>
+              </ul>
+            </li>
+            <li><span class="cb">public</span> where the compiled files are</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+    <!-- ======== vue quick notes ======== -->
+
+    <!-- ======== vue docs start ======== -->
+    <article>
+      <h2 class="main-heading">vue docs</h2>
+      <div class="container">
+        <section>
+          <h3>general tips</h3>
+          <ul class="big-items">
+            <li>
+              <p>
+                SFC is a defining feature of Vue and is the recommended way to
+                author Vue components
+              </p>
+              <p>
+                A Vue SFC, as the name suggests, encapsulates the component's
+                logic (JavaScript), template (HTML), and styles (CSS) in a
+                single file
+              </p>
+              <img src="images/vue-single-file-component.png" alt="" />
+            </li>
+            <li>
+              <h4>multiple application instances</h4>
+              <p>
+                according to the docs of
+                <a
+                  href="https://vuejs.org/guide/essentials/application.html#multiple-application-instances"
+                >
+                  creating an app
+                </a>
+                <i
+                  >You are not limited to a single application instance on the
+                  same page. The createApp API allows multiple Vue applications
+                  to co-exist on the same page, each with its own scope for
+                  configuration and global assets:</i
+                >
+              </p>
+              <img src="images/vue-multiple-application-instances.png" alt="" />
+              <p>
+                <i>
+                  If you are using Vue to enhance server-rendered HTML and only
+                  need Vue to control specific parts of a large page, avoid
+                  mounting a single Vue application instance on the entire page.
+                  Instead, create multiple small application instances and mount
+                  them on the elements they are responsible for.
+                </i>
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>options api VS composition api</h3>
+          <h4>option api</h4>
+          <p>object oriented</p>
+          <img src="images/vue-optoins-api.png" alt="" />
+          <h4>composition api</h4>
+          <img src="images/vue-composition-api.png" alt="" />
+          <h3>which one to choose</h3>
+          <ul>
+            <li>
+              Go with Options API if you are not using build tools, or plan to
+              use Vue primarily in low-complexity scenarios, e.g. progressive
+              enhancement.
+            </li>
+            <li>
+              Go with Composition API + Single-File Components if you plan to
+              build full applications with Vue.
+            </li>
+          </ul>
+        </section>
+
+        <section id="vue-docs-install">
+          <h3>installation</h3>
+          <p><span class="cb">npm create vue@latest</span> to create vue app</p>
+          <p>
+            you will be asked about the next options, according to the docs
+            <i class="bg-second-color"
+              >If you are unsure about an option, simply choose No</i
+            >
+          </p>
+          <p>then finally follow the commands it will tell you to type</p>
+        </section>
+
+        <section>
+          <h3>creating vue application</h3>
+          <h3>summary</h3>
+          <ol>
+            <li>
+              use:
+              <div class="cb">
+                <p>import { createApp } from 'vue'</p>
+                <p>
+                  const app = createApp({<br />
+                  /* root component options */
+                  <br />})
+                </p>
+              </div>
+              to create the app instance
+            </li>
+            <li>
+              <p>add your configurations like:</p>
+              <p class="cb">
+                app.config.errorHandler = (err) => {<br />
+                /* handle error */ <br />}
+              </p>
+              <p class="cb">
+                app.component('TodoDeleteButton', TodoDeleteButton)
+              </p>
+            </li>
+            <li>
+              <p>
+                use <span class="cb">.mount()</span> to link the app instance
+                you created with your app container in the html (or the dom)
+              </p>
+              <p>
+                html: <span class="cb"><div id="my-app"></div></span> js:
+                <span class="cb">app.mount('#my-app')</span>
+              </p>
+            </li>
+          </ol>
+
+          <h3>detailed docs</h3>
+          <p>
+            Every Vue application starts by creating a new application instance
+            with the <span class="cb">createApp</span> function:
+          </p>
+          <div class="cb">
+            <p>import { createApp } from 'vue'</p>
+            <p>
+              const app = createApp({<br />
+              /* root component options */
+              <br />})
+            </p>
+          </div>
+
+          <h3>the root component</h3>
+          <p>
+            the root component is the object you pass to the
+            <span class="cb">createApp()</span> function where you set opitons,
+            methods, children components, etc...
+          </p>
+          <p>
+            <i>
+              Every app requires a "root component" that can contain other
+              components as its children.
+            </i>
+          </p>
+          <p>
+            best practice:
+            <i>
+              If you are using Single-File Components, we typically import the
+              root component from another file:
+            </i>
+          </p>
+          <div class="cb">
+            <p>import App from './App.vue'</p>
+            <p>const app = createApp(App)</p>
+          </div>
+
+          <h4>Mounting the App</h4>
+          <p>
+            An application instance won't render anything until its
+            <span class="cb">.mount()</span> method is called. It expects a
+            "container" argument, which can either be an actual DOM element or a
+            selector string:
+          </p>
+          <p>
+            html: <span class="cb"><div id="my-app"></div></span> js:
+            <span class="cb">app.mount('#my-app')</span>
+          </p>
+          <p>
+            note that
+            <i>
+              The container element itself is not considered part of the app
+            </i>
+          </p>
+          <p class="bg-second-color">
+            The <span class="cb">.mount()</span> method should always be called
+            after all app configurations and asset registrations are done. Also
+            note that its return value, unlike the asset registration methods,
+            is the root component instance instead of the application instance.
+          </p>
+
+          <h4>In-DOM Root Component Template</h4>
+          <p>
+            The template for the root component is usually part of the component
+            itself, but it is also possible to provide the template separately
+            by writing it directly inside the mount container:
+          </p>
+          <img src="images/vue-in-dom-component-template.png" alt="" />
+          <p class="bg-second-color">
+            <i>
+              Vue will automatically use the container's innerHTML as the
+              template if the root component does not already have a template
+              option.
+            </i>
+          </p>
+          <p>
+            best practice:
+            <i>
+              In-DOM templates are often used in applications that are using Vue
+              without a build step. They can also be used in conjunction with
+              server-side frameworks, where the root template might be generated
+              dynamically by the server.
+            </i>
+          </p>
+
+          <h4>App Configurations</h4>
+          <p>
+            The application instance exposes a .config object that allows us to
+            configure a few app-level options, for example, defining an
+            app-level error handler that captures errors from all descendant
+            components:
+          </p>
+          <p class="cb">
+            app.config.errorHandler = (err) => {<br />
+            /* handle error */ <br />}
+          </p>
+          <p>
+            The application instance also provides a few methods for registering
+            app-scoped assets. For example, registering a component:
+          </p>
+          <p class="cb">app.component('TodoDeleteButton', TodoDeleteButton)</p>
+          <p>
+            This makes the TodoDeleteButton available for use anywhere in our
+            app.
+          </p>
+          <p class="bg-second-color">
+            again:
+            <i>
+              Make sure to apply all app configurations before mounting the app!
+            </i>
+          </p>
+
+          <h4>multiple application instances</h4>
+          <p>
+            You are not limited to a single application instance on the same
+            page. The createApp API allows multiple Vue applications to co-exist
+            on the same page, each with its own scope for configuration and
+            global assets:
+          </p>
+          <img src="images/vue-multiple-application-instances.png" alt="" />
+          <p>
+            vue best practice:
+            <i>
+              If you are using Vue to enhance server-rendered HTML and only need
+              Vue to control specific parts of a large page, avoid mounting a
+              single Vue application instance on the entire page. Instead,
+              create multiple small application instances and mount them on the
+              elements they are responsible for.
+            </i>
+          </p>
+        </section>
+
+        <section>
+          <h3>Template Syntax</h3>
+          <p class="bg-second-color">
+            best practice:
+            <i>
+              If you are familiar with Virtual DOM concepts and prefer the raw
+              power of JavaScript, you can also directly write render functions
+              instead of templates, with optional JSX support. However, do note
+              that they do not enjoy the same level of compile-time
+              optimizations as templates.
+            </i>
+          </p>
+        </section>
+      </div>
+    </article>
+    <!-- ======== vue docs end ======== -->
 
     <script src="script.js"></script>
   </body>
