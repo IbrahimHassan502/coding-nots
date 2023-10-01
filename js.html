@@ -8082,17 +8082,309 @@
         </section>
 
         <section>
-          <h3>Template Syntax</h3>
-          <p class="bg-second-color">
-            best practice:
-            <i>
-              If you are familiar with Virtual DOM concepts and prefer the raw
-              power of JavaScript, you can also directly write render functions
-              instead of templates, with optional JSX support. However, do note
-              that they do not enjoy the same level of compile-time
-              optimizations as templates.
-            </i>
-          </p>
+          <div>
+            <h3>Template Syntax</h3>
+            <p>
+              Under the hood, Vue compiles the templates into highly-optimized
+              JavaScript code. Combined with the reactivity system, Vue can
+              intelligently figure out the minimal number of components to
+              re-render and apply the minimal amount of DOM manipulations when
+              the app state changes.
+            </p>
+            <p class="bg-second-color">
+              best practice:
+              <i>
+                If you are familiar with Virtual DOM concepts and prefer the raw
+                power of JavaScript, you can also directly write render
+                functions instead of templates, with optional JSX support.
+                However, do note that they do not enjoy the same level of
+                compile-time optimizations as templates.
+              </i>
+            </p>
+          </div>
+
+          <div>
+            <h3>dynamic dom elements' content</h3>
+            <ol class="big-items">
+              <li>
+                <h4>Text Interpolation</h4>
+                <p class="cb">&lt;span&gt; Message: {{ msg }} &lt;/span&gt;</p>
+              </li>
+
+              <li>
+                <h4>raw html</h4>
+                <p>
+                  text Interpolation works exactly like
+                  <span class="cb">.textContent()</span> or
+                  <span class="cb">.innerText()</span> (I don't remember the
+                  difference between them) meaning if you try to add
+                  <span class="cb"
+                    >&lt;span&gt; this is a text &lt;/span&gt;</span
+                  >
+                  it will be added as is, so what if I need it to be compiled as
+                  html ? then use <span class="cb">v-html=""</span> attribute
+                  and place your html (or an html containing varibale) between
+                  the double quotes
+                </p>
+                <p>
+                  <span class="cb">v-html=""</span> works exactly like
+                  <span class="cb">.innerHtml=""</span>
+                </p>
+                <p class="bg-second-color">
+                  note that in both <span class="cb">{{msg}}</span> and
+                  <span class="cb">v-html="msg"</span> if the html element
+                  contained a hard coded content it will be overwritten just
+                  like in <span class="cb">.textContent=""</span> and
+                  <span class="cb">.innerHTML=""</span>
+                </p>
+                <p class="bg-danger-color">
+                  also note
+                  <i>
+                    Dynamically rendering arbitrary HTML on your website can be
+                    very dangerous because it can easily lead to
+                    <a
+                      href="https://en.wikipedia.org/wiki/Cross-site_scripting"
+                    >
+                      XSS vulnerabilities
+                    </a>
+                    . Only use v-html on trusted content and never on
+                    user-provided content.
+                  </i>
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h4>Attribute Bindings</h4>
+            <p>
+              <i class="bg-second-color">
+                Mustaches cannot be used inside HTML attributes. Instead, use a
+                v-bind directive:
+              </i>
+            </p>
+            <p class="cb">&lt;div v-bind:id="dynamicId"&gt;&lt;/div&gt;</p>
+            <p>
+              binding any attribute means whatever that is between the double
+              quotations is a variable although it looks like a regular text
+            </p>
+            <p class="bg-second-color">
+              note that:
+              <i>
+                If the bound value is null or undefined, then the attribute will
+                be removed from the rendered element.
+              </i>
+            </p>
+            <p>
+              shorthand for <span class="cb">v-bind:id</span> is
+              <span class="cb">:id</span> and of course it is usable with any
+              attribute not just the id
+            </p>
+          </div>
+
+          <div>
+            <h4>Boolean Attributes</h4>
+            <p class="cb">
+              &lt;button :disabled="isButtonDisabled"&gt;Button&lt;/button&gt;
+            </p>
+            <p class="bg-second-color">
+              note that if the <span class="cb">isButtonDisabled</span> is
+              <b>true</b> then the button will be <b>disabled</b>
+            </p>
+            <h4>Dynamically Binding Multiple Attributes</h4>
+            <p>
+              If you have a JavaScript object representing multiple attributes
+              that looks like this:
+            </p>
+            <img src="images/vue-attribute-object.png" alt="" />
+            <img src="images/vue-attribute-object-bind.png" alt="" />
+            <p class="bg-second-color">
+              Each binding can only contain one single expression. An expression
+              is a piece of code that can be evaluated to a value. A simple
+              check is whether it can be used after
+              <span class="cb">return</span>.
+            </p>
+            <p>
+              which means you can't type something like
+              <span class="cb">{{ var a = 1 }}</span> or
+              <span class="cb">{{ if (ok) { return message } }}</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              It is possible to call a component-exposed method inside a binding
+              expression:
+            </p>
+            <p class="cb">:title="toTitleDate(date)"</p>
+            <p class="bg-danger-color">
+              Functions called inside binding expressions will be called every
+              time the component updates, so they should not have any side
+              effects, such as changing data or triggering asynchronous
+              operations.
+            </p>
+          </div>
+          <div>
+            <p>
+              Template expressions are sandboxed and only have access to a
+              restricted list of globals. The list exposes commonly used
+              built-in globals such as <span class="cb">Math</span> and
+              <span class="cb">Date</span>.
+            </p>
+            <img src="images/vue-attribute-allowed-globals.png" alt="" />
+            <p>
+              image above from
+              <a
+                href="https://github.com/vuejs/core/blob/main/packages/shared/src/globalsAllowList.ts#L3"
+              >
+                their github
+              </a>
+            </p>
+          </div>
+          <div>
+            <h4>Directives</h4>
+            <p>
+              Directives are special attributes with the v- prefix. Vue provides
+              a number of
+              <a href="https://vuejs.org/api/built-in-directives.html"
+                >built-in directives</a
+              >
+              , including <span class="cb">v-html</span> and
+              <span class="cb">v-bind</span>
+            </p>
+            <p>
+              Directive attribute values are expected to be single JavaScript
+              expressions
+            </p>
+            <p>
+              A directive's job is to reactively apply updates to the DOM when
+              the value of its expression changes. Take
+              <span class="cb">v-if</span> as an example:
+            </p>
+          </div>
+          <div>
+            <h4>argumnets</h4>
+            <p>
+              some directives take arguments like
+              <span class="cb">v-bind:href="value"</span> the href is an
+              argument for the v-bind directive
+            </p>
+            <p>
+              you can use dynamic arguments
+              <span class="cb">v-bind:[attributeName]="url"</span>
+            </p>
+            <p class="bg-second-color">
+              you can also use javascript expressions inside the square brackets
+              (actually anything inside the [] is evaluated as js expression)
+            </p>
+            <p class="bg-second-co">
+              Dynamic arguments are expected to evaluate to a string, with the
+              exception of null.
+            </p>
+            <p class="bg-second-color">
+              The special value null can be used to explicitly remove the
+              binding. Any other non-string value will trigger a warning.
+            </p>
+            <p>
+              Dynamic argument expressions have some syntax constraints because
+              certain characters, such as spaces and quotes, are invalid inside
+              HTML attribute names. For example, the following is invalid:
+              <span class="cb">:['foo' + bar]="value"</span>
+            </p>
+            <p>
+              If you need to pass a complex dynamic argument, it's probably
+              better to use a computed property
+            </p>
+            <p class="bg-danger-color">
+              When using in-DOM templates (templates directly written in an HTML
+              file), you should also avoid naming keys with uppercase
+              characters, as browsers will force attribute names into lowercase:
+            </p>
+            <p>:[someAttr]="value"</p>
+            <p>
+              The above will be converted to :[someattr] in in-DOM templates. If
+              your component has a someAttr property instead of someattr, your
+              code won't work.
+            </p>
+            <p class="bg-second-color">
+              Templates inside Single-File Components are not subject to this
+              constraint.
+            </p>
+          </div>
+          <div>
+            <h4>Modifiers</h4>
+            <p>
+              Modifiers are special postfixes denoted by a dot, which indicate
+              that a directive should be bound in some special way like
+              <span class="cb">@click.right='someFunction'</span> which means on
+              right-click only the function will be applied
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="main-heading">
+            <a
+              href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html"
+            >
+              Reactivity Fundamentals <b>(options api)</b>
+            </a>
+          </h3>
+          <div>
+            <h4>states</h4>
+            <p>
+              states are put in an object that is returned by the
+              <span class="cb">data()</span> function
+            </p>
+            <pre class="cb">
+              data() {
+                  return {
+                    count: 0
+                  }
+                }
+            </pre>
+            <p>
+              vue will call the function when creating a new component instance
+            </p>
+            <p>
+              any property in the <span class="cb">data</span> is directly
+              accessable within the application like
+              <span class="cb">{{count}}</span> and accessable in the component
+              <span class="cb">mehtods</span> using the
+              <span class="cb">this</span> keyword
+            </p>
+            <pre class="cb">
+                data() {
+                  return {
+                    count: 0
+                  }
+                },
+                methods: {
+                  increment() {
+                    this.count++
+                  }
+                },
+            </pre>
+            <p class="bg-second-color">
+              note:
+              <i>
+                These instance properties are only added when the instance is
+                first created, so you need to ensure they are all present in the
+                object returned by the data function. Where necessary, use null,
+                undefined or some other placeholder value for properties where
+                the desired value isn't yet available.
+              </i>
+            </p>
+            <p>
+              It is possible to add a new property directly to this without
+              including it in data. However, properties added this way will not
+              be able to trigger reactive updates.
+            </p>
+            <p class="bg-second-color">
+              <i>
+                Vue uses a $ prefix when exposing its own built-in APIs via the component instance. It also reserves the prefix _ for internal properties. You should avoid using names for top-level data properties that start with either of these characters.
+              </i>
+            </p>
+          </div>
         </section>
       </div>
     </article>

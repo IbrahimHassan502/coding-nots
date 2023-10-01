@@ -92,12 +92,19 @@ b {
   margin-left: auto;
   margin-right: auto;
 }
-.bg-second-color {
-  background: var(--second-color);
+.bg-second-color,
+.bg-danger-color {
   color: black;
   padding: 10px;
   border-radius: 5px;
   margin-block: 10px;
+}
+.bg-second-color {
+  background: var(--second-color);
+}
+.bg-danger-color {
+  background-color: lightcoral;
+  color: white;
 }
 .second-color {
   color: var(--second-color);
@@ -144,6 +151,11 @@ b {
 }
 p.cb::first-letter {
   text-transform: none;
+}
+p.cb,
+div.cb {
+  display: block;
+  width: fit-content;
 }
 article {
   padding: 100px 0;
