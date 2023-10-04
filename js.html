@@ -8381,7 +8381,44 @@
             </p>
             <p class="bg-second-color">
               <i>
-                Vue uses a $ prefix when exposing its own built-in APIs via the component instance. It also reserves the prefix _ for internal properties. You should avoid using names for top-level data properties that start with either of these characters.
+                Vue uses a $ prefix when exposing its own built-in APIs via the
+                component instance. It also reserves the prefix _ for internal
+                properties. You should avoid using names for top-level data
+                properties that start with either of these characters.
+              </i>
+            </p>
+          </div>
+          <div>
+            <h4>Declaring Methods</h4>
+            <p>
+              we use the <span class="cb">methods:</span> option which is an
+              object inside which we declare the desired methods
+            </p>
+            <pre>
+              export default {
+                data() {
+                  return {
+                    count: 0
+                  }
+                },
+              <pre class="cb">
+methods: {
+  increment() {
+      this.count++
+    }
+  },
+              </pre>
+              mounted() {
+                // methods can be called in lifecycle hooks, or other methods!
+                this.increment()
+              }
+            }
+            </pre>
+            <p class="bg-danger-color">
+              note:
+              <i>
+                You should avoid using arrow functions when defining methods, as
+                that prevents Vue from binding the appropriate this value
               </i>
             </p>
           </div>
