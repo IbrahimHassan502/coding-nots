@@ -6776,6 +6776,41 @@
     </article>
     <!-- ======== promises article ends ======== -->
 
+    <!-- ======== arrow function vs regular function starts ======== -->
+    <article>
+      <h2 class="main-heading">arrow function vs regular function</h2>
+      <div>
+        <h3>argument</h3>
+        <p>
+          regular function has <span class="cb">argument</span>, but arrow
+          function doesn't
+        </p>
+        <p>
+          regular function has an <span class="cb">argument</span> variable by
+          default
+        </p>
+        <pre class="cb">
+        function sayHello() {
+          console.log(arguments)
+        }
+        sayHello('ibrahim', 28);
+      </pre
+        >
+        <p>
+          this console log will return an array of the arguments you sent the
+          function ['ibrahim', 28]
+        </p>
+        <p>
+          I was supposed to continue but I think it's not neccessary for my
+          current situation so whenever you feel continue this
+          <a href="https://youtu.be/ajTvmGxWQF8?si=Va13-JrOQdIi6AAY"
+            >youtube video</a
+          >
+        </p>
+      </div>
+    </article>
+    <!-- ======== arrow function vs regular function ends ======== -->
+
     <!-- ======== THREE js starts ======== -->
     <article class="three-js">
       <div class="container">
@@ -7837,7 +7872,7 @@
           <ul class="big-items">
             <li>
               <p>
-                SFC is a defining feature of Vue and is the recommended way to
+                SFC (single file component) is a defining feature of Vue and is the recommended way to
                 author Vue components
               </p>
               <p>
@@ -8420,6 +8455,59 @@ methods: {
                 You should avoid using arrow functions when defining methods, as
                 that prevents Vue from binding the appropriate this value
               </i>
+            </p>
+            <p>
+              and the above arrow function limitation is a javascript thing not
+              just a vue limitation you can know more about it from this
+              <a href="https://youtu.be/fVXp7ZWjlO4?si=woVZ4E4iEL0hD2aX"
+                >youtube video</a
+              >
+            </p>
+          </div>
+          <p>
+            in react state is "deeply reactive" which means changes can be
+            detected if you mutate a nested objects or arrays
+          </p>
+          <div>
+            <h4>DOM Update Timing</h4>
+            <p>
+              When you mutate reactive state, the DOM is updated automatically.
+              However, it should be noted that the DOM updates are not applied
+              synchronously. Instead, Vue buffers them until the "next tick" in
+              the update cycle to ensure that each component updates only once
+              no matter how many state changes you have made.
+            </p>
+            <p>
+              To wait for the DOM update to complete after a state change, you
+              can use the nextTick() global API
+            </p>
+            <pre class="cb">
+import { nextTick } from 'vue'
+
+export default {
+  methods: {
+    async increment() {
+      this.count++
+      await nextTick()
+      // Now the DOM is updated
+    }
+  }
+}
+            </pre>
+          </div>
+          <div>
+            <h4>Stateful Methods</h4>
+            <p>
+              it looks important as it talks about a certain type of methods
+              that are better put in <span class="cb">create</span> instead of
+              <span class="cb">methods</span> as it may cause conflict if there
+              are more than one instance of the component but I didn't
+              understand much so you can
+              <a
+                href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html#stateful-methods"
+              >
+                continue the article
+              </a>
             </p>
           </div>
         </section>

@@ -205,6 +205,15 @@
             responsive and relative to the font the percentage
           </p>
         </section>
+
+        <section>
+          <h3>list style</h3>
+          <p>
+            you can assign <span class="cb">list-style: none;</span> to the
+            <span class="cb">&lt;li/&gt;</span> instead of the
+            <span class="cb">&lt;ul/&gt;</span> and it will still work
+          </p>
+        </section>
       </div>
     </article>
     <!-- ======== CSS TIPS ends ======== -->
@@ -1003,12 +1012,274 @@
     </article>
     <!-- ======== tailwind notes ends ======== -->
 
-    <!-- ======== SVG starts ======== -->
-    <article class="svg">
-      
-    </article>
-    <!-- ======== SVG ends ======== -->
+    <!-- ======== animation starts ======== -->
+    <article class="animation">
+      <div class="container">
+        <h2 class="main-heading">animation</h2>
+        <p>there are multiple ways to animate vectors on website</p>
+        <ul>
+          <li>aimated svg</li>
+          <li>lottie files</li>
+        </ul>
+        <section>
+          <h3 class="main-heading">animated svg</h3>
+          <ul>
+            <li>
+              open up your vector on any vector software (inkscape, figma,
+              etc...)
+            </li>
+            <li>
+              group every part you are willing to animate: like an arm group the
+              fingers, the hand the actual arm, maybe the clothes even so they
+              are one thing
+            </li>
+            <li>
+              give the group an <span class="cb">id</span> so you can find it
+              later in the code
+            </li>
+            <li>save your svg</li>
+            <li>open your svg by any code editor</li>
+            <li>
+              the animation is just css animation which means it will be typed
+              in a <span class="cb">&lt;style&gt;&lt;/style&gt;</span>, right
+              after the opening <span class="cb">&lt;svg&gt;</span> tag put your
+              <span class="cb">&lt;style&gt;&lt;/style&gt;</span>
+              <img src="images/svg-style-tag.png" alt="" />
+            </li>
+            <li>
+              start typing your desired id to animate, the keyframes to it, and
+              give animtation (straight css)
+              <img src="images/svg-css-animation.png" alt="" />
+              <p class="bg-second-color">
+                but notice most of the time the animation won't go right and the
+                part you're trying to animate will have a transform origin way
+                out of it's own even if you set
+                <span class="cb">transform-origin</span> to it, so one of the
+                most important properties to use so everything go right is
+                <span class="cb">transform-box: fill-box</span>
+              </p>
+              <p>
+                the above issue usually happens with rotation but I think that
+                porperty won't hurt if you added to anything that will be
+                aniamte anyway
+              </p>
+              <img src="images/transform-box-mdn.png" alt="" />
+              <p>
+                with the <span class="cb">view-box</span> being the default
+                value
+              </p>
+            </li>
+          </ul>
+          <div>
+            <h4>hand written svg</h4>
+            <p>reference vedios:</p>
+            <ul>
+              <li>
+                <a href="https://youtu.be/wab7lQKHXL4?si=IKN6Fr8-oq2orzOz">
+                  k3dev
+                </a>
+              </li>
+              <li>
+                <a href="https://youtu.be/LuWdeuPMHps?si=Q9XI6FmY4YUPMObh">
+                  fireship
+                </a>
+              </li>
+            </ul>
+            <p>
+              for some reason the method I'm gonna explain worked with me only
+              on inkscape and didn't work on figma
+            </p>
+            <ol>
+              <li>start by typing the phrase you want it hand-drawn</li>
+              <li>
+                from the left tool ribon choose the pen tool
+                <img src="images/inkscape-pen-tool.png" alt="" />
+              </li>
+              <li>
+                start tracking your phrase (all in one line) and it's ok if the
+                line looks ugly
+                <img src="images/svg-word-tracking.png" alt="" />
+                that's how it looked in the video
+                <p class="bg-second-color">
+                  notice that sometime when you hit enter after you track the
+                  word (or the phrase) you may find that the end shape has color
+                  in it and doesn't look like the image above simply make the
+                  fill transparent and give it a stroke and give the storke a
+                  color and it will look like the image
+                </p>
+              </li>
+              <li>increase the stroke width until it covers the word</li>
+              <li>
+                in the stroke settings choose the two highlighted options in the
+                image below
+                <img
+                  src="images/inkscape-hand-writing-svg-stroke-settings.png"
+                  alt=""
+                />
+              </li>
+              <li>
+                choose the <span class="cb">edit path by nodes</span> tool from
+                the right ribon (second on from top) and adjust the stroke to
+                look exactly like the word
+              </li>
+              <li>
+                in the video he selected the word itself, right click and chose
+                <span class="cb">set clip</span>
+              </li>
+              <li>
+                in the first video in the references it kept guessin the
+                <span class="cb">stroke-dasharray</span> but from the second
+                video if you grap the path by id and console.log
+                <span class="cb">path.getTotalLenght()</span> where the path is
+                a variable containing the hand writing path it will log you the
+                exact path
+              </li>
+              <li>
+                in the css set these properties of the path to the number you
+                logged in the previous step
+                <span class="cb">stroke-dasharray:</span>
+                <span class="cb">stroke-dashoffset:</span>
+              </li>
+              <li>
+                create a keyframe animation with
+                <span class="cb">to {stroke-dasharray:0}</span>
+                and make sure the <span class="cb">fill-mode</span> on the path
+                animation propery is <span class="cb">forward</span>
+              </li>
+            </ol>
+          </div>
+        </section>
 
+        <section>
+          <h3 class="main-heading">lottie files</h3>
+          <p>
+            reference video:
+            <a href="https://youtu.be/x8WW0DDXZ4w?si=SmgrS4qvCCeBPoZ7"
+              >Add AMAZING Animations with LottieFiles - SO EASY</a
+            >
+          </p>
+          <ul>
+            <li>open your svg in any software (I use figma)</li>
+            <li>
+              group everything you are willing to animate first thing (otherwise
+              if you group things in later frames the animation will be ruined
+              and it will look like it's small pieces being re-arranged)
+            </li>
+            <li>
+              copy the frame, change what you want
+              <p class="bg-secon-color">
+                (I didn't master lottie yet) but as far as I noticed it doesn't
+                work if there's a frame within a frame so avoid using frames
+                other than the main outer frame
+              </p>
+              <p class="bg-second-color">
+                also notice that lottie doesn't recognize sequinces that are not
+                in frames so if you will make a componnet and use it's varients
+                to make the animation change them into frames
+              </p>
+            </li>
+            <li>
+              from that point you got to options
+              <ol>
+                <li>
+                  convert frames into <span class="cb">prototype</span>
+                  <img src="images/figma-prototype-panel.png" alt="" />
+                  and then right click open lottie plugin (or add it if you
+                  don't already have it in figma) and chose the flow (prototype)
+                  you created
+                  <img src="images/lottie-figma-prototype.png" alt="" />
+                </li>
+
+                <li>
+                  or just leave the frames as they are, select all of them right
+                  click, open lottie plugin (or add it if you don't already have
+                  it in figma) and you will find the
+                  <span class="cb">ecport to lottie</span> button active and in
+                  cyan background
+                  <img src="images/lottie-figma-export.png" alt="" />
+                </li>
+              </ol>
+            </li>
+            <li>
+              once the animation is exported hit the
+              <span class="cb">add to workspace</span> button at the bottom
+              right
+            </li>
+            <li>
+              choose the folder you want then hit
+              <span class="cb">save</span>
+            </li>
+            <li>
+              go to your lottie account, find your animation, at the right of
+              the top ribbon you will find a download button
+              <img src="images/lottie-download-json.png" alt="" />
+              so far I only tried the <span class="cb">.json</span> format so I
+              will continue explanation based on that
+            </li>
+            <li>download the json file, add it to your project files</li>
+            <li>
+              download the lottie library by searching google
+              <span class="cb">bodymovin web</span> and yes it's "movin" not
+              moving it should take you to this
+              <a href="https://github.com/airbnb/lottie-web/tree/master">
+                github repo</a
+              >
+            </li>
+            <li>
+              download the zip file, inside the folder lottie-web-master find
+              build then palyer you will find
+              <span class="cb">lottie.min.js</span>
+              add that one to your project files
+            </li>
+            <li>
+              <p>
+                all instructions you will find in
+                <a href="https://airbnb.io/lottie/#/web">lottie web docs</a>
+                but I will also type the steps I do in here
+              </p>
+              <p>add lottite.min.js to your project</p>
+            </li>
+            <li>
+              in your html add a container for lottie to inject the animation
+              inside
+            </li>
+            <li>
+              in your javascript add the code in the following image
+              <img src="images/lottie-js-initiation.png" alt="" />
+              and in the docs they show you the options and what's required and
+              what' optional
+              <img src="images/lottie-js-initiation-docs.png" alt="" /> and
+              that's it! happy animating
+            </li>
+            <li>
+              note that there is other options of using the animation, like when
+              you open the animation from your lottie dashboard you can choose
+              embed and handoff
+              <img src="images/lottie-embed.png" alt="" />
+              as you can see there's an
+              <span class="cb">assit link</span> which you can put in the
+              <span class="cb">path</span> of the bodymovin object in your js
+              instead of the local path of the .json file
+              <p>you can also change the format of that assit link</p>
+              <p>
+                or you can just copy the html embed scripts
+                <img src="images/lottie-html-embed.png" alt="" />
+                or from below that you can find iframe link (don't know what
+                Oembed url is yet)
+              </p>
+            </li>
+          </ul>
+          <p>
+            you can adjust your animation (if you will use the html embed
+            options) in their
+            <a href="https://lottiefiles.com/web-player">web player</a>
+            to find it got to lottiefiles.com hover over integrations in the top
+            navbar you will find
+          </p>
+        </section>
+      </div>
+    </article>
+    <!-- ======== animation ends ======== -->
 
     <script src="test.js"></script>
   </body>
