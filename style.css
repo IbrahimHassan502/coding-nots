@@ -216,12 +216,19 @@ ol {
   list-style-position: inside;
   padding-inline: 25px;
 }
+/* header */
 header {
   transition: 0.3s;
   position: absolute;
   top: 0;
   width: 100%;
 }
+@media screen and (max-width: 767px) {
+  header {
+    position: relative;
+  }
+}
+
 header .container {
   padding-top: 35px;
   display: flex;
@@ -229,9 +236,19 @@ header .container {
   justify-content: flex-end;
   position: relative;
 }
+@media screen and (max-width: 767px) {
+  header .container {
+    display: block;
+  }
+}
 header nav {
   display: flex;
   align-items: stretch;
+}
+@media screen and (max-width: 767px) {
+  header nav {
+    display: block;
+  }
 }
 header .input-box {
   position: relative;
@@ -263,8 +280,18 @@ header ul {
   list-style: none;
   display: flex;
 }
+@media screen and (max-width: 767px) {
+  header ul {
+    flex-direction: column;
+  }
+}
 header ul li {
   margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  header ul li {
+    margin-bottom: 1rem;
+  }
 }
 header ul a {
   padding: 5px 2.5rem;
@@ -273,6 +300,12 @@ header ul a {
   background: var(--main-color, lightblue);
   text-decoration: none;
   border-radius: 5px;
+}
+@media screen and (max-width: 767px) {
+  header ul a {
+    width: 100%;
+    text-align: center;
+  }
 }
 article section div {
   margin-bottom: 60px;
