@@ -1281,6 +1281,54 @@
     </article>
     <!-- ======== animation ends ======== -->
 
+    <!-- ======== proplems satrt ======== -->
+    <article class="problems">
+      <h2 class="main-heading">problems</h2>
+      <div class="container">
+        <section>
+          <h3 class="main-heading">100vh is not full screen in mobile</h3>
+          <p>
+            that problem occures because of the browser ui (the search bar at
+            the top) which can lead to the 100vh element to be actually larger
+            than the view port
+          </p>
+          <p>
+            the solution to that problem is to use
+            <span class="cb">dvh</span> which stands for
+            <i>"dynamic viewport height"</i> which continously calculates the
+            actual viewport and adjusting the dvh element to it
+          </p>
+          <p>
+            for example at first when you load up the website (and didn't scroll
+            yet) the browser ui takes 15% of your view port so you're left with
+            85% so the 100dvh element is actually now a 85% of the viewport
+            which takes up all the visual space of the website that is infront
+            of you
+          </p>
+          <p>
+            when you scroll down the browser ui may go fully invisible of
+            partially let's say now it takes only 10% then your 100dvh element
+            takes up 90% of the viewport which again all the space visible
+            infront of you
+          </p>
+          <p class="bg-second-color">
+            note that there is lvw and lvh which stands for
+            <i>"larg viewport width/height"</i> which calculates the height
+            based on the height of the viewport with the browser ui minimized
+            (90% in case of our example above) and its a static value
+          </p>
+          <p class="bg-second-color">
+            there is also svw and smh which stands for
+            <i>"small viewport width/height"</i> which makes the calculations
+            based on the viewport in case of maximized browser ui (85% in our
+            example above)
+          </p>
+          <img src="images/svh-vs-lvh-vs-dvh.webp" alt="" />
+        </section>
+      </div>
+    </article>
+    <!-- ======== proplems end ======== -->
+
     <script src="test.js"></script>
   </body>
 </html>
