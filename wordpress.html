@@ -277,7 +277,134 @@
             before securing wordpress you have to secure your machine (he won't
             talk about securing your machine he will talk about wordpress)
           </p>
-          <p>didn't continue the lessons cuz I don't give a fuck</p>
+          <p>quick tips to secure your wordpress site:</p>
+          <ul>
+            <li>
+              <p>
+                first way is to secure the dashboard: one way to get to the
+                dashboard is to type in the link of your wordpress site (either
+                locally so you go to localhost/wordpress or hosted so you type
+                the url to the domain you purchased) followed by
+                <span class="cb">/wp-admin</span>
+              </p>
+              <p>
+                you can make a firewall on any folder you have on your website
+                (including the wp-admin) to make a firewall:
+              </p>
+              <ol>
+                <li>elzero went to <span class="cb">direct admin</span></li>
+                <li>
+                  chose <span class="cb">password protected directory</span>
+                  <img
+                    src="images/wp-direct-admin-password-portected-directory.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  chose
+                  <span class="cb">find a directory to password protect</span>
+                </li>
+                <li>chose <span class="cb">wordpress</span></li>
+                <li>chose <span class="cb">wp-admin</span></li>
+                <li>
+                  in the <span class="cb">protected directory prompt</span> you
+                  type the message you want it browsed on the firewall (like
+                  staff only or whatever)
+                </li>
+                <li>type in the user who can access through the fire wall</li>
+                <li>type in the password</li>
+                <li>
+                  check the <span class="cb">protection enable</span> checkbox
+                  before the <span class="cb">save</span> button
+                </li>
+                <li>hit <span class="cb">save</span></li>
+              </ol>
+              <p>
+                now when you try to access the dashboard you'll be asked to
+                enter the username and password of the fire wall (to be able
+                after that to enter the username and password to the actual
+                site)
+              </p>
+              <img src="images/wp-dashboard-firewall.png" alt="" />
+              <p class="bg-second-color">
+                now notice if you type the website link followed by
+                <span class="cb">/wp-login.php</span> it will open the dashboard
+                login page just fine without authintication or firewall
+              </p>
+              <p>
+                to solve the previous problem you can add a rename plugin to
+                your website that will rename the
+                <span class="cb">wp-login.php</span> for you so the hacker can't
+                access it
+              </p>
+              <p>
+                in the video elzero just googled
+                <span class="cb">wp-login rename</span> and said that you can
+                find the plugin that suites you best
+              </p>
+            </li>
+            <li>
+              <p>
+                another tip is to always make sure to update the wordpress
+                version (from the dashboard) as they continously patch loopholes
+              </p>
+              <p>
+                also you can enable auto update but be aware is it may break
+                some stuff down in some customized wordpress versions
+              </p>
+              <p>
+                just google wp auto update and you will find some codes to add
+                to the wp-config file (he illustrated how to auto update I just
+                don't have energy to type)
+              </p>
+            </li>
+            <li>
+              only use the absolute neccessary plugins don't take the easy route
+              and make any small thing using plugin just because you don't want
+              to search how it's done
+            </li>
+            <li>
+              don't use cracked or nulled plugins as it will probably contain
+              viruses
+            </li>
+            <li>
+              <p>make sure your password to access the site is hard to crack</p>
+              <p>
+                you can use a password generator like
+                <a href="https://my.norton.com/extspa/passwordmanager">
+                  identity safe
+                </a>
+                from norton
+              </p>
+              <p>
+                and with such hard randomly generated password you might want to
+                use a passowrd saving application like
+                <a href="https://www.roboform.com/"> roboform </a> or you can
+                just count on <span class="cb">google password</span>
+              </p>
+            </li>
+            <li>
+              you can use a plugin to make a
+              <span class="cb">two step verfication</span> or 2fa so when
+              someone tries to access the website it won't let him (with the
+              right username and password) it won't let him untill you verfy the
+              login from your phone
+            </li>
+            <li>
+              make sure you're with a good hosting company so the hacker doesn't
+              hack you from the server
+            </li>
+            <li>
+              make sure you're using the right file permissions (he illustrated
+              them but I didn't like to type them)
+            </li>
+            <li>
+              change the database prefix (wp_) to a hard complicated prefix so
+              when the hacker tries to inject tables in the database and he
+              can't know the right prefix he simply won't be able to inject
+              these tables or they won't be effective
+            </li>
+          </ul>
         </section>
         <section>
           <h3></h3>
