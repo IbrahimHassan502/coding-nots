@@ -784,6 +784,144 @@
       </div>
     </article>
     <!-- ======== pugjs course  ENDS ======== -->
+
+    <!-- ======== pugjs course  ENDS ======== -->
+    <article class="e-mail">
+      <div class="container">
+        <h2 class="main-heading">email Development</h2>
+        <!-- accessability -->
+        <section>
+          <h3>accessability</h3>
+          <p>
+            according to
+            <a href="https://docs.thememountain.com/acorn/accessibility/"
+              >acron</a
+            >
+            framework
+            <i>
+              "Tables were meant for displaying tabular data, not for defining
+              the structure of a design. Unfortunately, they are (still) a
+              requirement for coding HTML email layouts, and this misuse can be
+              a real issue for people using screen readers to read your emails."
+            </i>
+          </p>
+          <p>
+            <i>
+              "The solution is to use the
+              <span class="cb">role="presentation"</span> attribute on all your
+              tables that are used for design purposes, as it makes it easier
+              for screen readers to read your content."
+            </i>
+          </p>
+        </section>
+
+        <!-- acorn framework -->
+        <section>
+          <h3>acorn framework</h3>
+          <div>
+            <h4>acorn google fonts</h4>
+            <p>
+              according to their
+              <a href="https://docs.thememountain.com/acorn/typography/"
+                >typography docs</a
+              >
+              <i>
+                In order to avoid Outlook's TNR bug ↗ and still keep our code
+                short and clean, we import the web fonts in an
+                <span class="cb">@media</span> query, and apply them after the
+                native font stack reset. All clients that support web fonts also
+                support media queries, but Outlook will just ignore it.
+              </i>
+            </p>
+          </div>
+        </section>
+
+        <!-- hacks -->
+        <section>
+          <h3>hacks</h3>
+
+          <!-- fix wrong text color -->
+          <div>
+            <h4>wrong text color</h4>
+            <p>
+              in
+              <a href="https://youtu.be/Ja0kNxFS3m4?si=y59ONGJIfsjfY7gh"
+                >this video</a
+              >
+              she finds out the header and the footer text are in black instead
+              of the color specified in the code which is white while she was
+              testing how email looks like using a website called
+              <span class="cb">email on acid</span>
+            </p>
+            <p>
+              in the code the colors are set to
+              <span class="cb">.header</span>&<span class="cb">.footer</span>
+              classes so she says that some times they get stripped out
+            </p>
+            <p>
+              <span class="second-color">the solution</span> she did was she
+              made a <span class="cb">.white</span> class only for
+              <span class="cb">color:white</span> and added it for every element
+              she wants its text to be white and the problem was solved
+            </p>
+          </div>
+
+          <!-- get rid of dashes between links icon images -->
+          <div>
+            <h4>dashes between link icon images</h4>
+            <p>
+              I used social media images nested in links for social media list
+            </p>
+            <img src="images/email-links-underline.png" alt="" />
+            <p>
+              but because of the links underline there is this weird dashes
+              beteween the images so one reset that solves this problem is to go
+              to the containing <span class="cb">td</span> and give it style of
+              <span class="cb">font-size:0</span>
+            </p>
+            <p class="bg-second-color">
+              note that doesn't set the text decoration to none or something
+              like that, that acutally gets rid of the extra space added by
+              browser and email clients which in turn doesn't leave a space for
+              the underlines to show up
+            </p>
+          </div>
+        </section>
+
+        <!-- HTML Email Template Built the RIGHT WAY tutorial -->
+        <section>
+          <h3>HTML Email Template Built the RIGHT WAY</h3>
+          <div>
+            <p>when the instructor was making this two columns</p>
+            <img src="images/sailchimp-two-columns.png" alt="" />
+            <p>he simply gave each column the following css</p>
+            <pre class="cb">
+              width: 100%;
+              max-width: 300px;
+              display: inline-block;
+              vertical-align: top;
+            </pre>
+            <p>which made it look like that</p>
+            <img src="images/sailchimp-two-columns-valign-top.png" alt="" />
+            <p>
+              then he manually added the padding to the containing
+              <span class="cb">td</span> of the social media icons
+              <span class="cb">padding: 12px 0 12px 62px;</span>
+              to make it look like it's centered he didn't use flex nor grid to
+              align them, and I'm not sure if he could use
+              <span class="cb">vertical-align:middle;</span>
+            </p>
+            <p>
+              well I used <span class="cb">vertical-align:middle;</span> and it
+              worked just fine but I'm not sure if it's right to use so I'm
+              sticking with the tutorial for now
+            </p>
+          </div>
+        </section>
+      </div>
+    </article>
+    <!-- ======== pugjs course  ENDS ======== -->
+
     <script src="script.js" type="module"></script>
   </body>
 </html>

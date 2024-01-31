@@ -781,6 +781,390 @@
             </p>
           </div>
         </section>
+
+        <section>
+          <h3>#16 - WordPress Post Format</h3>
+          <p>
+            according to
+            <a
+              href="https://developer.wordpress.org/themes/functionality/post-formats/"
+            >
+              wp docs
+            </a>
+            some themes support post format features and others don't
+          </p>
+          <p>
+            from my exploration the post option panel on the right isn't
+            affected by the theme (I guess) and for some reason I can't see the
+            post format dropdown
+          </p>
+          <p>
+            and when I watched a
+            <a href="https://youtu.be/qzKoFZtnRqo?si=0KYIJ5b4sQRzGmgv">
+              youtube video
+            </a>
+            from earlier this year he had it
+          </p>
+          <img src="images/wp-post-format.png" alt="" />
+          <p>the below image is from my pc</p>
+          <img src="images/wp-post-format-not-found.png" alt="" />
+          <p>
+            also I watched another
+            <a href="https://youtu.be/MwkZiw9JaKM?si=jP_0TkDeJmBwiYMu">
+              youtube viedo
+            </a>
+            that guided me on how to change the default post format (settings >
+            writing > Default Post Format) and that one I found so the feature
+            is not removed from wp and I got to figure out a way to find it in
+            the post page
+          </p>
+          <img src="images/wp-default-post-format.png" alt="" />
+        </section>
+
+        <section>
+          <h3>#17 - WordPress Categories vs Tags</h3>
+          <div>
+            <p>the best way to understand the difference is with examples</p>
+            <p>an example of a category is html, css, wordpress, etc...</p>
+            <p>and an example of a tag is news, tips&tricks, functions</p>
+            <p>
+              so you can find the "news" tag in all the sections, in another
+              word if you click on "news" it will show you all the news in all
+              categories
+            </p>
+            <p>
+              sometimes a post can belong to more than one category like "how to
+              build that in html and css" that belongs to both html and css
+              categores and you can specify more than one category in wordpress
+              when you're making the post
+            </p>
+            <img
+              src="images/wp-post-anatomy.png"
+              alt="wordpress post anatomy"
+            />
+            <p>note that the cateogries and the tags are clickable</p>
+          </div>
+          <div>
+            <p>
+              when you go to the tag page (from posts on the left bar) you will
+              see "count" column in the tags table showing you how many times
+              that tag was used
+            </p>
+            <p>
+              and if you click on the number it will show you a table of all the
+              posts containing that tag
+            </p>
+            <img src="images/wp-tags.png" alt="wordpress tag table" />
+          </div>
+        </section>
+
+        <section>
+          <h3>#18 - WordPress Screen Options</h3>
+          <div>
+            <p>
+              in the main dashboard you can show/hide the panels you want from
+              the
+              <span class="cb">screen options</span> at the top right of the
+              screen
+            </p>
+            <img
+              src="images/wp-screen-options-closed.png"
+              alt="wordpress dashboard screen options"
+            />
+            <p class="bg-second-color">
+              note that there are different screen options for every tab in the
+              left bar, which means the options for the dashboard for example is
+              different from the options of the posts and so on
+            </p>
+            <p class="bg-second-color">
+              even the options in the adding new post page are different from
+              those in post table page
+            </p>
+          </div>
+          <div>
+            <p>
+              in the post page there is <span class="cb">view mode</span> option
+            </p>
+            <ul>
+              <li>the compact one just shows you the title of the post</li>
+              <li>
+                while the extended view shows you "excerpt" of the post beneath
+                the post title which we will show how to set in a minute but in
+                case it's not set it just shows you the content of the post
+              </li>
+            </ul>
+            <img
+              src="images/wp-post-view-mode.png"
+              alt="wordpress post page with comapct view mode"
+            />
+            <img
+              src="images/wp-post-extended-view-mode.png"
+              alt="wordpress post page with extended view mode"
+            />
+          </div>
+          <div>
+            <p>
+              so elzero use the screen options in the add post page to add the
+              "excerpt" and to set the "discussion" which both we will explain
+              but apparently in that version I'm working on (or in the theme I'm
+              not sure) there are no screen options so the two options I just
+              mentioned will be found in the settings bar on the right at the
+              very bottom
+            </p>
+            <img
+              src="images/wp-excerpt-and-discussion.png"
+              alt="excerpt and discussion place in the add post page"
+            />
+            <p>
+              as for the excerpt if you open it, it will show you a text area to
+              type the excerpt you want for the post
+            </p>
+            <p>the discussion panel contains to options</p>
+            <ul>
+              <li>allow comments</li>
+              <li>
+                pingbacks&amp;trackbacks: if checked it sends you a notification
+                whenever another blog puts a link to that post as something like
+                reference, if you allow the "bingback" it shows at the comments
+                of that post as the text of the other post with a link to, of
+                course if you deni it it won't show
+              </li>
+            </ul>
+            <p class="bg-second-color">
+              elzero also showed option of adding link to another post as a
+              reference but I just can't find that
+            </p>
+            <p>
+              from what I understood from short searching whenever you put a
+              link to a wordpress post of another blog wordpress automatically
+              sends them notification if they enable the bingbacks on that post
+            </p>
+            <p>
+              to <span class="second-color">globally disable bingbacks</span> go
+              to settings > discussion > in the "default post settings" section
+              uncheck "Allow link notifications from other blogs (pingbacks and
+              trackbacks) on new posts" and from the name it disables that
+              option for future posts not the already posted ones
+            </p>
+          </div>
+          <div>
+            <p>
+              if you go to the post page, selected multiple posts, and from the
+              <span class="cb">bluk action</span> drop down chose
+              <span class="cb">edit</span> then hit apply it will show you the
+              options you can do to these posts like adding them all to a
+              category (at that case each post will be in his original
+              categories plus that category or categories you chose) or maybe
+              move them all to trash, change their dates, just explore these
+              options
+            </p>
+            <img src="images/wp-post-bulk-action.png" alt="" />
+          </div>
+        </section>
+
+        <section>
+          <h3>#19 - Featured Image and Permissions</h3>
+          <p>the featured image is the main image of the post</p>
+          <img src="images/wp-featured-image-example.png" alt="" />
+          <p>
+            now you can have as many images inside of the post but only the
+            featured image is gonna be showed as the image of the post
+          </p>
+          <p>
+            elzero spoke about a problem that you might encounter which is that
+            wordpress is unable to upload the image
+          </p>
+          <p>
+            that problem is due to the wordpress not having the premission to
+            write in the <span class="cb">wp-content</span> folder (problem from
+            the hosting company)
+          </p>
+          <p>
+            to solve that problem you go to the ftp program you're using (the
+            program showing you the wordpress folders on the server) > right
+            click on <span class="cb">wp-conetent</span> > premissions it will
+            show you the dialouge in the below image
+          </p>
+          <img src="images/wp-premissions.png" alt="" />
+          <p>these premissions are the right ones</p>
+          <p>
+            as for the number in the <span class="cb">numeric value</span> field
+            (775):
+          </p>
+          <ul>
+            <li>775 => public can't right</li>
+            <li>777 => public can right</li>
+            <li>755 => neither public nor group can right</li>
+            <li>555 => no one can right</li>
+          </ul>
+          <p>
+            I didn't search in the difference between the owner, the group, and
+            the public but from what I understood from elzero the owner is
+            simply you, the group is you, wordpress, filezilla and any software
+            you're using, and the public are just the users of the website
+          </p>
+          <p>
+            also you will find all your website images inside that
+            <span class="cb">wp-content</span> in a folder called
+            <span class="cb">uploads</span>
+          </p>
+        </section>
+
+        <section>
+          <h3>#20 - Media and How to Attach Images</h3>
+          <p>
+            in the media page (from the left bar) you can find all the images,
+            videos, etc... you uploaded to the website you can also upload media
+            straight to that page to add them later in your posts
+          </p>
+          <img src="images/wp-media.png" alt="" />
+          <ul>
+            <i>
+              if you change the view mode (between the 2 icons highilghted by
+              the pink rectangular) to the list mode you can see details like
+              where the image is used (if attached) or if its just unuttached
+            </i>
+            <li>
+              you can use the filter (all media items dropdown) to give you
+              better control like you can choose to show only the unattached
+              media and delete all of them (you have to hit the
+              <span class="cb">filter</span> button so the filter you chose is
+              applied)
+            </li>
+            <li>
+              you can also distribute your media by
+              <ol>
+                <li>
+                  <p>
+                    attaching the media to a certain post (attach > choose the
+                    post/s you want)
+                  </p>
+                  <img src="images/wp-media-attach.png" alt="" />
+                </li>
+                <li>
+                  go to the post you attached it to (the image won't be shown
+                  yet)
+                </li>
+                <li>
+                  <p>choose to add a gallery (note a gallery not an image)</p>
+                  <img src="images/wp-post-gallery.png" alt="" />
+                </li>
+                <li>click on media library</li>
+                <li>
+                  <p>
+                    from the <span class="cb">images</span> dropdown choose
+                    <span class="cb">uploaded to this post</span> it will show
+                    you only the image attached to the post
+                  </p>
+                  <img src="images/wp-post-uploaded-media.png" alt="" />
+                </li>
+              </ol>
+            </li>
+          </ul>
+          <p>
+            also you can just <span class="cb">detach</span> certain media and
+            it will deisappear from wherever it is
+          </p>
+          <p class="bg-second-color">
+            note that the filter is different in case of square view mode
+            compared with the list view mode
+          </p>
+          <div class="img-container">
+            <img src="images/wp-media-square-view.png" alt="" />
+            <img src="images/wp-media-list-view.png" alt="" />
+          </div>
+          <p>
+            in the square view mode you can click on the image to show you all
+            the details about and you will find two arrows on the top right to
+            slide between them
+          </p>
+          <img src="images/wp-media-single-img.png" alt="" />
+        </section>
+
+        <section>
+          <h3>#21 - Pages vs Posts</h3>
+          <p>
+            it feels like important info but I didn't feel like it the only take
+            is you can add new pages (home, about us, contact, etc...) from the
+            pages page from the left bar
+          </p>
+          <p>
+            the page you're adding can be either one of the main pages or a
+            child to an existing page
+          </p>
+        </section>
+
+        <section>
+          <h3>#22 - Comments System</h3>
+          <p>
+            whenever there's a new comment waiting for addministration approval
+            you will get a notifciation number on the comment tab in the left
+            bar
+          </p>
+          <img src="images/wp-new-comment.png" alt="" />
+          <p>when you enter you will see the comment table</p>
+          <img src="images/wp-new-comment-anatomy.png" alt="" />
+          <p>
+            right under the content of the comment you will find the main
+            controls for that comment
+          </p>
+          <img src="images/wp-new-comment-controls.png" alt="" />
+          <ul>
+            <li>if it's ok you click "approv"</li>
+            <li>if you want to reply to it you click "reply"</li>
+            <li>
+              the quick edit lets you edit literaly everything in the comment
+              (the name, the email, his website url, the content of the comment)
+              without leaving the page
+            </li>
+            <li>the edit lets you make the same edits but in another page</li>
+            <li>
+              if that comment is just advertisement or an annoying person you
+              can click "spam" I'm not sure if it prevents that user from
+              commenting again or what
+            </li>
+            <li>finally you can delete that comment by clicking 'trash'</li>
+          </ul>
+          <p class="bg-second-color">
+            note that if you reply to the comment without approving it, it is
+            automatically approved and added with your reply on it
+          </p>
+          <p class="bg-second-color">
+            also note that any further replys from that user on that post won't
+            need the administration approval
+          </p>
+          <p>
+            you can remove any approved comment by clicking the "unapprove"
+            button that is showed in the place of "approve" button previousely
+          </p>
+          <p>
+            also at the very top of the comment page you will notice the
+            categories of the comments
+          </p>
+          <img src="images/wp-comment-category.png" alt="" />
+        </section>
+
+        <section>
+          <h3>#23 - Appearance - Themes</h3>
+          <p>
+            he just changed the website theme, he went to
+            <span class="cb">appearance</span> from the left bar >
+            <span class="cb">themes</span> > <span class="cb">add new</span> >
+            <spna class="cb">install</spna> > <span class="cb">activate</span>
+          </p>
+          <p>
+            some themes require certain plugins in that case worpress will
+            notify you about it in the dashboard
+          </p>
+          <img src="images/wp-theme-required-plugin.png" alt="" />
+        </section>
+
+        <section>
+          <h3>#24 - Appearance - Customize</h3>
+          <p>
+            the customize bar
+          </p>
+        </section>
       </div>
     </article>
     <script src="script.js"></script>

@@ -346,81 +346,90 @@
          weird solved problems
      ========================== -->
     <article class="weird-probs">
+      <h2 class="main-heading">weird solved problems</h2>
       <div class="container">
-        <h2 class="main-heading">weird solved problems</h2>
-        <div class="container">
-          <section>
-            <h3>github push is stuck or fails</h3>
-            <p>
-              noticed that <span class="cb">.psd</span> files cause this kind of
-              behaviour
-            </p>
-            <p>with some small search still didn't get why this is happening</p>
-          </section>
+        <section>
+          <h3>github push is stuck or fails</h3>
+          <p>
+            noticed that <span class="cb">.psd</span> files cause this kind of
+            behaviour
+          </p>
+          <p>with some small search still didn't get why this is happening</p>
+        </section>
 
-          <section>
-            <h3>nav buttons are hidden in owl carousel</h3>
-            <p>
-              despite specifing <span class="cb">nav: true</span> nav buttons
-              are still not visible
-            </p>
-            <p>
-              noticed this behaviour occures when you specify
-              <span class="cb">items: </span> number equal to the actual item
-              number in the html (if you place 3 items in the html and then
-              specify <span class="cb">items: 3</span> in owl carousel functino
-              buttons wont appear )
-            </p>
-          </section>
+        <section>
+          <h3>nav buttons are hidden in owl carousel</h3>
+          <p>
+            despite specifing <span class="cb">nav: true</span> nav buttons are
+            still not visible
+          </p>
+          <p>
+            noticed this behaviour occures when you specify
+            <span class="cb">items: </span> number equal to the actual item
+            number in the html (if you place 3 items in the html and then
+            specify <span class="cb">items: 3</span> in owl carousel functino
+            buttons wont appear )
+          </p>
+        </section>
 
-          <section>
-            <h3>
-              text from <span class="cb">.innerText()</span> doesn't match
-            </h3>
-            <p>
-              the method returns the styled text. In my case the text was
-              capitalized and I was trying to match it with a text from database
-              which is normally all-lower-case text and kept not matching
-            </p>
-          </section>
+        <section>
+          <h3>text from <span class="cb">.innerText()</span> doesn't match</h3>
+          <p>
+            the method returns the styled text. In my case the text was
+            capitalized and I was trying to match it with a text from database
+            which is normally all-lower-case text and kept not matching
+          </p>
+        </section>
 
-          <section>
-            <h3>tailwind stopped processing style</h3>
-            <p>
-              tailwind was working prefectly and suddenly stopped modifying the
-              output style file
-            </p>
-            <p>
-              the problem was that I added a wrong class name in the
-              <span class="cb">@apply</span> rule
-            </p>
-            <p>
-              so the <span class="cb">@apply</span> rule is a custom rule made
-              by tail wind so if you add the wrong class name (a class that
-              doesn't exist neither in their utility classes or the classes you
-              add in the src style file) like
-              <span class="cb">item-center</span> instead of
-              <span class="cb">items-center</span> the "s" difference between
-              the two appearantly treggered error in the framework that stopped
-              it from proccessing
-            </p>
-            <p>
-              it's not just the wrong class that can tregger that error.
-              Forgetting to add the ";" at the end of the line (and for some
-              reasons the editor doesn't added for you ) can tregger and error
-              too
-            </p>
-            <h3>how you know you messed up ?</h3>
-            <p>
-              if you have the <span class="cb">--watch</span> termnal you notice
-              with every modification you make you see it typing
-              <span class="cb">rebuilding...</span> then
-              <span class="cb">done in ...ms</span> but when you mess up you see
-              green text like in the image below
-            </p>
-            <img src="images/tailwind-no-process-error.png" alt="" />
-          </section>
-        </div>
+        <section>
+          <h3>tailwind stopped processing style</h3>
+          <p>
+            tailwind was working prefectly and suddenly stopped modifying the
+            output style file
+          </p>
+          <p>
+            the problem was that I added a wrong class name in the
+            <span class="cb">@apply</span> rule
+          </p>
+          <p>
+            so the <span class="cb">@apply</span> rule is a custom rule made by
+            tail wind so if you add the wrong class name (a class that doesn't
+            exist neither in their utility classes or the classes you add in the
+            src style file) like <span class="cb">item-center</span> instead of
+            <span class="cb">items-center</span> the "s" difference between the
+            two appearantly treggered error in the framework that stopped it
+            from proccessing
+          </p>
+          <p>
+            it's not just the wrong class that can tregger that error.
+            Forgetting to add the ";" at the end of the line (and for some
+            reasons the editor doesn't added for you ) can tregger and error too
+          </p>
+          <h3>how you know you messed up ?</h3>
+          <p>
+            if you have the <span class="cb">--watch</span> termnal you notice
+            with every modification you make you see it typing
+            <span class="cb">rebuilding...</span> then
+            <span class="cb">done in ...ms</span> but when you mess up you see
+            green text like in the image below
+          </p>
+          <img src="images/tailwind-no-process-error.png" alt="" />
+        </section>
+
+        <section>
+          <h3>gap is not working properly</h3>
+          <p>
+            I noticed in the section in the image below that the separator is
+            not exactly in the middle
+          </p>
+          <img src="images/gap-not-working-properly.png" alt="" />
+          <p>
+            the proplem was from the padding of the inputs was changing their
+            width and hence all the containers on them causing the gap to push
+            the form only
+          </p>
+          <p>solution was to explicitly set the width of the input to 100%</p>
+        </section>
       </div>
     </article>
 
@@ -457,6 +466,7 @@
         </p>
       </section>
     </article>
+
     <!-- =========================
          webflow
      ========================== -->
@@ -1365,6 +1375,19 @@
           <p>
             the font size will stay the same it won't change with the new font
             size and so all other fixed dimensions
+          </p>
+        </section>
+
+        <section>
+          <h3>don't use 100vw</h3>
+          <p>
+            according to
+            <a href="https://youtu.be/x4u1yp3Msao?si=kAQmHRGCJurqwR-o"
+              >this video</a
+            >
+            some browsers like chrome don't account for the verticle scrollbar
+            on the right which cause the website to have a horizontal scroll
+            when you set an element width to 100vw
           </p>
         </section>
       </div>

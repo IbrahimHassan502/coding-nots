@@ -35,6 +35,7 @@
     <article class="css-notes">
       <h2 class="main-heading">notes</h2>
       <div class="container">
+        <!-- animation delay -->
         <section>
           <h3>animatoin delay</h3>
           suppose you have multiple elements (say 3) you want to animate them so
@@ -69,6 +70,7 @@
           </b>
         </section>
 
+        <!-- align items vs align content -->
         <section class="align">
           <h3>align-items VS align-content</h3>
           <div class="img-container">
@@ -131,6 +133,7 @@
           </p>
         </section>
 
+        <!-- focus withing -->
         <section>
           <h3>:focus-within</h3>
           <p>
@@ -144,6 +147,7 @@
           </p>
         </section>
 
+        <!-- place items -->
         <section>
           <h3>place-items</h3>
           <p>
@@ -164,6 +168,7 @@
           </p>
         </section>
 
+        <!-- after & before not working -->
         <section>
           <h3>:after & :before don't work</h3>
           <p>
@@ -178,21 +183,10 @@
             <img src="images/after-before-not-working-question.webp" alt="" />
             <img src="images/after-before-not-working-answer.webp" alt="" />
           </div>
-        </section>
-
-        <section>
-          <h3>gap is not working properly</h3>
           <p>
-            I noticed in the section in the image below that the separator is
-            not exactly in the middle
+            this also applies to <span class="cb">&lt;img&gt;</span> as it's a
+            "replaced element"
           </p>
-          <img src="images/gap-not-working-properly.png" alt="" />
-          <p>
-            the proplem was from the padding of the inputs was changing their
-            width and hence all the containers on them causing the gap to push
-            the form only
-          </p>
-          <p>solution was to explicitly set the width of the input to 100%</p>
         </section>
 
         <section>
@@ -1371,6 +1365,105 @@
       </div>
     </article>
     <!-- ======== grid auto flow ends ======== -->
+
+    <!-- ======== pseudo elements starts ======== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">pseudo elements</h2>
+        <p>
+          this info is from
+          <a href="https://youtu.be/xoRbkm8XgfQ?si=IDkNvSbfwLFL19jE">
+            Kevin Powell video
+          </a>
+        </p>
+        <ul>
+          <li>pesudo elements can't be selected unlike usual text</li>
+          <li>
+            you can use pseudo elements to add an image
+            <span class="cb"
+              >content: url(path of the image wihtout qoutes)</span
+            >
+          </li>
+          <li>
+            you can qoutes without the use of external icons by simply
+            <span class="cb">content: open-quote</span> in the before and a
+            <span class="cb">content: close-quote</span>
+          </li>
+          <li>
+            you can use the value of custom attributes (data-my-custom-att for
+            example) in css
+            <span class="cb">content: attr(data-my-custom-attr)</span>
+          </li>
+          <li>
+            you can use fontawesom icons in pesudo elements
+            <img src="images/fontawesome-pseudo-elements.png" alt="" />
+          </li>
+          <li>
+            <h3>css counter</h3>
+            <p>to declare a counter:</p>
+            <ol>
+              <li>
+                go in the style of the element you want to use the counter in
+                and type
+                <span class="cb">counter-reset: my-first-counter</span>
+              </li>
+              <li>
+                in the pesudo element of the elements that will be repeated
+                inside the element you just declared the counter in and type
+                <span class="cb"> counter-increment: my-first-counter </span>
+                <p class="bg-second-color">
+                  obvously you must put the same counter name in the increment
+                  as the one you declared
+                </p>
+                <p>
+                  let's say you declared the counter in a class called counter
+                  test
+                  <span class="cb">
+                    <pre>
+                      .counter-test {
+                        counter-reset: first-counter;
+                      }
+                    </pre>
+                  </span>
+                  the counter will start from one in every element that has
+                  class of counter-test
+                </p>
+
+                after that in pesudo element
+                <span class="cb">content: counter(my-first-counter)</span>
+
+                <p>
+                  you can also add text before or after the counter
+                  <span class="cb"
+                    >content: 'this is the element number '
+                    counter(my-frist-counter) '. '</span
+                  >
+                </p>
+
+                <p>
+                  let's say you have two lists and you want the second one to
+                  continue from where the first one stopped (link lists
+                  together):
+                </p>
+                <ul>
+                  <li>simply put them in a parent element</li>
+                  <li>declare a counter in the parent</li>
+                  <li>
+                    add the counter to the pesudo element of the
+                    <span class="cb">&lt;li&gt;</span>
+                  </li>
+                  <li>
+                    add <span class="cb">list-style: none</span> to hide the
+                    bullets or the numbers of the lists
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <!-- ======== pseudo elements  ends ======== -->
 
     <script src="test.js"></script>
   </body>
