@@ -1237,31 +1237,446 @@
 
         <section>
           <h3>#26 - Appearance - Menu</h3>
+          <div>
+            <p>
+              from the <span class="cb">menus</span> page that is under
+              appearance in the left bar of the dashboard you can control all
+              the menus of your website
+              <span class="bg-second-color">including the nav bar</span>
+            </p>
+            <img src="images/wp-menus-page.png" alt="" />
+            <p>
+              on the left you will find the items that you can add to a menu and
+              as you can deduce menus are not just for pages you can also add
+              posts, categories or custom links
+            </p>
+            <p>
+              the custom link is added by putting the url you want the link to
+              go to and the link text and it will be added just like any other
+              nav bar link
+            </p>
+            <p class="bg-second-color">
+              your menu won't show in the website if you don't specify it's
+              <span class="cb">display location</span>
+            </p>
+            <img src="images/wp-menu-display-location.png" alt="" />
+            <p>
+              some themes offer only one location for menus (like the one in the
+              image) and some others offer more
+            </p>
+            <p class="bg-second-color">
+              note that some themes provide a default navigation bar don't think
+              that it is the one you made until you set the location
+            </p>
+            <p>
+              some default nav bars might seem distorted or out of style (like
+              one theme the links didn't have spaces between them and looked
+              like "homeaboutuscontact") but once you make your own nav bar and
+              assign it's location to primary things will work just fine
+            </p>
+          </div>
+          <div>
+            <p>
+              all the menu item controls can be found by clicking the little
+              arrow on the right of the item name
+            </p>
+            <img src="images/wp-menu-controls.png" alt="" />
+            <p>
+              note the <span class="cb">under home</span> option that's to make
+              the item a sub item of the item above it which is home in this
+              image
+            </p>
+          </div>
+          <div>
+            <p>
+              to add a new item to the menu you check the items you want and
+              click <span class="cb">add to menu</span> button
+            </p>
+            <img src="images/wp-add-to-menu.png" alt="" />
+            <p>and you can order your menu links by simply dragging them</p>
+          </div>
+          <div>
+            <p>note that in <span class="cb">pages</span> there are 3 tabs</p>
+            <img src="images/wp-menus-page-items.png" alt="" />
+          </div>
+          <div>
+            <p>
+              also at the bottom of the menu page under the
+              <span class="cb">menu settings</span> there's
+              <span class="cb"
+                >automatically add new top-level pages to this menu</span
+              >
+              option that might make your life easier
+            </p>
+            <img src="images/wp-menus-auto-add-pages.png" alt="" />
+          </div>
+        </section>
+
+        <section>
+          <h3>#27 - Appearance - Editor</h3>
           <p>
-            from the <span class="cb">menus</span> page that is under appearance
-            in the left bar of the dashboard you can control all the menus of
-            your website
-            <span class="bg-second-color">including the nav bar</span>
-          </p>
-          <img src="images/wp-menus-page.png" alt="" />
-          <p>
-            on the left you will find the items that you can add to a menu and
-            as you can deduce menus are not just for pages you can also add
-            posts, categories or custom links
+            the <span class="cb">theme file editor</span> page is where you can
+            edit the code of all your theme files like the
+            <span class="cb">style.css</span> etc..
           </p>
           <p>
-            the custom link is added by putting the url you want the link to go
-            to and the link text and it will be added just like any other nav
-            bar link
+            when I opened this page the first time wordpress warned me the
+            directly modifying the theme files is not recommended and I can
+            either:
           </p>
-          <p class="bg-second-color">
-            your menu won't show in the website if you don't specify it's
-            <span class="cb">display location</span>
+          <ul>
+            <li>
+              make a
+              <a
+                href="https://developer.wordpress.org/themes/advanced-topics/child-themes/"
+                >child theme</a
+              >
+            </li>
+            <li>
+              or use the a file manager to make a copy of the main theme so in
+              case things didn't go well you can revert back to that
+            </li>
+            <li>
+              or add your css in the <span class="cb">additional css</span> page
+              that is in the <span class="cb">customize</span> page from the
+              left bar in the dashboard
+            </li>
+          </ul>
+          <p>
+            so when I made a change in the
+            <span class="cb">theme file editor</span> page it was added to the
+            code but it was never showed but when I made the same change in the
+            <span class="cb">additional css</span> it was showed I don't know
+            the reason
           </p>
-          <img src="images/wp-menu-display-location.png" alt="" />
-          <p class="bg-second-color">
-            note that some themes provide a default navigation bar
+          <p>
+            elzero also said that editing the code directly in the
+            <span class="cb">theme file editor</span> page is not recommended
+            and he recommended editors you can add your server in and make the
+            changes from like:
           </p>
+          <ul>
+            <li>phpstorm</li>
+            <li>comdo ide</li>
+            <li>Aptana studio</li>
+          </ul>
+          <p>
+            which I made a quick search and found that they were php IDEs and
+            that visual studio code was also on the list
+          </p>
+          <p>
+            elzero talked about how sometimes you might not find the
+            <span class="cb">update file</span> button that's due to wordpress
+            doens't have the premission to write in the file
+          </p>
+          <p>
+            to find this file to change it's premissions go to
+            <span class="cb">wp-content</span> > <span class="cb">theme</span> >
+            find the folder with the theme name you want to modify > then the
+            file you want to modify (in my case it was
+            <span class="cb">style.css</span> )
+          </p>
+          <img src="images/wp-theme-file-editor-anatomy.png" alt="" />
+        </section>
+
+        <section>
+          <h3>#28 - Backup and Live Update</h3>
+          <div>
+            <p>
+              before every update of the wordpress version or the themes you
+              should backup your wordpress website and that's devided into two
+              parts
+            </p>
+            <ul>
+              <li>
+                the database (which contains the posts, comments, users, etc...)
+              </li>
+              <li>
+                and wordpress files
+                <ul>
+                  <li>
+                    the dashboard settings (the appearance, functionalities,
+                    etc...)
+                  </li>
+                  <li>
+                    the langeuages of the your website, plugins, theme files,
+                    media, etc...
+                  </li>
+                  <li>and some other stuff</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>database backup</h4>
+            <ol>
+              <li>
+                <h5>direct admin</h5>
+                <p>
+                  these steps are what elzero did on his hosted website so I
+                  don't konw if they're still valied after 7 years or not as I'm
+                  working local host (which will give you steps for in a minute)
+                </p>
+                <ol>
+                  <li>
+                    in the url of the browser type your website url followed by
+                    column ":2222" (example: www.elzero.net:2222) and that
+                    should open the cpaenl sign in page for you
+                  </li>
+                  <li>put your username and password</li>
+                  <li>
+                    <p>
+                      under <span class="cb">your account</span> section on the
+                      right click on <span class="cb">mysql mangement</span>
+                    </p>
+                    <img
+                      src="images/wp-direct-admin-mysql-mangement.png"
+                      alt=""
+                    />
+                  </li>
+                  <li>
+                    <p>
+                      find your wordpress database (which in elzero's case was
+                      elzerone_mywp) ,click the checkbox on the far right, then
+                      click the download button on it's right
+                    </p>
+                    <img
+                      src="images/wp-direct-admin-mysql-db-download.png"
+                      alt=""
+                    />
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h5>phpMyAdmin (localhost)</h5>
+                <ol>
+                  <li>
+                    in the url type
+                    <a href="http://localhost/phpMyAdmin"
+                      >http://localhost/phpMyAdmin</a
+                    >
+                  </li>
+                  <li>
+                    <p>
+                      on the left hand side find your wordpress database (which
+                      in my case was "wordpress") and click on it
+                    </p>
+                    <img src="images/wp-phpmyadmin-wordpress-db.png" alt="" />
+                  </li>
+                  <li>
+                    at the top bar click on <span class="cb">export</span>
+                  </li>
+                  <li>
+                    the
+                    <a href="https://youtu.be/_zu9ss2RX-0?si=OihzO_kizTzEj_NF">
+                      tutorial
+                    </a>
+                    I found for "how to backup wordpress phpmyadmin" chose the
+                    <span class="cb">
+                      Quick - display only the minimal options
+                    </span>
+                    and hit <span class="cb">export</span> at the bottom left
+                  </li>
+                </ol>
+                <p>
+                  also check the
+                  <a href="https://youtu.be/_zu9ss2RX-0?si=OihzO_kizTzEj_NF">
+                    tutorial
+                  </a>
+                  video as he explained another 2 ways
+                </p>
+                <ul>
+                  <li>
+                    one with a plugin called "updraft" which seems to be the
+                    industry standard and he explained how to make the plugin
+                    automatically backup your website on daily, weekly bases
+                  </li>
+                  <li>
+                    the other one is with the command line which can also be
+                    automated and free
+                  </li>
+                </ul>
+              </li>
+              <li>
+                you can also find the database on your pc in that route
+                <span class="cb">C:\xampp\mysql\data\wordpress</span> maybe you
+                can just copy those I don't know
+              </li>
+            </ol>
+          </div>
+          <div>
+            <h4>file backup</h4>
+            <ol>
+              <li>
+                <h5>filzilla</h5>
+                <p>again that is elzero's proccess on the hosted website</p>
+                <ol>
+                  <li>
+                    <p>
+                      on the left hand side (his pc files) he chose the folder
+                      he wanted to download the files in
+                    </p>
+                    <img src="images/wp-filzilla-backup-1.png" alt="" />
+                  </li>
+                  <li>
+                    <p>
+                      from the right hand side (his server files) he chose the
+                      wordpress files
+                    </p>
+                    <img src="images/wp-filzilla-backup-2.png" alt="" />
+                  </li>
+                  <li>
+                    <p>
+                      select or the wordpress files, right click and choose
+                      download
+                    </p>
+                    <img src="images/wp-filzilla-backup-3.png" alt="" />
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h5>localhost</h5>
+                <p>
+                  well I deduced since the files are already on your pc in case
+                  of localhost just go to
+                  <span class="cb">C:\xampp\htdocs\wordpress</span> and you
+                  either copy all the files in there to your backup folder or
+                  you just go to the htdocs and copy the wordpress folder itself
+                </p>
+              </li>
+            </ol>
+          </div>
+          <p>
+            elzero mentioned that there is a backup option for the whole website
+            in the control panel but that would backup alot more files than just
+            wordpress database and files so unless you only have the wordpress
+            on your website this option is not recommended
+          </p>
+        </section>
+
+        <section>
+          <h3>#29 - Plugins and How to Activate Akismet</h3>
+          <div>
+            <p>
+              the plugin page is where you will find your added plugins
+              (activated and not activated) and where you can add new plugin
+            </p>
+            <p>
+              if you open the plugin page for the first time you will find 2
+              plugins that come by default with wordpress
+            </p>
+            <ul>
+              <li>
+                hello dolly: not important just a test plugin that puts qoute
+                for you at the top right of every dashboard page
+              </li>
+              <li>
+                akismet: used to catch spam comments and elzero activated it
+              </li>
+            </ul>
+            <p>under the name of the plugin you will find 2 options</p>
+            <ul>
+              <li>
+                either activate & delete options if the plugin is not activated
+                yet
+              </li>
+              <li>
+                or settings & deactivate options if the plugin is activated
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>activate aksmit</h4>
+            <p>
+              when you click on activate under aksmit it will ask you for your
+              api key and show you a button to sign up in their. Follow the
+              process and chose the personal or free plan
+            </p>
+            <p>
+              on the donation page that is showed in the image below just drag
+              the slider all the way to the left and the payment form will
+              disappear
+            </p>
+            <img src="images/wp-aksmit-doniation.png" alt="" />
+            <p>
+              get your api key and then go back to wordpress and choose
+              <span class="cb">manually enter api key</span> and it will be
+              activated
+            </p>
+            <p>
+              in case of elzero's since his website is hosted aksmit detected
+              that and asked him for some info of his website so he doesn't have
+              do add the api manually
+            </p>
+            <img src="images/wp-aksmit-settings.png" alt="" />
+            <p>
+              it will open you the settings page of the plugin to set the
+              preferences you like and as you can notice at the end of the first
+              section of the page you can
+              <span class="cb">disconnect this account</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              to add a new plugin just click the
+              <span class="cb">add new plugin</span> button at the top left of
+              the page
+            </p>
+            <p>
+              the first thing you will see at the very top of the page an alert
+              to remind you of the plugins your installed theme requires (if
+              there any and you didn't install them)
+            </p>
+            <p>
+              under that you will find four tabs (featured, popular,
+              recommended, favorites)
+            </p>
+            <p>
+              and on the left of that you will find a search bar with a search
+              filter on it's left to etiher search with a keyword, author, or
+              tag
+            </p>
+            <p class="bg-second-color">
+              under each plugin you will find the star rating of it and at the
+              right hand side of that rating you will find either
+              <span class="cb">Compatible with your version of WordPress</span>
+              or <span class="cb">not tested on your version yet</span> you have
+              to be attention for that in order not to missing anything up by
+              adding an untested plugin
+            </p>
+            <p>
+              on the right side of the plugin icon you will find under install
+              <span class="cb">show details</span> which will take you to the
+              plugin page on wp to know more about it and see the reviews
+            </p>
+            <p>
+              <span class="second-color">also</span> at the very top of the page
+              you will find <span class="cb">upload plugin</span> button in case
+              you created a plugin yourself and want to add it
+            </p>
+          </div>
+          <div>
+            <p>
+              mostly when you install any new plugin it adds pages to the
+              settings tab on the left bar and my add options in the customize,
+              appearance tabs etc...
+            </p>
+            <p>
+              you can find the plugins' files in wp folder under
+              <span class="cb">wp-content</span> >
+              <span class="cb">plugins</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              the third tab in plugins page is
+              <span class="cb">plugin file editor</span> which enables you to
+              modify the plugin codes just like we did in the theme file editor
+            </p>
+          </div>
+        </section>
+        <section>
+          <h3>#30 - Users Management</h3>
         </section>
       </div>
     </article>
