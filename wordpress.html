@@ -68,6 +68,40 @@
         </ul>
       </div>
     </article>
+    <!-- =============================
+      documentation starts
+    ================================== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">documentaion</h2>
+        <section>
+          <h3>general tips and tricks</h3>
+          <ul class="big-items">
+            <li>
+              <p>
+                according to
+                <a
+                  href="https://wordpress.org/documentation/article/first-steps-with-wordpress-block-editor/"
+                >
+                  first-steps-with-wordpress-block-editor docs
+                </a>
+                <i>
+                  categories can be sorted in WordPress in two ways: by name
+                  (alphabetically) or by ID number. As you enter the categories,
+                  they are assigned an ID number. It is difficult to change
+                  this, so if you don't want your categories sorted
+                  alphabetically, enter them in the order you want to see them
+                  presented on the screen.
+                </i>
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </article>
+    <!-- =============================
+      documentation ends
+    ================================== -->
 
     <!-- =============================
       elzero 2016 course starts
@@ -1675,6 +1709,7 @@
             </p>
           </div>
         </section>
+
         <section>
           <h3>#30 - Users Management</h3>
           <div>
@@ -1751,23 +1786,441 @@
 
         <section>
           <h3>#31 - Tools Press This, Import and Export</h3>
+          <div>
+            <p>
+              elzero started by talking about
+              <span class="cb">press it</span> tool which is a tool you pin to
+              your browser bookmark bar and when clicking on it while you have
+              any article or post (that is not on your website) it takes the
+              image and first paragraph of the post and put them in a post
+              editing for you (a quick way to copy someones post)
+            </p>
+            <p>
+              but it looks like it has been removed as I can't find it in my
+              versoin
+            </p>
+          </div>
+          <div>
+            <h4>import</h4>
+            <p>the import page is made for migration from other platforms</p>
+            <ul>
+              <li>
+                you get your posts and media exported from the platform you are
+                at
+              </li>
+              <li>
+                then you import that from the import page in wordpress and walla
+                you migrated your website to wordpress
+              </li>
+            </ul>
+            <p>
+              the import page offers you to import from many platforms like
+              (blogger, livejournal, tumbler, etc...)
+            </p>
+            <p>it also offers to import posts from rss feeds</p>
+            <p>
+              it also offers import from wordpress in case you want to move
+              content between wp websites
+            </p>
+          </div>
+          <div>
+            <h4>export</h4>
+            <p>
+              this page offers to download your posts, media ,etc.. so you can
+              either import them in another platform or to different wp website
+            </p>
+            <p>you have two options in export:</p>
+            <ul>
+              <li>
+                <span class="cb">all content:</span> contain your posts, pages,
+                comments, custom fields, categories, and tags, terms, navigation
+                menus, and custom posts.
+              </li>
+              <li>or choose certain pieces (posts,pages,media)</li>
+            </ul>
+            <p class="bg-second-color">
+              when you try to import an export wp will tell you "choose a wxr
+              file to import" wxr stands for wordpress extended rss it's not a
+              special format or anything just xml file like any other export
+              file
+            </p>
+          </div>
+          <div>
+            <h4>backup vs export</h4>
+            <p>
+              the export uses the links of your content not the actual content
+              so if that content is not live on the internet it won't get
+              imported (wheather or not the imported content sticks with you
+              after you delete the original one that's something I don't konw
+              yet)
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>#32 - WordPress Settings Part 1</h3>
+          <div>
+            <h4>general settings</h4>
+            <ul>
+              <li>site title: the name of your website</li>
+              <li>
+                <p>tagline: the small sentence under the site title</p>
+                <img src="images/wp-site-title-tagline.png" alt="" />
+              </li>
+              <li>
+                wordpress url: the path of the wordpress installation on your
+                website
+              </li>
+              <li>
+                <h5>wordpress url vs site address</h5>
+                <p>
+                  as far as I understood you can change the url of your website
+                  (like instead of "elzero.net/wordpress" to "elzro.net") and it
+                  will still take you to the wordpress installation, and he
+                  mentioned that it is good for security as it wouldn't reveal
+                  your wp installation path
+                </p>
+              </li>
+              <li>membership: rather or not anyone can register</li>
+              <li>
+                new user default rule:
+                <p class="bg-danger-color">never make it adminstrator</p>
+              </li>
+              <li>site language</li>
+              <li>time zone</li>
+              <li>preferred date format</li>
+              <li>
+                time format: at the bottom you will notice a documentaion link
+                in case you want to make custom time format
+              </li>
+              <li>the day to which the week starts</li>
+            </ul>
+          </div>
+          <div>
+            <h4>writing settings</h4>
+            <ul>
+              <li>
+                Default Post Category: elzero said it's better to leave it
+                uncategorized
+              </li>
+              <li>
+                Default Post Format: again elzero said it's better to leave it
+                standard and let the author choose the format while typing the
+                post
+              </li>
+              <li>
+                <p>
+                  post via email: a functionality that allows you to email the
+                  post you want to your website and it will be posted
+                </p>
+                <p>
+                  althought elzero showed in some sort of documentation that the
+                  built-in post via email is depricated it still shows at my wp
+                  version 7 years later so I don't know if it's really
+                  depricated or not
+                </p>
+                <p>
+                  the documentation elzero showed also suggested using plugins
+                  for that job instead of the built-in
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>reading settings</h4>
+            <ul>
+              <li>
+                choose what your home page displays (rather its your latest
+                posts or a static page you choose from your pages)
+              </li>
+              <li>number of posts at the blog Page</li>
+              <li>the number of posts you want to send in your websites RSS</li>
+              <li>
+                wheather to show the post's full text or just its excerption
+              </li>
+              <li>
+                wheather or not you want your page to be listed (found) in
+                search engines or not
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>#33 - WordPress Settings Part 2</h3>
+          <div>
+            <h4>discussion settings</h4>
+            <ul>
+              <li>
+                Default post settings: (notify any blogs linked to from the
+                post, allow pingbacks and trackbacks on new posts, Allow people
+                to submit comments on new posts)
+              </li>
+              <li>
+                Other comment settings:
+                <ul>
+                  <li>Comment author must fill out name and email</li>
+                  <li>Users must be registered and logged in to comment</li>
+                  <li>
+                    Automatically close comments on posts older than {set
+                    number} of days
+                  </li>
+                  <li>
+                    Show comments cookies opt-in checkbox, allowing comment
+                    author cookies to be set (I don't know what that is right
+                    now)
+                  </li>
+                  <li>Enable threaded (nested) comments {set number} deep</li>
+                  <li>
+                    Break comments into pages with {number} top level comments
+                    per page and the {last/first} page displayed by default
+                    Comments should be displayed with the {older/newst} comments
+                    at the top of each page
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Email me whenever:
+                <ul>
+                  <li>Anyone posts a comment</li>
+                  <li>A comment is held for moderation</li>
+                </ul>
+              </li>
+              <li>
+                Before a comment appears
+                <ul>
+                  <li>Comment must be manually approved</li>
+                  <li>
+                    Comment author must have a previously approved comment
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Comment Moderation:
+                <ul>
+                  <li>
+                    Hold a comment in the queue if it contains {number} or more
+                    links. (A common characteristic of comment spam is a large
+                    number of hyperlinks.)
+                  </li>
+                  <li>
+                    When a comment contains any of these words in its content,
+                    author name, URL, email, IP address, or browser’s user agent
+                    string, it will be held in the moderation queue. One word or
+                    IP address per line. It will match inside words, so “press”
+                    will match “WordPress”.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Disallowed Comment Keys: When a comment contains any of these
+                words in its content, author name, URL, email, IP address, or
+                browser’s user agent string, it will be put in the Trash. One
+                word or IP address per line. It will match inside words, so
+                “press” will match “WordPress”.
+              </li>
+              <li>
+                Avatars:
+                <ul>
+                  <li>Show Avatars</li>
+                  <li>
+                    Maximum Rating: how propriate or impropriate you allow the
+                    avatrs to be
+                  </li>
+                  <li>
+                    Default Avatar: choose either just an anonymous avatr or
+                    choose among some avatar genterators
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>media settings</h4>
+            <ul>
+              <li>Thumbnail size</li>
+              <li>Medium size</li>
+              <li>Large size</li>
+              <li>Organize my uploads into month- and year-based folders</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Permalink Settings</h4>
+            <p>
+              let's you choose the link format of the posts (wheather it's your
+              base link followed by the post name, or followed by the post date
+              then name or etc...)
+            </p>
+            <img src="images/wp-permlink.png" alt="" />
+            <p>
+              you can also make your custom structre at the section that is at
+              the very bottom of that page
+            </p>
+          </div>
+          <div>
+            <h4>privacy</h4>
+            <p>
+              a page where you set your privacy policy (or you can use wp's
+              privacy policy)
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>#34 - Files and Directories Structure</h3>
+          <div>
+            <h4>wordpress version</h4>
+            <p>
+              you can know the wp version by going to wp folder on your pc or
+              your server > <span class="cb">wp-includes</span> >
+              <span class="cb">version.php</span>
+            </p>
+            <img src="images/wp-version.png" alt="" />
+          </div>
+          <div>
+            <h4>why would you need to know wp version</h4>
+            <p>
+              in case of the website got hacked and you want to setup a new
+              clean wp installment you need the version to download it
+            </p>
+          </div>
+          <div>
+            <p>
+              also the <span class="cb">wp-includes</span> contains the
+              <span class="cb">widgets</span> folder
+            </p>
+            <p>
+              the <span class="cb">wp-admin</span> is for the dashboard files
+            </p>
+          </div>
+          <div>
+            <h4>wp-content</h4>
+            <p>contains</p>
+            <ul>
+              <li>languages: the site installed languages</li>
+              <li>plugins</li>
+              <li>themes</li>
+              <li>
+                upgrade: as far as I understood from elzero it contains files
+                that help the wp version update then get deleted
+              </li>
+              <li>
+                upgrade-temp-backup: no idea what that is and it wasn't at
+                elzero's
+              </li>
+              <li>uploads: contains all your media</li>
+            </ul>
+          </div>
+          <div>
+            <h4>why to know the folder structure</h4>
+            <p>
+              according to elzero: in case wp can't add something like a plugin
+              or a theme, etc... due to premissions you can go to the folders on
+              the pc or the server and add them yourself
+            </p>
+            <p>
+              elzero said as long as you are in the
+              <span class="cb">wp-content</span> it's ok to create folders and
+              add stuff
+            </p>
+          </div>
+          <div>
+            <h4>
+              having a blank page when transferring wp website from place to
+              place?
+            </h4>
+            <p>
+              elzero said it may be from the plugins to solve this problem you
+              change the name of one plugin and see if still blank get the name
+              back and change another's name and so on until you find the one
+              causing the problem
+            </p>
+          </div>
           <p>
-            elzero started by talking about
-            <span class="cb">press it</span> tool which is a tool you pin to
-            your browser bookmark bar and when clicking on it while you have any
-            article or post (that is not on your website) it takes the image and
-            first paragraph of the post and put them in a post editing for you
-            (a quick way to copy someones post)
+            finally elzero talked about the
+            <span class="cb">.htaccess</span> file and said it was wp
+            configurations for the servers
+          </p>
+        </section>
+
+        <section>
+          <h3>#035 - Step Into Developing Theme</h3>
+          <p>
+            elzero said you should pay very good attention to
+            <a href="https://codex.wordpress.org/Main_Page">wordpress codex</a>
           </p>
           <p>
-            but it looks like it has been removed as I can't find it in my
-            versoin
+            to make a basic theme you have to have some pages (at elzero's they
+            were stuff like style.css, rtl.css, index.php, comments.php, etc...)
+          </p>
+          <p>
+            but when I opend the
+            <a href="https://codex.wordpress.org/Theme_Development">
+              codex: theme development
+            </a>
+            they said files like (header.php, footer.php, widgets.php,
+            index.php, etc...)
+          </p>
+          <p>
+            elzero's codex said that
+            <i
+              >the minimum files to make a theme were style.css and index.php</i
+            >
+            but that doesn't show in my codex plus elzero said it's not really a
+            useful info
           </p>
         </section>
       </div>
     </article>
     <!-- =============================
       elzero 2016 course ends
+    ================================== -->
+
+    <!-- =============================
+      self notes starts
+    ================================== -->
+    <article class="self-notes">
+      <div class="container">
+        <h2>self notes</h2>
+        <section>
+          <h3>homepage slider</h3>
+          <p>
+            in the
+            <span class="cb">
+              appearance > customize > home page sections > slider section
+            </span>
+            from the left bar of the dashboard you will notice if you enabled
+            the slider section with your default theme it won't appear that's
+            because it shows on the page you set as the home page from
+            <span class="cb">
+              settings > reading > your home page displays > a static page
+            </span>
+          </p>
+          <p>
+            let's say you chos a page called "courses" to be your home page then
+            it will have the slider on it
+          </p>
+          <p class="bg-second-color">
+            but notice if you set your home page to display the
+            <span class="cb">latest posts</span> and then go to the courses page
+            it won't have the slider as it's not a home page anymore
+          </p>
+          <p>
+            also notice when you make a certain page that is in the nav bar the
+            home page both the home and that page are highlighted
+          </p>
+          <img src="images/wp-home-page-nav-bar.png" alt="" />
+          <p>
+            and when you click on home while on the "courses" page the page will
+            be the same which makes the website looks broken so my
+            recommendation is to remove that page from the nav bar or choose the
+            home page one that is not on the navbar
+          </p>
+        </section>
+      </div>
+    </article>
+    <!-- =============================
+      self notes starts ends
     ================================== -->
 
     <!-- =============================
