@@ -104,6 +104,175 @@
     ================================== -->
 
     <!-- =============================
+      self notes starts
+    ================================== -->
+    <article class="self-notes">
+      <div class="container">
+        <h2>self notes</h2>
+        <section>
+          <h3>homepage slider</h3>
+          <div>
+            <p>
+              in the
+              <span class="cb">
+                appearance > customize > home page sections > slider section
+              </span>
+              from the left bar of the dashboard you will notice if you enabled
+              the slider section with your default theme it won't appear that's
+              because it shows on the page you set as the home page from
+              <span class="cb">
+                settings > reading > your home page displays > a static page
+              </span>
+            </p>
+            <p>
+              let's say you chos a page called "courses" to be your home page
+              then it will have the slider on it
+            </p>
+            <p class="bg-second-color">
+              but notice if you set your home page to display the
+              <span class="cb">latest posts</span> and then go to the courses
+              page it won't have the slider as it's not a home page anymore
+            </p>
+            <p>
+              also notice when you make a certain page that is in the nav bar
+              the home page both the home and that page are highlighted
+            </p>
+            <img src="images/wp-home-page-nav-bar.png" alt="" />
+            <p>
+              and when you click on home while on the "courses" page the page
+              will be the same which makes the website looks broken so my
+              recommendation is to remove that page from the nav bar or choose
+              the home page one that is not on the navbar
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>bloginfo() vs get_bloginfo()</h3>
+          <p>
+            as far as I understood from the user contributed notes of
+            <a
+              href="https://developer.wordpress.org/reference/functions/bloginfo/#user-contributed-notes"
+            >
+              bloginf docs
+            </a>
+            if you need the value to use in a php variable use the
+            <span class="cb">get_bloginfo()</span> as it returns that value
+            while <span class="cb">bloginf()</span> just echos the value (like
+            console.log()) and if you set it to a variable the variable will be
+            empty
+          </p>
+        </section>
+
+        <section id="tailwind-in-wordpress">
+          <h3>add tailwind to wordpress</h3>
+          <p>
+            steps according to
+            <a href="https://youtu.be/_8iy0Gfl_9E?si=SUWfDaNxBLJ1-NsD">
+              this video
+            </a>
+            and the
+            <a href="https://tailwindcss.com/docs/installation">
+              installation docs
+            </a>
+          </p>
+          <ol>
+            <li>
+              go to your theme folder and either open a powershell window or
+              open it with vs code then open the terminal
+            </li>
+            <li>
+              install tailwind
+              <span class="cb">npm install -D tailwindcss</span> then create
+              tailwind config file <span class="cb"> npx tailwindcss init</span>
+            </li>
+            <li>
+              inside the "tailwind.config.js" put the paths to the files that
+              use tailwind it should look something like that
+              <span class="cb">
+                content:
+                ["./*.{php,html,js}","./template-parts/*.{php,html,js}"]
+              </span>
+              (if you have a template-parts folder of course)
+              <p class="bg-danger-color">
+                just make sure there is no space after the coma in the content
+                array between the two paths as it will cause a warning of "no
+                utility classes detected"
+              </p>
+            </li>
+            <li>
+              create a <span class="cb">src</span> folder and then create
+              <span class="cb">input.css</span> inside of it (you don't have to
+              create the src folder actually as long as you put the right path
+              to the input.css in the
+              <span class="cb">
+                npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+              </span>
+              command)
+            </li>
+            <li>
+              inside the input.css you put
+              <pre class="cb">
+                @tailwind base;
+                @tailwind components;
+                @tailwind utilities;
+              </pre>
+            </li>
+            <li>
+              then make sure your terminal is in the root folder of your theme
+              (not any subfolder in the theme folder) and run
+              <span class="cb">
+                npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+              </span>
+            </li>
+            <li>
+              now we have to include the "output.css" in the style of our theme
+              so he goes to <span class="cb">functinos.php</span> and adds the
+              highlighted line in the function screenshot below (I didn't build
+              the functions.php with elzero yet so I'm not trying this)
+              <img src="images/wp-include-tw-output-css.png" alt="" />
+            </li>
+          </ol>
+        </section>
+      </div>
+    </article>
+    <!-- =============================
+      self notes starts ends
+    ================================== -->
+
+    <!-- =============================
+      solved problems starts
+    ================================== -->
+    <article>
+      <h2 class="main-heading">problems solved</h2>
+      <div class="container">
+        <section>
+          <h3>theme navigation bar doesn't look right</h3>
+          <p>
+            in one theme I was using the links in the navigation bar didn't have
+            space between them they literaly looked lik "homeaboutuscontactus"
+          </p>
+          <p><span class="second-color">the solution</span> was:</p>
+          <ul>
+            <li>
+              I went to the <span class="cb">menus</span> page from the
+              <span class="cb">appearance</span> tab in the left bar in the
+              dashboard
+            </li>
+            <li>opened the <span class="cb">manage locations</span> tab</li>
+            <li>
+              and chose the my main nav bar from the primary dropdown menu
+            </li>
+          </ul>
+          <img src="images/wp-assign-primary-menu.png" alt="" />
+        </section>
+      </div>
+    </article>
+    <!-- =============================
+      solved problems ends
+    ================================== -->
+
+    <!-- =============================
       elzero 2016 course starts
     ================================== -->
     <article class="elzero-2016">
@@ -2145,29 +2314,293 @@
 
         <section>
           <h3>#035 - Step Into Developing Theme</h3>
+          <div>
+            <p>
+              elzero said you should pay very good attention to
+              <a href="https://codex.wordpress.org/Main_Page"
+                >wordpress codex</a
+              >
+            </p>
+            <p>
+              to make a basic theme you have to have some pages (at elzero's
+              they were stuff like style.css, rtl.css, index.php, comments.php,
+              etc...)
+            </p>
+            <p>
+              but when I opend the
+              <a href="https://codex.wordpress.org/Theme_Development">
+                codex: theme development
+              </a>
+              they said files like (header.php, footer.php, widgets.php,
+              index.php, etc...)
+            </p>
+            <p>
+              elzero's codex said that
+              <i
+                >the minimum files to make a theme were style.css and
+                index.php</i
+              >
+              but that doesn't show in my codex plus elzero said it's not really
+              a useful info
+            </p>
+            <p>
+              he also talked about an image that summaryes the relation between
+              pages and said you shouldn't neccessary understand it right now
+              but once you made all these pages it will come handy
+            </p>
+            <img src="images/wp-temp-hierarchy.webp" alt="" />
+          </div>
+          <div>
+            <p>
+              notice that wp has
+              <a
+                href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/"
+              >
+                coding standard
+              </a>
+              in writing
+              <a
+                href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/"
+              >
+                css </a
+              >,
+              <a
+                href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/html/"
+              >
+                html </a
+              >,
+              <a
+                href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/"
+              >
+                javascript </a
+              >, and
+              <a
+                href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/"
+              >
+                php
+              </a>
+              as well as accessability standards. Make you sure you give these a
+              look
+            </p>
+            <p>
+              elzero also explained that these standards are actually an
+              industry standard not just for wp so you better understand them
+              well
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>#036 - Create Theme Directories and Files</h3>
+          <div>
+            <p>to make a new theme of your own</p>
+            <ul>
+              <li>
+                go to <span class="cb">wordpress</span> >
+                <span class="cb">wp-content</span> >
+                <span class="cb">themes</span>
+              </li>
+              <li>make a new folder with the theme name you like</li>
+              <li>
+                <p>inside that folder create 2 files</p>
+                <ul>
+                  <li><span class="cb">style.css</span></li>
+                  <li><span class="cb">index.php</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              at this point if you go to your themes in your dashboard you will
+              find a blank theme with the name you set for the new folder
+            </p>
+            <p class="bg-danger-color">
+              note that you will see a message on the top of your new theme "new
+              version available, update now" if you click on update now it will
+              delete all the files inside the folder of the new theme so don't
+              click on it
+            </p>
+          </div>
+          <div>
+            <p>to include the header inside your new theme:</p>
+            <ul>
+              <li>open index.php</li>
+              <li>
+                <p>
+                  type
+                  <span class="cb">&lt;?php get_header(); ?&gt;</span> which
+                  will load your website logo and tagline
+                </p>
+                <img src="images/wp-new-theme-header.png" alt="" />
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p>
+              to include the footer type
+              <span class="cb">&lt;?php get_footer(); ?&gt;</span>
+            </p>
+            <p class="bg-second-color">
+              note that elzero said you MUST always include the footer even if
+              you didn't have footer of your own, as the footer has all the
+              scripts that wp operates with in it and without you'll have alot
+              of problems with your website
+            </p>
+          </div>
           <p>
-            elzero said you should pay very good attention to
-            <a href="https://codex.wordpress.org/Main_Page">wordpress codex</a>
+            then elzero added a side bar widget using
+            <span class="cb">&lt;?php get_sidebar(); ?&gt;</span>
           </p>
           <p>
-            to make a basic theme you have to have some pages (at elzero's they
-            were stuff like style.css, rtl.css, index.php, comments.php, etc...)
+            and also added searh using
+            <span class="cb">&lt;?php get_search_form(); ?&gt;</span>
           </p>
           <p>
-            but when I opend the
-            <a href="https://codex.wordpress.org/Theme_Development">
-              codex: theme development
-            </a>
-            they said files like (header.php, footer.php, widgets.php,
-            index.php, etc...)
+            and said that you will find all the get() functinos you need in
+            codex
+          </p>
+          <p class="bg-second-color">
+            in case you encoutner a wp function that you don't konw what it does
+            go to <a href="https://wordpress.org/">wordpress.org</a> and search
+            for it
           </p>
           <p>
-            elzero's codex said that
-            <i
-              >the minimum files to make a theme were style.css and index.php</i
-            >
-            but that doesn't show in my codex plus elzero said it's not really a
-            useful info
+            elzero also said to pay a good attention to
+            <span class="cb">user contributed notes</span>
+          </p>
+          <p>
+            also said to always type comments in your code it's not wrong for
+            comments to be long and thorough
+          </p>
+          <img src="images/wp-php-comment.png" alt="" />
+        </section>
+
+        <section>
+          <h3>#037 - Dig Deep Into Bloginfo Function</h3>
+          <div>
+            <p>
+              to add an image to your theme (usually a screen shot of how the
+              theme looks like) you go to your theme folder and place the image
+              there naming it <span class="cb">screenshot</span>
+            </p>
+            <p class="bg-second-color">
+              note the image's name must be screenshot otherwise it won't show
+              up
+            </p>
+            <img src="images/wp-theme-main-image.png" alt="" />
+          </div>
+          <div>
+            <p>
+              elzero talked about a function called
+              <span class="cb">bloginfo({string})</span> where the string can be
+              any of the options I will list below
+            </p>
+            <p>
+              this function is used to display information about the current
+              website
+            </p>
+            <img src="images/wp-bloginfo-options.png" alt="" />
+            <p>
+              there are alot more of options you can find them in the
+              <a
+                href="https://developer.wordpress.org/reference/functions/bloginfo/"
+              >
+                function doc page
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>#038 - Create the Header Php File</h3>
+          <p>
+            he started coding the html boiler plate in a file he created called
+            <span class="cb">header.php</span> in the theme files
+            <span class="cb">
+              except he didn't type the closing tag of &lt;html&gt;
+            </span>
+            and said "of course we won't close the html tag" which I don't konw
+            why
+          </p>
+          <p>
+            the boiler plate is pretty much the same except for some static
+            values he used dynamic values instead
+          </p>
+          <ul class="big-items">
+            <li>
+              <p>
+                instead of &lt;html <span class="cb">lang="en"</span>&gt;
+                attribute in the html tag he used &lt;html &lt;?php
+                <span class="cb">language_attributes(); ?&gt; &gt;</span>
+              </p>
+              <p>
+                this function includes the both the language of the website and
+                the direction of that language
+              </p>
+            </li>
+            <li>
+              <p>
+                instead of
+                <span class="cb">&lt;meta charset='utf-8' /&gt;</span> he used
+                &lt;meta charset='&lt;?php
+                <span class="cb">bloginf('charset')</span>?&gt;' /&gt;
+              </p>
+            </li>
+            <li>
+              inside the title tags he would've used
+              <span class="cb">wp_title()</span> but he said it has some advance
+              in it and at this point if you use it won't echo anything so we
+              will use <span class="cb">bloginf('name')</span> for now
+            </li>
+            <li>
+              <p>
+                then he added what I believe allows the pingback for your posts
+                <span class="cb">
+                  &lt;link rel="pingback" href="&lt;?php bloginf('pingback_url')
+                  ?&gt;" /&gt;
+                </span>
+              </p>
+            </li>
+          </ul>
+          <p>
+            elzero emphasized that you never add the style or the script of the
+            theme by yourself (like &lt;link rel="stylesheet" href="style.css"
+            /&gt;) and that he will show the proper way to add these later
+          </p>
+          <p>
+            then before the <span class="cb">head</span> closing tag you should
+            add <span class="cb">&lt;?php wp_head(); ?&lt;</span> as it includes
+            wp scripts and styles (I think are for dashboard)
+          </p>
+          <p class="bg-second-color">
+            the first thing you will notice when you show your theme that the
+            website title and tagline are not there anymore and that's because
+            the <span class="cb">get_header();</span> in the
+            <span class="cb">index.php</span> calls a default wp header if it
+            doesn't find <span class="cb">header.php</span> but once you create
+            your header.php it includes it instead
+          </p>
+          <p>
+            but notice if you had a missed up header.php the website will be
+            missed up it won't fall back to the dafault wp header
+          </p>
+        </section>
+
+        <section>
+          <h3>#039 - Create the Functions Php File</h3>
+          <p>
+            he created a css, js, fonts folder and added the css, js, fonts of
+            bootstrap and fontawesome (and any other library you gonna use)
+          </p>
+          <p>
+            currently I'm not using bootstrap I'm using tailwind and it's not
+            that straight forward to just download it and find your css, js
+            files so follow the steps in
+            <a href="#tailwind-in-wordpress">taliwind in wordpress</a>
+          </p>
+          <p>
+            he also created <span class="cb">functinos.php</span> where all your functions go including these which call the styles and scripts of your theme
           </p>
         </section>
       </div>
@@ -2176,84 +2609,6 @@
       elzero 2016 course ends
     ================================== -->
 
-    <!-- =============================
-      self notes starts
-    ================================== -->
-    <article class="self-notes">
-      <div class="container">
-        <h2>self notes</h2>
-        <section>
-          <h3>homepage slider</h3>
-          <p>
-            in the
-            <span class="cb">
-              appearance > customize > home page sections > slider section
-            </span>
-            from the left bar of the dashboard you will notice if you enabled
-            the slider section with your default theme it won't appear that's
-            because it shows on the page you set as the home page from
-            <span class="cb">
-              settings > reading > your home page displays > a static page
-            </span>
-          </p>
-          <p>
-            let's say you chos a page called "courses" to be your home page then
-            it will have the slider on it
-          </p>
-          <p class="bg-second-color">
-            but notice if you set your home page to display the
-            <span class="cb">latest posts</span> and then go to the courses page
-            it won't have the slider as it's not a home page anymore
-          </p>
-          <p>
-            also notice when you make a certain page that is in the nav bar the
-            home page both the home and that page are highlighted
-          </p>
-          <img src="images/wp-home-page-nav-bar.png" alt="" />
-          <p>
-            and when you click on home while on the "courses" page the page will
-            be the same which makes the website looks broken so my
-            recommendation is to remove that page from the nav bar or choose the
-            home page one that is not on the navbar
-          </p>
-        </section>
-      </div>
-    </article>
-    <!-- =============================
-      self notes starts ends
-    ================================== -->
-
-    <!-- =============================
-      solved problems starts
-    ================================== -->
-    <article>
-      <h2 class="main-heading">problems solved</h2>
-      <div class="container">
-        <section>
-          <h3>theme navigation bar doesn't look right</h3>
-          <p>
-            in one theme I was using the links in the navigation bar didn't have
-            space between them they literaly looked lik "homeaboutuscontactus"
-          </p>
-          <p><span class="second-color">the solution</span> was:</p>
-          <ul>
-            <li>
-              I went to the <span class="cb">menus</span> page from the
-              <span class="cb">appearance</span> tab in the left bar in the
-              dashboard
-            </li>
-            <li>opened the <span class="cb">manage locations</span> tab</li>
-            <li>
-              and chose the my main nav bar from the primary dropdown menu
-            </li>
-          </ul>
-          <img src="images/wp-assign-primary-menu.png" alt="" />
-        </section>
-      </div>
-    </article>
-    <!-- =============================
-      solved problems ends
-    ================================== -->
     <script src="script.js"></script>
   </body>
 </html>
