@@ -43,10 +43,289 @@
     <article>
       <div class="container">
         <h2 class="main-heading">figma</h2>
+
+        <!-- tips and tricks -->
+        <section>
+          <h3>tips and tricks</h3>
+          <div>
+            <h4>text breaks into lines</h4>
+            <img src="images/figma-text-breaks-into-lines.png" alt="" />
+            <ul>
+              <li>select the text with the type tool</li>
+              <li>
+                <img src="images/figma-text-auto-width.png" alt="" />
+                <p>
+                  you can see that the <span class="cb">fixed width</span> icon
+                  is selected what we want to do is to select the
+                  <span class="cb">auto width</span> which is highlighted by the
+                  red rectangular
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>text extra options</h4>
+            <img src="images/figma-text-settings.png" alt="" />
+          </div>
+
+          <!-- variable colors -->
+          <div>
+            <h4>variable colors</h4>
+            <p>
+              <spna class="second-color">why use variable colors?</spna> simply
+              as it makes it way easier to modify the color scheme of the design
+              saying you have primary and secondary colors you don't have to go
+              change every element that has the changed color by yourself you
+              just changed once it you're ready to go
+            </p>
+            <p>
+              <span class="second-color">how to make a variable color</span>
+            </p>
+            <ol>
+              <li>select any element you want to assign the color to</li>
+              <li>
+                find the <span class="cb">fill</span> in the
+                <span class="cb">design</span> bar on the right
+              </li>
+              <li>
+                click on the four dots on the right of the fill and hit the plus
+                icon
+                <img src="images/figma-variable-color.png" alt="" />
+              </li>
+              <li>
+                type the name and description of the color as instructed in the
+                placeholder
+                <p class="bg-second-color">
+                  notice the plus icon on highlighted by the rose rectangular it
+                  lets you add shades or something like that I didn't experment
+                  with it yet
+                </p>
+              </li>
+            </ol>
+            <p>
+              <span class="second-color">how to use variable colors</span>
+            </p>
+            <ol>
+              <li>
+                after selecting the element you want to assign the color to
+                under fill on the design bar on the right click on the color
+                square to pick a color
+              </li>
+              <li>
+                on the top of the new panel click on
+                <span class="cb">libraries</span> then choose your color
+              </li>
+            </ol>
+            <img src="images/figma-use-variable-colors.png" alt="" />
+          </div>
+        </section>
+
+        <!-- shortcuts -->
         <section>
           <h3>shortcuts</h3>
           <ul class="big-items">
             <li><span class="cb">f</span> for frame tool</li>
+            <li><span class="cb">t</span> for the type tool</li>
+          </ul>
+        </section>
+
+        <!-- concepts to search for -->
+        <section>
+          <h3>concepts to search for</h3>
+          <ul>
+            <li>white space</li>
+            <li>visual hierarchy</li>
+            <li>grouping</li>
+            <li>consistency</li>
+            <li>contrast</li>
+          </ul>
+        </section>
+
+        <!-- show grid -->
+        <section>
+          <h3>show the 12 column layout</h3>
+          <ul>
+            <li>make a frame</li>
+            <li>
+              on the right at the design panel click on
+              <span class="cb">grid layout</span>
+            </li>
+            <li>click on the grid icon on the left of the word "Grid"</li>
+            <li>
+              on right top corner of the opened tab click on the dropdown menu
+              that says grid and choose columns
+            </li>
+            <li>
+              set count to 12 and in the course he set the margin to 140 which
+              is the space on the left and right of the grid so double check if
+              the 140 is the standard
+              <img src="images/figma-column-layout.png" alt="" />
+              <p>
+                and you can show and hide it by clicking the eye icon on the
+                right of "12 columns (auto)" that is under "layout grid"
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- components -->
+        <section>
+          <h3>components</h3>
+          <div>
+            <h4>when to use components</h4>
+            <ul>
+              <li>when making an animated element like a spiner</li>
+              <li>
+                when making an interacting element like button with hover state
+              </li>
+              <li>
+                when repeating the same element with changes like pricing cards
+                or navbar links
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>compenets with repeated elements</h4>
+            <p>
+              it's really important espicially with something like navbar links
+              so when you need to make a change like the color or the casing of
+              the letters you just change the parent component and all of them
+              change instead of you going for one by one (just like classes in
+              css)
+            </p>
+          </div>
+          <div>
+            <h4>how to make a component and varient</h4>
+            <p>
+              lets say we're making a navbar element. You want to make three
+              states
+            </p>
+            <ol>
+              <li>the active state (usually home)</li>
+              <li>the default one</li>
+              <li>and the hover state</li>
+            </ol>
+            <img src="images/figma-component-and-varients.png" alt="" />
+            <ul class="big-items">
+              <li>
+                <p>
+                  the <span class="second-color">the best practice</span> that
+                  you make a seperate component page
+                </p>
+                <p>
+                  to make a new page click on the "page-1" on the right side of
+                  left bar
+                </p>
+                <img src="images/figma-pages.png" alt="" />
+                <p>
+                  here I renamed it to "final design" but in default it says
+                  "page-1"
+                </p>
+                <p>
+                  once you click on it, it will open a list of all the pages you
+                  have click the plus icon to add a page (figma allows 3 pages
+                  per project in the free plan)
+                </p>
+              </li>
+              <li>
+                go to your component page, choose the type tool either from the
+                top bar or by hitting "t" on the keyboard, then type the first
+                navbar link you want which is usually "home"
+              </li>
+              <li>
+                select that element and from the top bar hit the diamond-like
+                icon
+                <img src="images/figma-make-component-icon.png" alt="" />
+              </li>
+              <li>
+                name your component from the right bar under
+                <span class="cb">current varient</span>
+                <img src="images/figma-component-naming.png" alt="" />
+              </li>
+              <li>
+                make varient by selecting the component then in the place of the
+                diamond-like icon you will find a plus icon looks like it when
+                you click that it makes you a new varient, make the changes you
+                want
+              </li>
+              <li>
+                <p>
+                  then to make the hover state make a third varient with the
+                  changes you like then from the right open the
+                  <span class="cb">prototype</span>
+                </p>
+                <img src="images/figma-prototype.png" alt="" />
+                <p>
+                  hit the plus icon from the
+                  <span class="cb">on click</span> dropdown choose
+                  <span class="cb">while hovering</span> then hover over the
+                  default state varient, a small plus icon will show up drag
+                  from the icon then connect to the last varient which is the
+                  hover state
+                </p>
+                <img src="images/figma-smart-animation.png" alt="" />
+                <p>
+                  from the <span class="cb">instant</span> dropdown menu choose
+                  smart animation
+                </p>
+              </li>
+              <li>
+                <p>
+                  now to use the component in the design go to the main design
+                  page from the left bar choose <span class="cb">assests</span>
+                </p>
+                <img src="images/figma-assests.png" alt="" />
+                <p>then drag the component and drop it in the design</p>
+              </li>
+              <li>
+                to choose between the different variations from the right bar
+                under the name of the component (which in our case called
+                nav-item) click on the dropdown menu on the right of "property
+                1" and choose the name or the state you want
+                <img src="images/figma-choose-variation.png" alt="" />
+              </li>
+              <li>
+                <p>
+                  to modify the compenent you don't modify the component instant
+                  in the main design you go to the main component in the
+                  component page and modify that
+                </p>
+                <p class="bg-second-color">
+                  note that in that crash course the instructor made the changes
+                  for the three varients one by one, so I'm not sure if that's
+                  the only way or there's a way to make changes just once and it
+                  applies for the three of them
+                </p>
+              </li>
+              <li>
+                <p>
+                  if you want to test the hover animatino now click on the play
+                  button on the top right of the top bar
+                </p>
+                <img src="images/figma-play-prototype.png" alt="" />
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- building the design -->
+        <section>
+          <h3>building the design</h3>
+          <ul class="big-items">
+            <li>
+              after deploying the navbar links make them in
+              <span class="cb">auto layout</span> as if you don't notice when
+              you change the text of one of the links the space on it's left and
+              right is not right anymore
+            </li>
+            <li>
+              also make the logo and the nav menu in
+              <span class="cb">auto layout</span> and make them a compoenent in
+              case you make different designs for different screens you can
+              easly adjust the space between the logo and the nav menu in
+              narrower screens
+            </li>
           </ul>
         </section>
       </div>
