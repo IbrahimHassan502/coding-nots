@@ -1093,6 +1093,9 @@
               for some reason the method I'm gonna explain worked with me only
               on inkscape and didn't work on figma
             </p>
+            <p>
+              actually I made it in figma, I put the steps after inkscape steps
+            </p>
             <ol>
               <li>start by typing the phrase you want it hand-drawn</li>
               <li>
@@ -1127,8 +1130,26 @@
                 look exactly like the word
               </li>
               <li>
-                in the video he selected the word itself, right click and chose
-                <span class="cb">set clip</span>
+                <p>
+                  select the word and the stroke (or the path), right click and
+                  choos
+                  <span class="cb">set clip</span>
+                </p>
+                <img src="images/inkscape-borken-svg.png" alt="" />
+                <p>
+                  in case the result is like the image above when you clip the
+                  text make sure the stroke is below the text not above
+                </p>
+                <div class="img-container">
+                  <img
+                    src="images/inkscape-hand-writing-svg-stroke-wrong-way.png"
+                    alt=""
+                  />
+                  <img
+                    src="images/inkscape-hand-writing-svg-stroke-right-way.png"
+                    alt=""
+                  />
+                </div>
               </li>
               <li>
                 in the first video in the references it kept guessin the
@@ -1151,6 +1172,70 @@
                 animation propery is <span class="cb">forward</span>
               </li>
             </ol>
+            <p class="bg-second-color">
+              also make sure to follow the curves with multiple points instead
+              of just a line (it animates more realistic)
+            </p>
+            <div class="img-container">
+              <img
+                src="images/inkscape-hand-writing-svg-curves-multi-point.png"
+                alt=""
+              />
+              <img
+                src="images/inkscape-hand-writing-svg-curves-one-line.png"
+                alt=""
+              />
+            </div>
+            <p class="bg-second-color">
+              in the animation you may notice edges at the branching points show
+              early and unnaturally
+            </p>
+            <object data="./images/batchi-svg.svg" type=""></object>
+            <p>
+              that occures when strokes overlab eachothers, and solution for
+              that is to use <span class="cb">node tool</span> to move the
+              strokes away so they barely cover the branching point
+            </p>
+            <div class="img-container">
+              <img
+                src="images/inkscape-hand-writing-svg-overlapping-strokes.png"
+                alt=""
+              />
+              <img
+                src="images/inkscape-hand-writing-svg-stroke-spaced.png"
+                alt=""
+              />
+            </div>
+            <p>as for figma</p>
+            <ol>
+              <li>load the svg in figma</li>
+              <li>
+                use the pen tool to track the text just like inkscape
+                <img src="images/figma-pen-tool.png" alt="" />
+              </li>
+              <li>
+                adjust the size of the storke, set the ends of the stroke to be
+                <span class="cb">round</span> and the joints of the stroke to
+                <span class="cb">round</span> from the stroke settings in the
+                right bar
+                <img src="images/figma-stroke-settings.png" alt="" />
+              </li>
+              <li>
+                when the storke is covering the word select the stroke and the
+                word, right click and choose
+                <span class="cb">use as a mask</span>
+              </li>
+            </ol>
+            <p>
+              as for which is better figma or inkscape I didn't study that yet
+            </p>
+            <p class="bg-second-color">
+              the example "rehani" was an svg with each letter as a seperate
+              path to solve this problem select the letters (paths) and from
+              <span class="cb">path</span> menu in inkscape choose
+              <span class="cb">union</span>
+              <img src="images/inkscape-union-path.png" alt="" />
+            </p>
           </div>
         </section>
 
@@ -1165,9 +1250,17 @@
           <ul>
             <li>open your svg in any software (I use figma)</li>
             <li>
-              group everything you are willing to animate first thing (otherwise
-              if you group things in later frames the animation will be ruined
-              and it will look like it's small pieces being re-arranged)
+              <p>
+                group everything you are willing to animate first thing
+                (otherwise if you group things in later frames the animation
+                will be ruined and it will look like it's small pieces being
+                re-arranged)
+              </p>
+              <p>
+                also if you rename an element or a group in some frames and
+                forgot to rename it in others it will cause a disturbed
+                animation
+              </p>
             </li>
             <li>
               copy the frame, change what you want
@@ -1178,8 +1271,18 @@
               </p>
               <p class="bg-second-color">
                 also notice that lottie doesn't recognize sequinces that are not
-                in frames so if you will make a componnet and use it's varients
+                in frames so if you will make a componet and use it's varients
                 to make the animation change them into frames
+              </p>
+              <p>
+                if you notice that an element you added to the animation (or a
+                frame) doesn't show in lottie try ungrouping that element you
+                added (or the last added element)
+              </p>
+              <p>
+                I didn't get the full grap over the grouping thing with lottie
+                yet but sometimes it works ok when the element is grouped and
+                some other times it doesn't
               </p>
             </li>
             <li>
@@ -1203,6 +1306,12 @@
                   <img src="images/lottie-figma-export.png" alt="" />
                 </li>
               </ol>
+              <p class="bg-second-color">
+                it's better if you first check the animation with the second
+                method after each frame you create just to make sure it works
+                fine on lottie then after the whole sequence is done you can
+                create a prototype to get the timing and the delay right
+              </p>
             </li>
             <li>
               once the animation is exported hit the
