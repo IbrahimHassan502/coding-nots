@@ -922,6 +922,271 @@
     </article>
     <!-- ======== pugjs course  ENDS ======== -->
 
+    <!-- ======== twig starts ======== -->
+    <article class="twig">
+      <div class="container">
+        <h2 class="main-heading">twig</h2>
+        <p>
+          <a href="https://twig.symfony.com/doc/3.x/">documentation</a> in here
+        </p>
+        <section>
+          <h3>installation</h3>
+          <p>
+            first you need to download php you can see that
+            <a href="https://www.youtube.com/watch?v=n04w2SzGr_U">tutorial</a>
+          </p>
+          <ul>
+            <li>
+              go to <a href="https://www.php.net/downloads.php">download php</a>
+              <img src="images/download-php-1.png" alt="" />
+            </li>
+            <li>
+              <img src="images/download-php-2.png" alt="" />
+            </li>
+            <li>unzip the file in a folder</li>
+            <li>
+              name the folder with php- followed by the version something like
+              <span class="cb">php-8.3.8</span>
+            </li>
+            <li>copy the folder and paste it into local disk (c:)</li>
+            <li>enter the folder in the c and copy the file path</li>
+            <li>
+              in the search bar search "edit enviornment variables for your
+              account"
+            </li>
+            <li>
+              you can either change the variables for the current user or for
+              the whole system
+              <img src="images/change-environment-variables.png" alt="" />
+            </li>
+            <li>
+              whatever path you choos click on <span class="cb">path</span> then
+              <span class="cb">edit</span>
+            </li>
+            <li>click new then paste the folder path you copied</li>
+            <li>
+              to check if php is installed open cmd and insert
+              <span class="cb">php --version</span>
+              <p class="second-color">
+                if it says "php" is not defined try restarting or try changing
+                the system path instead of the user path in case you did it for
+                the user
+              </p>
+            </li>
+            <li>
+              then you have to download
+              <a href="https://getcomposer.org/">composer</a> which is A
+              Dependency Manager for PHP (my best guess its like npm for node)
+              <p>
+                to check that it's installed open a new cmd after you install it
+                (note that you have to open new cmd even if you already have one
+                opened) then run <span class="cb">composer</span>
+              </p>
+            </li>
+            <li>
+              finally you open your project folder and run
+              <span class="cb">composer require twig/twig</span> in the
+              <a href="https://twig.symfony.com/doc/3.x/intro.html">docs</a>
+              they instruct to run
+              <span class="cb">composer require "twig/twig:^3.0" </span> but it
+              gave me error that it required php-7. some 7th version and mine
+              was php-8.3.8 and that doesn't satisfy it's requirement so I
+              followed that
+              <a href="https://www.youtube.com/watch?v=SVb0whlghQY">tutroial</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>creating first page</h3>
+          <p>
+            follwoing this
+            <a href="https://www.youtube.com/watch?v=lLweQpE59oU">tutorial</a>
+          </p>
+          <ul>
+            <li>
+              <p>
+                inside the project folder where you installed twig create a
+                folder named views which will contain our templates
+              </p>
+              <p>
+                inside the project folder you should see folder named vendor,
+                composer.json, and composer.lock
+              </p>
+            </li>
+            <li>
+              inside the project folder also create
+              <span class="cb">index.php</span>
+            </li>
+          </ul>
+          now we start the boilerplate for index.php
+          <ul>
+            <li>
+              inside the inedx.php the first thing you want to do is to include
+              <span class="cb">autoload.php</span> which will be in the vendor
+              folder
+              <span class="cb">require 'vendor/autoload.php';</span>
+            </li>
+            <li>
+              then create twig instance
+              <span class="cb">$twig= new Twig_Environment($loader)</span> as
+              you can see it takes a loader as a paramater you don't have to
+              call it loader it's just best practice
+            </li>
+            <li>
+              <p>
+                then let's create the loader (declare it before $twig):
+                <span class="cb">
+                  $loader = new Twig_Loader_Filesystem('views')
+                </span>
+              </p>
+              <p>
+                the instructor mentioned that there're about 4 loaders by
+                default and that you can also make your own
+              </p>
+            </li>
+            <li>
+              now to start rendering a view we go under $twig
+              <pre class="cb">
+                $twig->render('hello.html', array(
+                  'name' => 'Michael',
+                  'age' => '52'
+                ));
+              </pre>
+              the array in the second paramter is the data we want to pass to
+              the view
+            </li>
+            <li>
+              now go ahead and create the hello.html you passed to the render
+              function and you create it inside the
+              <span class="cb">views</span> folder
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h3>
+            docs for
+            <a href="https://twig.symfony.com/doc/3.x/templates.html">
+              twig for template designers
+            </a>
+          </h3>
+          <section>
+            <h4 class="yellow">tips and tricks</h4>
+            <ul>
+              <li>
+                Using double-quoted or single-quoted strings has no impact on
+                performance but string interpolation is only supported in
+                double-quoted strings.
+              </li>
+              <li>Operators (and, or, not) are case sensitive.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="yellow">variables</h4>
+            <ul class="big-items">
+              <li>
+                <h4>code execution</h4>
+                <p>there are two types of brackets to execute code:</p>
+                <ul>
+                  <li>
+                    <span class="cb">{% .... %}</span>: used to execute
+                    statements such as for-loops and if statements
+                  </li>
+                  <li>
+                    <span class="cb">{{ .... }}</span>: used to output the
+                    result of an expression or display a variable's value.
+                  </li>
+                </ul>
+                <p>
+                  the second set of {} are the print statement so it's like
+                  typing js inside of ` ` you first open {} to let the editor
+                  know there's a code to be compiled/evaluated then you either
+                  open % % or {} depeneding on what're about to do
+                </p>
+                <img src="images/twig-brackets.png" alt="" />
+              </li>
+              <li>
+                you can display a proberty of an object
+                <span class="cb">{{ car.color }}</span> or you can use
+                <span class="cb">{{ car['color'] }}</span>
+              </li>
+              <li>
+                <h4>dynamic attributes (properties)</h4>
+                <p>
+                  you can use
+                  <span class="cb">
+                    {{ attribute(yourObj, yourDynamicAttribute) }}
+                  </span>
+                </p>
+                <p>
+                  it's also used to access attributes with special characters
+                  like
+                  <span class="cb">
+                    {{ attribute(yourObj, 'your-special-attribute') }}
+                  </span>
+                </p>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="yellow">Global Variables</h4>
+            <ul>
+              <li>
+                <span class="cb">_self:</span> references the current template
+                name
+              </li>
+              <li>
+                <span class="cb">_context:</span> references the current context
+              </li>
+              <li>
+                <span class="cb">_charset:</span> references the current charset
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h4 class="yellow">setting variables</h4>
+            <p class="cb">{% set foo = 'foo' %}</p>
+            <p class="cb">{% set foo = [1, 2] %}</p>
+            <p class="cb">{% set foo = {'foo': 'bar'} %}</p>
+          </section>
+
+          <section>
+            <h4 class="yellow">filters</h4>
+            <div>
+              <h5 class="yellow">batch</h5>
+              <p>
+                let's say you have a long array of products and you want to put
+                them in the home page in a form of rows with every row
+                containing 3 items
+              </p>
+              <img src="images/twig-filter-batch.png" alt="" />
+              <p>full code in the <a href="">docs</a> and the image below</p>
+              <img src="images/twig-filter-batch-example.png" alt="" />
+            </div>
+            <div>
+              <h5 class="yellow">column</h5>
+              <p>
+                iterates through array of objects returning the value of the
+                entered key
+              </p>
+              <pre class="cb">
+                {% set items = [{ 'fruit' : 'apple'}, {'fruit' : 'orange' }] %}
+
+                {% set fruits = items|column('fruit') %}
+
+                {# fruits now contains ['apple', 'orange'] #}
+              </pre>
+            </div>
+          </section>
+        </section>
+      </div>
+    </article>
+    <!-- ======== twig ENDS ======== -->
+
     <script src="script.js" type="module"></script>
   </body>
 </html>
