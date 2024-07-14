@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/ih-logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>platforms</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="css.html">css</a></li>
+            <li><a href="js.html">JS</a></li>
+            <li><a href="platforms.html">platforms</a></li>
+            <li><a href="building-the-web.html">building the web</a></li>
+            <li><a href="upwork.html">building the web</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <article>
+      <div class="container">
+        <h2 class="main-heading">wordpress</h2>
+        <section>
+          <h2 class="main-heading">intro</h2>
+          <p>
+            wordpress is an open source software which means you can take a
+            version an customize it as you whish
+          </p>
+        </section>
+
+        <section>
+          <div class="container">
+            <h2 class="main-heading">two options</h2>
+            <p>
+              when it comes to making websites on wordpress you have two
+              optoins:
+            </p>
+            <ul class="big-items">
+              <li>
+                <p>
+                  first you can make it on
+                  <a href="https://wordpress.com">wordpress.com</a>
+                  which has the wordpress version setup, updated, secure and
+                  ready to go. which means you don't have to see what are the
+                  security problems and solve them and you don't need to check
+                  for updates. Just pick your plan and go
+                </p>
+                <h3 class="second-heading">disadvantages</h3>
+                <p>
+                  far less customizable compared with the second option which is
+                  taking a version of wordpress on your machine and work it
+                  yourself as at the end of the day in case of
+                  <a href="https://wordpress.com">wordpress.com</a> they manage
+                  the website not you
+                </p>
+              </li>
+              <li>
+                <p>
+                  second option is as mentioned is to download the software from
+                  <a href="https://wordpress.org/download/">
+                    wordpress.org/download
+                  </a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="main-heading">wordpress.org</h2>
+          <p>where you can:</p>
+          <ul>
+            <li>download the software</li>
+            <li>find support</li>
+            <li>read documentation</li>
+            <li>download and upload themes</li>
+            <li>download plugines</li>
+          </ul>
+        </section>
+
+        <!-- =============================
+      documentation starts
+    ================================== -->
+        <section>
+          <h2 class="main-heading">documentaion</h2>
+          <div>
+            <h3>general tips and tricks</h3>
+            <ul class="big-items">
+              <li>
+                <p>
+                  according to
+                  <a
+                    href="https://wordpress.org/documentation/article/first-steps-with-wordpress-block-editor/"
+                  >
+                    first-steps-with-wordpress-block-editor docs
+                  </a>
+                  <i>
+                    categories can be sorted in WordPress in two ways: by name
+                    (alphabetically) or by ID number. As you enter the
+                    categories, they are assigned an ID number. It is difficult
+                    to change this, so if you don't want your categories sorted
+                    alphabetically, enter them in the order you want to see them
+                    presented on the screen.
+                  </i>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- =============================
+      documentation ends
+    ================================== -->
+        <!-- =============================
+      self notes starts
+    ================================== -->
+        <section class="self-notes">
+          <div class="container">
+            <h2>self notes</h2>
+            <div>
+              <h3>homepage slider</h3>
+              <div>
+                <p>
+                  in the
+                  <span class="cb">
+                    appearance > customize > home page sections > slider section
+                  </span>
+                  from the left bar of the dashboard you will notice if you
+                  enabled the slider section with your default theme it won't
+                  appear that's because it shows on the page you set as the home
+                  page from
+                  <span class="cb">
+                    settings > reading > your home page displays > a static page
+                  </span>
+                </p>
+                <p>
+                  let's say you chos a page called "courses" to be your home
+                  page then it will have the slider on it
+                </p>
+                <p class="bg-second-color">
+                  but notice if you set your home page to display the
+                  <span class="cb">latest posts</span> and then go to the
+                  courses page it won't have the slider as it's not a home page
+                  anymore
+                </p>
+                <p>
+                  also notice when you make a certain page that is in the nav
+                  bar the home page both the home and that page are highlighted
+                </p>
+                <img src="images/wp-home-page-nav-bar.png" alt="" />
+                <p>
+                  and when you click on home while on the "courses" page the
+                  page will be the same which makes the website looks broken so
+                  my recommendation is to remove that page from the nav bar or
+                  choose the home page one that is not on the navbar
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>bloginfo() vs get_bloginfo()</h3>
+              <p>
+                as far as I understood from the user contributed notes of
+                <a
+                  href="https://developer.wordpress.org/reference/functions/bloginfo/#user-contributed-notes"
+                >
+                  bloginf docs
+                </a>
+                if you need the value to use in a php variable use the
+                <span class="cb">get_bloginfo()</span> as it returns that value
+                while <span class="cb">bloginf()</span> just echos the value
+                (like console.log()) and if you set it to a variable the
+                variable will be empty
+              </p>
+            </div>
+
+            <div id="tailwind-in-wordpress">
+              <h3>add tailwind to wordpress</h3>
+              <p>
+                steps according to
+                <a href="https://youtu.be/_8iy0Gfl_9E?si=SUWfDaNxBLJ1-NsD">
+                  this video
+                </a>
+                and the
+                <a href="https://tailwindcss.com/docs/installation">
+                  installation docs
+                </a>
+              </p>
+              <ol>
+                <li>
+                  go to your theme folder and either open a powershell window or
+                  open it with vs code then open the terminal
+                </li>
+                <li>
+                  install tailwind
+                  <span class="cb">npm install -D tailwindcss</span> then create
+                  tailwind config file
+                  <span class="cb"> npx tailwindcss init</span>
+                </li>
+                <li>
+                  inside the "tailwind.config.js" put the paths to the files
+                  that use tailwind it should look something like that
+                  <span class="cb">
+                    content:
+                    ["./*.{php,html,js}","./template-parts/*.{php,html,js}"]
+                  </span>
+                  (if you have a template-parts folder of course)
+                  <p class="bg-danger-color">
+                    just make sure there is no space after the coma in the
+                    content array between the two paths as it will cause a
+                    warning of "no utility classes detected"
+                  </p>
+                </li>
+                <li>
+                  create a <span class="cb">src</span> folder and then create
+                  <span class="cb">input.css</span> inside of it (you don't have
+                  to create the src folder actually as long as you put the right
+                  path to the input.css in the
+                  <span class="cb">
+                    npx tailwindcss -i ./src/input.css -o ./src/output.css
+                    --watch
+                  </span>
+                  command)
+                </li>
+                <li>
+                  inside the input.css you put
+                  <pre class="cb">
+                @tailwind base;
+                @tailwind components;
+                @tailwind utilities;
+              </pre
+                  >
+                </li>
+                <li>
+                  then make sure your terminal is in the root folder of your
+                  theme (not any subfolder in the theme folder) and run
+                  <span class="cb">
+                    npx tailwindcss -i ./src/input.css -o ./src/output.css
+                    --watch
+                  </span>
+                </li>
+                <li>
+                  now we have to include the "output.css" in the style of our
+                  theme so he goes to <span class="cb">functinos.php</span> and
+                  adds the highlighted line in the function screenshot below (I
+                  didn't build the functions.php with elzero yet so I'm not
+                  trying this)
+                  <img src="images/wp-include-tw-output-css.png" alt="" />
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+        <!-- =============================
+      self notes starts ends
+    ================================== -->
+
+        <!-- =============================
+      solved problems starts
+    ================================== -->
+        <section>
+          <h2 class="main-heading">problems solved</h2>
+          <div class="container">
+            <div>
+              <h3>theme navigation bar doesn't look right</h3>
+              <p>
+                in one theme I was using the links in the navigation bar didn't
+                have space between them they literaly looked lik
+                "homeaboutuscontactus"
+              </p>
+              <p><span class="second-color">the solution</span> was:</p>
+              <ul>
+                <li>
+                  I went to the <span class="cb">menus</span> page from the
+                  <span class="cb">appearance</span> tab in the left bar in the
+                  dashboard
+                </li>
+                <li>opened the <span class="cb">manage locations</span> tab</li>
+                <li>
+                  and chose the my main nav bar from the primary dropdown menu
+                </li>
+              </ul>
+              <img src="images/wp-assign-primary-menu.png" alt="" />
+            </div>
+          </div>
+        </section>
+        <!-- =============================
+      solved problems ends
+    ================================== -->
+
+        <!-- =============================
+      elzero 2016 course starts
+    ================================== -->
+        <section class="elzero-2016">
+          <div class="container">
+            <h2 class="main-heading">elzero 2016</h2>
+            <p class="bg-second-color">
+              note: i'm taking this course 14/11/2022
+            </p>
+
+            <div>
+              <h3>05 - Setup WordPress On Localhost</h3>
+              <ol>
+                <li>
+                  first you need to download local server like
+                  <a href="https://www.apachefriends.org/download.html"
+                    >XAMPP</a
+                  >
+                </li>
+                <li>
+                  <p>after install is finished start both Apache and MySQL</p>
+                  <p class="bg-second-color">
+                    in the setup file of xampp wherever you chose it find
+                    <b>htdocs</b> this is the folder where you put the websites
+                    you want on the local server and it's the folder opened when
+                    you type <b>Localhost</b> in the browser
+                  </p>
+                </li>
+                <li>
+                  <a href="https://wordpress.org/download/"
+                    >download wordpress</a
+                  >. not a click bait 😅
+                </li>
+                <li>
+                  after un-zipping the file copy the wordpress folder (which
+                  came from the zipped file) and past it in the
+                  <b>htdocs</b> folder
+                </li>
+                <li>
+                  go to
+                  <a href="http://localhost/wordpress">localhost/wordpress</a>
+                  <p>
+                    after you finish the install that link will lead you to the
+                    actual website, if you want to go to the adming panel got to
+                    <a href="http://localhost/wordpress/wp-admin"
+                      >http://localhost/wordpress/wp-admin/</a
+                    >
+                  </p>
+                </li>
+                <li>choose the language</li>
+                <li>
+                  <ul>
+                    <li>
+                      <p>database name: wordpress</p>
+                      <p class="bg-second-color">
+                        notice that you should create database with the name
+                        wordpress on your machine
+                      </p>
+                      <p>
+                        to create the database (in course elzero said go to
+                        localhost/phpMyAdmin but I fuond it outsite of htdocs
+                        (the localhost) so I simply copied and pasted it
+                      </p>
+                      <p>then go to database tap</p>
+                      <img src="images/phpMyAdmin-database.png" alt="" />
+                      <p>type the name you want</p>
+                      <p>choose utf8_general_ci for encription</p>
+                      <p class="bg-second-color">
+                        phpMyAdmin by default makes the user name root and no
+                        password (thats' why we put the same info in wordpress
+                        setup )
+                      </p>
+                      <p>
+                        to see the database user's in phpMyAdmin and their
+                        permissisons go to privilleges
+                      </p>
+                      <img src="images/phpMyAdmin-privilleges.png" alt="" />
+                    </li>
+                    <li>username: root</li>
+                    <li>password: leave it empty</li>
+                    <li>
+                      database host: 'localhost' (127.0.0.1 is the localhost) so
+                      you can type it as 'localhost' or as numbers as you wish
+                      <img src="images/phpMyAdmin-database-host.png" alt="" />
+                    </li>
+                    <li>
+                      prefix: leave it as: wp_ (wordpress uses this prefix
+                      before the name of its files in case of another files will
+                      be added from different wordpress or different party with
+                      the same file name they don't mix up)
+                    </li>
+                    <li>hit submit then 'run the install'</li>
+                    <li>type the site title you like</li>
+                    <li>
+                      type the username <b>of the website</b> he typed a
+                      different name than root so it's probably different
+                      username of the database username
+                    </li>
+                    <li>whatever the password you like</li>
+                    <li>
+                      if the password is weak and you like that way check the
+                      confirm password checkbox
+                    </li>
+                    <li>
+                      type in the email you want to use for recovery cases
+                    </li>
+                    <li>
+                      search engine visability: in case you
+                      <b>don't want</b> your site to be archived by search
+                      engines (no one can get to the website unless they have
+                      the link as it won't be visible in the search) then check
+                      it. if you want your website to be public just leave it
+                      unchecked
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <p>
+                he explained something about making another database and using
+                the encription in the image below instead of the utf8_general_ci
+                in case he wants to make another wordpress installation bu it
+                didn't really understand wtf he wants
+              </p>
+              <img src="images/phpMyAdmin-database-encription.png" alt="" />
+            </div>
+
+            <div>
+              <h3>06 - Setup WordPress On DirectAdmin</h3>
+              <p>
+                explained how to install wordpress if you have a domain and
+                hosting, just like local wordpress install but on the server you
+                bought
+              </p>
+              <p>
+                also explained how to upload the files and manage them using
+                <a href="https://filezilla-project.org/">filezilla ftp</a>
+              </p>
+              <p>
+                didn't find it suitable for me in the mean time so didn't take
+                notes
+              </p>
+            </div>
+
+            <div>
+              <h3>07 - Setup WordPress on cPanel Website</h3>
+              <p>
+                same as the previous lesson but using "cPanel" instead of
+                "DirectAdmin"
+              </p>
+            </div>
+
+            <div>
+              <h3>08 - WordPress in Your Language</h3>
+              <p>
+                to change the language simply go to sittings and you will find
+                'site language' showing you the installed and available
+                languages
+              </p>
+              <p>choose the language then hit save changes at the page</p>
+              <p>
+                you can find the installed language files by going to the
+                wordpress folder inside htdocs ===> wp-content ===> languages
+              </p>
+              <p class="bg-second-color">
+                notice that at first the folder languages won't exist unless you
+                change the site language one time at lease
+              </p>
+              <p class="bg-second-color">
+                also notice that here we're changing the panel and controls
+                language not the site content language (this is not how you make
+                multilangual website)
+              </p>
+              <p>
+                elzero went on and explained how you can make your own language
+                files for wordpress and how to contribute in the translation
+                projects but I found the info irrelvant so didn't take notes
+                about it
+              </p>
+            </div>
+
+            <div>
+              <h3>09 - Dig Deep Into WordPress Database</h3>
+              <p>
+                talking about each tabel in the wp database in case you needed
+                to do major changes like changing a certain phrase or link that
+                exists in hundreds of posts or in case you got hacked and don't
+                have the admin username and password. From the database you can
+                enter on admins and change the email and password
+              </p>
+              <ul class="big-items">
+                <li>
+                  wp_commentmeta & wp_comments: are about the comments the
+                  visitors leave on the site posts
+                </li>
+                <li>
+                  wp_links: contains all the external links (elzero said it was
+                  about comptability and should be removed in the future and
+                  today is 17/11/2022 and it still here)
+                </li>
+                <li>
+                  wp_options: contains all the chosen settings like the blog
+                  name, the admin's email, etc...
+                </li>
+                <li>wp_posts: contains all the articles</li>
+                <li>wp_postmeta: I don't fully understand it now</li>
+                <li>wp_terms: contains the categories and tags of the posts</li>
+                <li>
+                  wp_term_relationships: contains the relations between the
+                  database tables linking tags with posts and categories
+                </li>
+                <li>
+                  wp_term_taxonomy: contains the descreption of each catergory
+                </li>
+                <li>
+                  wp_users: contains all website users (I guess, still not sure
+                  if it's about just admins or all users)
+                </li>
+                <li>wp_usermeta: contains all info about all users</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>#10 - Tips to Secure Your WordPress Website</h3>
+              <p>
+                before securing wordpress you have to secure your machine (he
+                won't talk about securing your machine he will talk about
+                wordpress)
+              </p>
+              <p>quick tips to secure your wordpress site:</p>
+              <ul>
+                <li>
+                  <p>
+                    first way is to secure the dashboard: one way to get to the
+                    dashboard is to type in the link of your wordpress site
+                    (either locally so you go to localhost/wordpress or hosted
+                    so you type the url to the domain you purchased) followed by
+                    <span class="cb">/wp-admin</span>
+                  </p>
+                  <p>
+                    you can make a firewall on any folder you have on your
+                    website (including the wp-admin) to make a firewall:
+                  </p>
+                  <ol>
+                    <li>elzero went to <span class="cb">direct admin</span></li>
+                    <li>
+                      chose <span class="cb">password protected directory</span>
+                      <img
+                        src="images/wp-direct-admin-password-portected-directory.png"
+                        alt=""
+                      />
+                    </li>
+                    <li>
+                      chose
+                      <span class="cb"
+                        >find a directory to password protect</span
+                      >
+                    </li>
+                    <li>chose <span class="cb">wordpress</span></li>
+                    <li>chose <span class="cb">wp-admin</span></li>
+                    <li>
+                      in the
+                      <span class="cb">protected directory prompt</span> you
+                      type the message you want it browsed on the firewall (like
+                      staff only or whatever)
+                    </li>
+                    <li>
+                      type in the user who can access through the fire wall
+                    </li>
+                    <li>type in the password</li>
+                    <li>
+                      check the
+                      <span class="cb">protection enable</span> checkbox before
+                      the <span class="cb">save</span> button
+                    </li>
+                    <li>hit <span class="cb">save</span></li>
+                  </ol>
+                  <p>
+                    now when you try to access the dashboard you'll be asked to
+                    enter the username and password of the fire wall (to be able
+                    after that to enter the username and password to the actual
+                    site)
+                  </p>
+                  <img src="images/wp-dashboard-firewall.png" alt="" />
+                  <p class="bg-second-color">
+                    now notice if you type the website link followed by
+                    <span class="cb">/wp-login.php</span> it will open the
+                    dashboard login page just fine without authintication or
+                    firewall
+                  </p>
+                  <p>
+                    to solve the previous problem you can add a rename plugin to
+                    your website that will rename the
+                    <span class="cb">wp-login.php</span> for you so the hacker
+                    can't access it
+                  </p>
+                  <p>
+                    in the video elzero just googled
+                    <span class="cb">wp-login rename</span> and said that you
+                    can find the plugin that suites you best
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    another tip is to always make sure to update the wordpress
+                    version (from the dashboard) as they continously patch
+                    loopholes
+                  </p>
+                  <p>
+                    also you can enable auto update but be aware is it may break
+                    some stuff down in some customized wordpress versions
+                  </p>
+                  <p>
+                    just google wp auto update and you will find some codes to
+                    add to the wp-config file (he illustrated how to auto update
+                    I just don't have energy to type)
+                  </p>
+                </li>
+                <li>
+                  only use the absolute neccessary plugins don't take the easy
+                  route and make any small thing using plugin just because you
+                  don't want to search how it's done
+                </li>
+                <li>
+                  don't use cracked or nulled plugins as it will probably
+                  contain viruses
+                </li>
+                <li>
+                  <p>
+                    make sure your password to access the site is hard to crack
+                  </p>
+                  <p>
+                    you can use a password generator like
+                    <a href="https://my.norton.com/extspa/passwordmanager">
+                      identity safe
+                    </a>
+                    from norton
+                  </p>
+                  <p>
+                    and with such hard randomly generated password you might
+                    want to use a passowrd saving application like
+                    <a href="https://www.roboform.com/"> roboform </a> or you
+                    can just count on <span class="cb">google password</span>
+                  </p>
+                </li>
+                <li>
+                  you can use a plugin to make a
+                  <span class="cb">two step verfication</span> or 2fa so when
+                  someone tries to access the website it won't let him (with the
+                  right username and password) it won't let him untill you verfy
+                  the login from your phone
+                </li>
+                <li>
+                  make sure you're with a good hosting company so the hacker
+                  doesn't hack you from the server
+                </li>
+                <li>
+                  make sure you're using the right file permissions (he
+                  illustrated them but I didn't like to type them)
+                </li>
+                <li>
+                  change the database prefix (wp_) to a hard complicated prefix
+                  so when the hacker tries to inject tables in the database and
+                  he can't know the right prefix he simply won't be able to
+                  inject these tables or they won't be effective
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>#11 - WordPress Dashboard</h3>
+              <div>
+                for more info you can visit the
+                <a
+                  href="https://wordpress.org/documentation/article/administration-screens/"
+                >
+                  wp dashboard docs
+                </a>
+              </div>
+              <div>
+                <h4>site health status panel</h4>
+                <p>
+                  Overview of current state of your website and if any parts of
+                  it needs improvements.
+                </p>
+              </div>
+              <div>
+                <h4>at glance panel</h4>
+                <p>
+                  shows the number of posts, pages, and comments, and you can
+                  access them by clicking on them
+                </p>
+                <p>
+                  also at the bottom you find "WordPress 6.4.1 running Twenty
+                  Twenty-Four theme."
+                </p>
+                <p>
+                  you can click on the theme name "Twenty Twenty-Four" to change
+                  it
+                </p>
+              </div>
+              <div>
+                <h4>change theme (not panel)</h4>
+                <ul>
+                  <li>
+                    either from the bottom of
+                    <span class="cb">at glance</span> panel
+                  </li>
+                  <li>
+                    or from the <span class="cb">appearance</span> tab in the
+                    left toolbar
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>quick draft panel</h4>
+                <p>
+                  Allows you to create a new post and save it as a draft. Also
+                  displays links to the 5 most recent draft posts you've
+                  started.
+                </p>
+              </div>
+              <div>
+                <h4>activity panel</h4>
+                <p>
+                  Shows the upcoming scheduled posts, recently published posts,
+                  and the most recent comments on your posts and allows you to
+                  moderate them.
+                </p>
+              </div>
+              <div>
+                <h4>wordpress events and news panel</h4>
+                <p>shows the latest news of wordpress</p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#12 - WordPress Toolbar</h3>
+              <div>
+                <h4>the "w" icon</h4>
+                <p>when you hover over it, it shows you the following links:</p>
+                <ul>
+                  <li>
+                    about wordpress: where you can now the about the latest
+                    version and what's new
+                  </li>
+                  <li>
+                    get involved: where you can contribute in developing
+                    wordpress
+                    <p>
+                      they have a no-code contribution and a code based
+                      contribution
+                    </p>
+                  </li>
+                  <li>wordpress.org</li>
+                  <li>documentation</li>
+                  <li>learn wordpress</li>
+                  <li>support</li>
+                  <li>feedback</li>
+                </ul>
+              </div>
+              <div>
+                <h4>the site name</h4>
+                <p>
+                  right after the "w" logo you will the see your wordpress
+                  website name which takes you to the actual website
+                </p>
+              </div>
+              <div>
+                <h4>comments icon</h4>
+                <p>
+                  it takes you to the comments page in which is all the comments
+                  on your page and options to control them
+                </p>
+              </div>
+              <div>
+                <h4>new icon</h4>
+                <p>
+                  when you hover over it, it gives you the option to add a new:
+                </p>
+                <ul>
+                  <li>post</li>
+                  <li>media</li>
+                  <li>page</li>
+                  <li>user</li>
+                </ul>
+              </div>
+              <p>
+                when you are in the actual website you find a new item in the
+                toolbar the "edit site" which allows you to edit the various
+                aspects of the site like the content, maybe delete something, or
+                change the colors or dimensions of an item
+              </p>
+            </div>
+
+            <div>
+              <h3>#13 - WordPress Categories</h3>
+              <div>
+                <p>
+                  to go to category page: from the
+                  <span class="cb">left bar > posts >categoreis</span>
+                </p>
+                <p>you will find the page devided into to sections:</p>
+                <ul>
+                  <li>the left one for adding the category</li>
+                  <li>the right one for controlling categories</li>
+                </ul>
+              </div>
+
+              <div>
+                <p>as for the left one you will find:</p>
+                <ul>
+                  <li>
+                    name: where you enter the name of the cateogy (the name can
+                    be long like learn html from scratch)
+                  </li>
+                  <li>
+                    slug: enter a short word or dashed word as it will be used
+                    by search engines like (html, or learn-html) just keep it
+                    search engine friendly
+                  </li>
+                  <li>
+                    parent categoy: use it in case you're adding a sub-category,
+                    when you click it it will show the available categories
+                    <p>if you're adding a main category just leave it</p>
+                  </li>
+                  <li>
+                    descreption: where you add the description for your category
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <p>
+                  in the right one you will find a table that is devided into:
+                  the category name, decription, slug, and the count of articles
+                  that belong to that category
+                </p>
+                <p>
+                  when you hover over the category name you'll see four options:
+                </p>
+                <ul>
+                  <li>
+                    edit: it takes you to the edit page where you can modify
+                    everthing about the category just like you were adding it
+                    (the name, the slug, the parent category, the description)
+                  </li>
+                  <li>
+                    quick edit: allows you to edit just the name and slug of the
+                    category while in the same page without leaving
+                  </li>
+                  <li>
+                    if you want delete bunch of categories alltogether you can
+                    check the check box at the left of the category name and at
+                    the very bottom or the very top of the table you will find a
+                    <span class="cb">bulk actions</span> drop down where you can
+                    find "delete" then hit "apply" right at the right of the
+                    dropdown
+                  </li>
+                </ul>
+              </div>
+              <div>
+                after the table on the right you will find a pragraph telling
+                you that:
+                <p class="bg-second-color">
+                  notice: Deleting a category does not delete the posts in that
+                  category. Instead, posts that were only assigned to the
+                  deleted category are set to the default category
+                  Uncategorized. The default category cannot be deleted.
+                </p>
+                <p>
+                  after that paragraph you find another one telling you that
+                  categories can be converted into tags using "category to tag
+                  converter" which is a link you can click and it will take you
+                  to the import page that is in the tools in the left bar of the
+                  dashboard
+                </p>
+              </div>
+              <p>
+                also notice if you delete a category that was a parent to
+                sub-categories the laters are automatically converted into main
+                categories
+              </p>
+            </div>
+
+            <div>
+              <h3>#14 - WordPress Posts - Editor & Overview</h3>
+              <div>
+                <p>to make a new post</p>
+                <ul>
+                  <li>either from the plus icon in the top toolbar</li>
+                  <li>or from the posts tab in the left navbar in dashboard</li>
+                </ul>
+              </div>
+              <div>
+                <h4>new post page structure</h4>
+                <p>at the top of the page you'll find a toolbar that has:</p>
+                <ul>
+                  <li>the "w" icon that takes you back to the dashboard</li>
+                  <li>
+                    <p>
+                      plus icon: which opens the blocks,pattern, and media panel
+                      on the left wher you can choose what to add in the current
+                      place of the article you're at in the moment
+                    </p>
+                    <p>
+                      you can add paragraph, heading, list, image, and alot more
+                      options
+                    </p>
+                  </li>
+                  <li>edit (pen) icon: I don't know what it does yet</li>
+                  <li>undo and redo buttons</li>
+                  <li>
+                    <ul>
+                      <li>
+                        list view: document overview which opens a list on the
+                        left where you can see all the elements of the article
+                        (something like the layer tab in figma or webflow)
+                      </li>
+                      <li>
+                        outline: the number of characters, words, time to read,
+                        and the heading structure
+                      </li>
+                      <li>
+                        on the right of the tool bar you'll find the
+                        <span class="cb">save</span> button, sometimes wordpress
+                        auto saves then you'll see a check icon with "saved"
+                        beside it
+                      </li>
+                      <li>
+                        a laptop icon which is preview in different screen icon
+                      </li>
+                      <li>publish button</li>
+                      <li>
+                        settings panel
+                        <ul>
+                          <li>
+                            post: where you can set the visability, publish
+                            time, template, category, tag and other options of
+                            the post
+                          </li>
+                          <li>
+                            block: where you can change options of the selected
+                            block like the text color and background color for
+                            paragraph blocks
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <p>
+                          three dots: where you can set the prefernces of the
+                          post page like showing the main left navbar of the
+                          dashboard or not, showing the top toolbar or not and
+                          many other optoins
+                        </p>
+                        <p class="bg-second-color">
+                          but one of the most important options is
+                          <span class="cb">visual editor</span> or
+                          <span class="cb">code editor</span> which switch
+                          between the normal user friendly user interface which
+                          is just the words infront of you and the control icons
+                          or you can see the actual code
+                        </p>
+                        <img src="images/wp-visual-editor.png" alt="" />
+                        <img src="images/wp-code-editor.png" alt="" />
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3>#15 - WordPress Posts - Publish Options</h3>
+              <div>
+                <h4>revisions</h4>
+                <p>
+                  when you make several modification on a draft wordpress saves
+                  every version of the draft just like github
+                </p>
+                <img src="images/wp-revisions.png" alt="" />
+                <p>
+                  when you click on it it will show you a comparison between the
+                  latest version (on the right) and the previous version (on the
+                  left) with a plus icon beside the added lines, and a minus
+                  icon beside the removed lines
+                </p>
+                <p>
+                  you can go from a versino to another using the slider at the
+                  top of the page with every line in the slider representing a
+                  version
+                </p>
+                <img src="images/wp-version-slider.png" alt="" />
+                <p>
+                  also you can compare between any two versions by checking the
+                  "compare any two versions" checkbox on the right of the slider
+                </p>
+                <p>you can restore any revision you want</p>
+                <img src="images/wp-restore-revision.png" alt="" />
+                <p class="bg-second-color">
+                  it's a little annoying that wordpress compares versions in the
+                  code status not in the visual one so try to search how to make
+                  the comparison in the visual editor or status
+                </p>
+              </div>
+              <div>
+                <h4>article status</h4>
+                <p>
+                  the default status is <span class="cb">draft</span> if you're
+                  done and want it to be reviewed by one of your team you can
+                  change it's status to
+                  <span class="cb">pending review</span> by checking the
+                  checkbox in the settings panel
+                </p>
+                <img src="images/wp-pending-review.png" alt="" />
+                <p>
+                  then it will be added to the bending tab in the posts page
+                </p>
+                <img src="images/wp-pending-tab.png" alt="" />
+              </div>
+              <div>
+                <h4>preview article</h4>
+                <img src="images/wp-preview-article.png" alt="" />
+              </div>
+              <div>
+                <h4>visability</h4>
+                <ul>
+                  <li>public</li>
+                  <li>
+                    password protected: the user has to enter the passowrd you
+                    set to see the article
+                  </li>
+                  <li>private: just like the only-me posts on facebook</li>
+                  <li>
+                    notice that other admins can still see the private posts
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>publish options</h4>
+                <p>you can either leave it as "immediately" or schedule it</p>
+                <img src="images/wp-publish-options.png" alt="" />
+                <p>obvously the schedule time is based on your timezone</p>
+                <p>
+                  funny enough I found out that mytime zone was set to utc+0 and
+                  my actual one is utc+2
+                </p>
+                <img src="images/wp-timezone.png" alt="" />
+                <p>
+                  you can either choose your country by the name or you can
+                  choose the timezone by the numbers
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#16 - WordPress Post Format</h3>
+              <p>
+                according to
+                <a
+                  href="https://developer.wordpress.org/themes/functionality/post-formats/"
+                >
+                  wp docs
+                </a>
+                some themes support post format features and others don't
+              </p>
+              <p>
+                from my exploration the post option panel on the right isn't
+                affected by the theme (I guess) and for some reason I can't see
+                the post format dropdown
+              </p>
+              <p>
+                and when I watched a
+                <a href="https://youtu.be/qzKoFZtnRqo?si=0KYIJ5b4sQRzGmgv">
+                  youtube video
+                </a>
+                from earlier this year he had it
+              </p>
+              <img src="images/wp-post-format.png" alt="" />
+              <p>the below image is from my pc</p>
+              <img src="images/wp-post-format-not-found.png" alt="" />
+              <p>
+                also I watched another
+                <a href="https://youtu.be/MwkZiw9JaKM?si=jP_0TkDeJmBwiYMu">
+                  youtube viedo
+                </a>
+                that guided me on how to change the default post format
+                (settings > writing > Default Post Format) and that one I found
+                so the feature is not removed from wp and I got to figure out a
+                way to find it in the post page
+              </p>
+              <img src="images/wp-default-post-format.png" alt="" />
+            </div>
+
+            <div>
+              <h3>#17 - WordPress Categories vs Tags</h3>
+              <div>
+                <p>
+                  the best way to understand the difference is with examples
+                </p>
+                <p>an example of a category is html, css, wordpress, etc...</p>
+                <p>and an example of a tag is news, tips&tricks, functions</p>
+                <p>
+                  so you can find the "news" tag in all the sections, in another
+                  word if you click on "news" it will show you all the news in
+                  all categories
+                </p>
+                <p>
+                  sometimes a post can belong to more than one category like
+                  "how to build that in html and css" that belongs to both html
+                  and css categores and you can specify more than one category
+                  in wordpress when you're making the post
+                </p>
+                <img
+                  src="images/wp-post-anatomy.png"
+                  alt="wordpress post anatomy"
+                />
+                <p>note that the cateogries and the tags are clickable</p>
+              </div>
+              <div>
+                <p>
+                  when you go to the tag page (from posts on the left bar) you
+                  will see "count" column in the tags table showing you how many
+                  times that tag was used
+                </p>
+                <p>
+                  and if you click on the number it will show you a table of all
+                  the posts containing that tag
+                </p>
+                <img src="images/wp-tags.png" alt="wordpress tag table" />
+              </div>
+            </div>
+
+            <div>
+              <h3>#18 - WordPress Screen Options</h3>
+              <div>
+                <p>
+                  in the main dashboard you can show/hide the panels you want
+                  from the
+                  <span class="cb">screen options</span> at the top right of the
+                  screen
+                </p>
+                <img
+                  src="images/wp-screen-options-closed.png"
+                  alt="wordpress dashboard screen options"
+                />
+                <p class="bg-second-color">
+                  note that there are different screen options for every tab in
+                  the left bar, which means the options for the dashboard for
+                  example is different from the options of the posts and so on
+                </p>
+                <p class="bg-second-color">
+                  even the options in the adding new post page are different
+                  from those in post table page
+                </p>
+              </div>
+              <div>
+                <p>
+                  in the post page there is
+                  <span class="cb">view mode</span> option
+                </p>
+                <ul>
+                  <li>the compact one just shows you the title of the post</li>
+                  <li>
+                    while the extended view shows you "excerpt" of the post
+                    beneath the post title which we will show how to set in a
+                    minute but in case it's not set it just shows you the
+                    content of the post
+                  </li>
+                </ul>
+                <img
+                  src="images/wp-post-view-mode.png"
+                  alt="wordpress post page with comapct view mode"
+                />
+                <img
+                  src="images/wp-post-extended-view-mode.png"
+                  alt="wordpress post page with extended view mode"
+                />
+              </div>
+              <div>
+                <p>
+                  so elzero use the screen options in the add post page to add
+                  the "excerpt" and to set the "discussion" which both we will
+                  explain but apparently in that version I'm working on (or in
+                  the theme I'm not sure) there are no screen options so the two
+                  options I just mentioned will be found in the settings bar on
+                  the right at the very bottom
+                </p>
+                <img
+                  src="images/wp-excerpt-and-discussion.png"
+                  alt="excerpt and discussion place in the add post page"
+                />
+                <p>
+                  as for the excerpt if you open it, it will show you a text
+                  area to type the excerpt you want for the post
+                </p>
+                <p>the discussion panel contains to options</p>
+                <ul>
+                  <li>allow comments</li>
+                  <li>
+                    pingbacks&amp;trackbacks: if checked it sends you a
+                    notification whenever another blog puts a link to that post
+                    as something like reference, if you allow the "bingback" it
+                    shows at the comments of that post as the text of the other
+                    post with a link to, of course if you deni it it won't show
+                  </li>
+                </ul>
+                <p class="bg-second-color">
+                  elzero also showed option of adding link to another post as a
+                  reference but I just can't find that
+                </p>
+                <p>
+                  from what I understood from short searching whenever you put a
+                  link to a wordpress post of another blog wordpress
+                  automatically sends them notification if they enable the
+                  bingbacks on that post
+                </p>
+                <p>
+                  to
+                  <span class="second-color">globally disable bingbacks</span>
+                  go to settings > discussion > in the "default post settings"
+                  section uncheck "Allow link notifications from other blogs
+                  (pingbacks and trackbacks) on new posts" and from the name it
+                  disables that option for future posts not the already posted
+                  ones
+                </p>
+              </div>
+              <div>
+                <p>
+                  if you go to the post page, selected multiple posts, and from
+                  the
+                  <span class="cb">bluk action</span> drop down chose
+                  <span class="cb">edit</span> then hit apply it will show you
+                  the options you can do to these posts like adding them all to
+                  a category (at that case each post will be in his original
+                  categories plus that category or categories you chose) or
+                  maybe move them all to trash, change their dates, just explore
+                  these options
+                </p>
+                <img src="images/wp-post-bulk-action.png" alt="" />
+              </div>
+            </div>
+
+            <div>
+              <h3>#19 - Featured Image and Permissions</h3>
+              <p>the featured image is the main image of the post</p>
+              <img src="images/wp-featured-image-example.png" alt="" />
+              <p>
+                now you can have as many images inside of the post but only the
+                featured image is gonna be showed as the image of the post
+              </p>
+              <p>
+                elzero spoke about a problem that you might encounter which is
+                that wordpress is unable to upload the image
+              </p>
+              <p>
+                that problem is due to the wordpress not having the premission
+                to write in the <span class="cb">wp-content</span> folder
+                (problem from the hosting company)
+              </p>
+              <p>
+                to solve that problem you go to the ftp program you're using
+                (the program showing you the wordpress folders on the server) >
+                right click on <span class="cb">wp-conetent</span> > premissions
+                it will show you the dialouge in the below image
+              </p>
+              <img src="images/wp-premissions.png" alt="" />
+              <p>these premissions are the right ones</p>
+              <p>
+                as for the number in the
+                <span class="cb">numeric value</span> field (775):
+              </p>
+              <ul>
+                <li>775 => public can't right</li>
+                <li>777 => public can right</li>
+                <li>755 => neither public nor group can right</li>
+                <li>555 => no one can right</li>
+              </ul>
+              <p>
+                I didn't search in the difference between the owner, the group,
+                and the public but from what I understood from elzero the owner
+                is simply you, the group is you, wordpress, filezilla and any
+                software you're using, and the public are just the users of the
+                website
+              </p>
+              <p>
+                also you will find all your website images inside that
+                <span class="cb">wp-content</span> in a folder called
+                <span class="cb">uploads</span>
+              </p>
+            </div>
+
+            <div>
+              <h3>#20 - Media and How to Attach Images</h3>
+              <p>
+                in the media page (from the left bar) you can find all the
+                images, videos, etc... you uploaded to the website you can also
+                upload media straight to that page to add them later in your
+                posts
+              </p>
+              <img src="images/wp-media.png" alt="" />
+              <ul>
+                <i>
+                  if you change the view mode (between the 2 icons highilghted
+                  by the pink rectangular) to the list mode you can see details
+                  like where the image is used (if attached) or if its just
+                  unuttached
+                </i>
+                <li>
+                  you can use the filter (all media items dropdown) to give you
+                  better control like you can choose to show only the unattached
+                  media and delete all of them (you have to hit the
+                  <span class="cb">filter</span> button so the filter you chose
+                  is applied)
+                </li>
+                <li>
+                  you can also distribute your media by
+                  <ol>
+                    <li>
+                      <p>
+                        attaching the media to a certain post (attach > choose
+                        the post/s you want)
+                      </p>
+                      <img src="images/wp-media-attach.png" alt="" />
+                    </li>
+                    <li>
+                      go to the post you attached it to (the image won't be
+                      shown yet)
+                    </li>
+                    <li>
+                      <p>
+                        choose to add a gallery (note a gallery not an image)
+                      </p>
+                      <img src="images/wp-post-gallery.png" alt="" />
+                    </li>
+                    <li>click on media library</li>
+                    <li>
+                      <p>
+                        from the <span class="cb">images</span> dropdown choose
+                        <span class="cb">uploaded to this post</span> it will
+                        show you only the image attached to the post
+                      </p>
+                      <img src="images/wp-post-uploaded-media.png" alt="" />
+                    </li>
+                  </ol>
+                </li>
+              </ul>
+              <p>
+                also you can just <span class="cb">detach</span> certain media
+                and it will deisappear from wherever it is
+              </p>
+              <p class="bg-second-color">
+                note that the filter is different in case of square view mode
+                compared with the list view mode
+              </p>
+              <div class="img-container">
+                <img src="images/wp-media-square-view.png" alt="" />
+                <img src="images/wp-media-list-view.png" alt="" />
+              </div>
+              <p>
+                in the square view mode you can click on the image to show you
+                all the details about and you will find two arrows on the top
+                right to slide between them
+              </p>
+              <img src="images/wp-media-single-img.png" alt="" />
+            </div>
+
+            <div>
+              <h3>#21 - Pages vs Posts</h3>
+              <p>
+                it feels like important info but I didn't feel like it the only
+                take is you can add new pages (home, about us, contact, etc...)
+                from the pages page from the left bar
+              </p>
+              <p>
+                the page you're adding can be either one of the main pages or a
+                child to an existing page
+              </p>
+            </div>
+
+            <div>
+              <h3>#22 - Comments System</h3>
+              <p>
+                whenever there's a new comment waiting for addministration
+                approval you will get a notifciation number on the comment tab
+                in the left bar
+              </p>
+              <img src="images/wp-new-comment.png" alt="" />
+              <p>when you enter you will see the comment table</p>
+              <img src="images/wp-new-comment-anatomy.png" alt="" />
+              <p>
+                right under the content of the comment you will find the main
+                controls for that comment
+              </p>
+              <img src="images/wp-new-comment-controls.png" alt="" />
+              <ul>
+                <li>if it's ok you click "approv"</li>
+                <li>if you want to reply to it you click "reply"</li>
+                <li>
+                  the quick edit lets you edit literaly everything in the
+                  comment (the name, the email, his website url, the content of
+                  the comment) without leaving the page
+                </li>
+                <li>
+                  the edit lets you make the same edits but in another page
+                </li>
+                <li>
+                  if that comment is just advertisement or an annoying person
+                  you can click "spam" I'm not sure if it prevents that user
+                  from commenting again or what
+                </li>
+                <li>finally you can delete that comment by clicking 'trash'</li>
+              </ul>
+              <p class="bg-second-color">
+                note that if you reply to the comment without approving it, it
+                is automatically approved and added with your reply on it
+              </p>
+              <p class="bg-second-color">
+                also note that any further replys from that user on that post
+                won't need the administration approval
+              </p>
+              <p>
+                you can remove any approved comment by clicking the "unapprove"
+                button that is showed in the place of "approve" button
+                previousely
+              </p>
+              <p>
+                also at the very top of the comment page you will notice the
+                categories of the comments
+              </p>
+              <img src="images/wp-comment-category.png" alt="" />
+            </div>
+
+            <div>
+              <h3>#23 - Appearance - Themes</h3>
+              <p>
+                he just changed the website theme, he went to
+                <span class="cb">appearance</span> from the left bar >
+                <span class="cb">themes</span> >
+                <span class="cb">add new</span> >
+                <spna class="cb">install</spna> >
+                <span class="cb">activate</span>
+              </p>
+              <p>
+                some themes require certain plugins in that case worpress will
+                notify you about it in the dashboard
+              </p>
+              <img src="images/wp-theme-required-plugin.png" alt="" />
+            </div>
+
+            <div>
+              <h3>#24 - Appearance - Customize</h3>
+              <div>
+                <p>
+                  the customize page (which opens when you hover over
+                  <span class="cb">appearance</span> from the left bar then
+                  choose <span class="cb">customize</span> ) offers you alot of
+                  options to change the visuals of the theme
+                </p>
+                <ul>
+                  <li>change the background color</li>
+                  <li>add a background image</li>
+                  <li>change the layout of the page, blog, single post page</li>
+                  <li>add widgets etc...</li>
+                </ul>
+                <p>
+                  notice when you change the layout of the blog or single post
+                  page to have a side bar you will see that it's just an empty
+                  space that's because you didn't add widgets to it yet
+                </p>
+                <p>
+                  to add widgets to the sidebar go to the widget panel from the
+                  customize page choose the sidebar then click the plus icon
+                </p>
+                <p>
+                  at first it will show the text stuff like paragraph, heading,
+                  list scroll press the
+                  <span class="cb">browse all</span> button then scroll until
+                  you reach the widget group then you will find widgets like
+                  calendar, latest posts, latest comments
+                </p>
+                <p>
+                  as for the social media links widget you will notice when
+                  adding a new icon it doesn't show up in the page that's
+                  because you didn't set a link to it yet so you click on the
+                  icon and add the link and it will show up
+                </p>
+                <img src="images/wp-social-icons-widget.png" alt="" />
+                <p>
+                  just make sure to click on the social media icon itself not
+                  the color around it
+                </p>
+                <p>
+                  you can also change the order of the widgets in the side bar
+                  by draging the six dots icon above the widget
+                </p>
+                <img src="images/wp-widget-drag.png" alt="" />
+              </div>
+              <ul class="big-items">
+                <li>
+                  <p>
+                    from the <span class="cb">homepage settings</span> you can
+                    choose which page of your website you want to be the main
+                    one or just make the latest post page the main one
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    from the home page sections you can enable/disable and edit
+                    sections like (slider, gallery, upcoming events, etc...)
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>#25 - Appearance - Widgets</h3>
+              <p>
+                he just showed the different widget pages of different themese
+                emphasizing the info he said about every theme has different
+                widgets of its own
+              </p>
+            </div>
+
+            <div>
+              <h3>#26 - Appearance - Menu</h3>
+              <div>
+                <p>
+                  from the <span class="cb">menus</span> page that is under
+                  appearance in the left bar of the dashboard you can control
+                  all the menus of your website
+                  <span class="bg-second-color">including the nav bar</span>
+                </p>
+                <img src="images/wp-menus-page.png" alt="" />
+                <p>
+                  on the left you will find the items that you can add to a menu
+                  and as you can deduce menus are not just for pages you can
+                  also add posts, categories or custom links
+                </p>
+                <p>
+                  the custom link is added by putting the url you want the link
+                  to go to and the link text and it will be added just like any
+                  other nav bar link
+                </p>
+                <p class="bg-second-color">
+                  your menu won't show in the website if you don't specify it's
+                  <span class="cb">display location</span>
+                </p>
+                <img src="images/wp-menu-display-location.png" alt="" />
+                <p>
+                  some themes offer only one location for menus (like the one in
+                  the image) and some others offer more
+                </p>
+                <p class="bg-second-color">
+                  note that some themes provide a default navigation bar don't
+                  think that it is the one you made until you set the location
+                </p>
+                <p>
+                  some default nav bars might seem distorted or out of style
+                  (like one theme the links didn't have spaces between them and
+                  looked like "homeaboutuscontact") but once you make your own
+                  nav bar and assign it's location to primary things will work
+                  just fine
+                </p>
+              </div>
+              <div>
+                <p>
+                  all the menu item controls can be found by clicking the little
+                  arrow on the right of the item name
+                </p>
+                <img src="images/wp-menu-controls.png" alt="" />
+                <p>
+                  note the <span class="cb">under home</span> option that's to
+                  make the item a sub item of the item above it which is home in
+                  this image
+                </p>
+              </div>
+              <div>
+                <p>
+                  to add a new item to the menu you check the items you want and
+                  click <span class="cb">add to menu</span> button
+                </p>
+                <img src="images/wp-add-to-menu.png" alt="" />
+                <p>and you can order your menu links by simply dragging them</p>
+              </div>
+              <div>
+                <p>
+                  note that in <span class="cb">pages</span> there are 3 tabs
+                </p>
+                <img src="images/wp-menus-page-items.png" alt="" />
+              </div>
+              <div>
+                <p>
+                  also at the bottom of the menu page under the
+                  <span class="cb">menu settings</span> there's
+                  <span class="cb"
+                    >automatically add new top-level pages to this menu</span
+                  >
+                  option that might make your life easier
+                </p>
+                <img src="images/wp-menus-auto-add-pages.png" alt="" />
+              </div>
+            </div>
+
+            <div>
+              <h3>#27 - Appearance - Editor</h3>
+              <p>
+                the <span class="cb">theme file editor</span> page is where you
+                can edit the code of all your theme files like the
+                <span class="cb">style.css</span> etc..
+              </p>
+              <p>
+                when I opened this page the first time wordpress warned me the
+                directly modifying the theme files is not recommended and I can
+                either:
+              </p>
+              <ul>
+                <li>
+                  make a
+                  <a
+                    href="https://developer.wordpress.org/themes/advanced-topics/child-themes/"
+                    >child theme</a
+                  >
+                </li>
+                <li>
+                  or use the a file manager to make a copy of the main theme so
+                  in case things didn't go well you can revert back to that
+                </li>
+                <li>
+                  or add your css in the
+                  <span class="cb">additional css</span> page that is in the
+                  <span class="cb">customize</span> page from the left bar in
+                  the dashboard
+                </li>
+              </ul>
+              <p>
+                so when I made a change in the
+                <span class="cb">theme file editor</span> page it was added to
+                the code but it was never showed but when I made the same change
+                in the <span class="cb">additional css</span> it was showed I
+                don't know the reason
+              </p>
+              <p>
+                elzero also said that editing the code directly in the
+                <span class="cb">theme file editor</span> page is not
+                recommended and he recommended editors you can add your server
+                in and make the changes from like:
+              </p>
+              <ul>
+                <li>phpstorm</li>
+                <li>comdo ide</li>
+                <li>Aptana studio</li>
+              </ul>
+              <p>
+                which I made a quick search and found that they were php IDEs
+                and that visual studio code was also on the list
+              </p>
+              <p>
+                elzero talked about how sometimes you might not find the
+                <span class="cb">update file</span> button that's due to
+                wordpress doens't have the premission to write in the file
+              </p>
+              <p>
+                to find this file to change it's premissions go to
+                <span class="cb">wp-content</span> >
+                <span class="cb">theme</span> > find the folder with the theme
+                name you want to modify > then the file you want to modify (in
+                my case it was <span class="cb">style.css</span> )
+              </p>
+              <img src="images/wp-theme-file-editor-anatomy.png" alt="" />
+            </div>
+
+            <div>
+              <h3>#28 - Backup and Live Update</h3>
+              <div>
+                <p>
+                  before every update of the wordpress version or the themes you
+                  should backup your wordpress website and that's devided into
+                  two parts
+                </p>
+                <ul>
+                  <li>
+                    the database (which contains the posts, comments, users,
+                    etc...)
+                  </li>
+                  <li>
+                    and wordpress files
+                    <ul>
+                      <li>
+                        the dashboard settings (the appearance, functionalities,
+                        etc...)
+                      </li>
+                      <li>
+                        the langeuages of the your website, plugins, theme
+                        files, media, etc...
+                      </li>
+                      <li>and some other stuff</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>database backup</h4>
+                <ol>
+                  <li>
+                    <h5>direct admin</h5>
+                    <p>
+                      these steps are what elzero did on his hosted website so I
+                      don't konw if they're still valied after 7 years or not as
+                      I'm working local host (which will give you steps for in a
+                      minute)
+                    </p>
+                    <ol>
+                      <li>
+                        in the url of the browser type your website url followed
+                        by column ":2222" (example: www.elzero.net:2222) and
+                        that should open the cpaenl sign in page for you
+                      </li>
+                      <li>put your username and password</li>
+                      <li>
+                        <p>
+                          under <span class="cb">your account</span> section on
+                          the right click on
+                          <span class="cb">mysql mangement</span>
+                        </p>
+                        <img
+                          src="images/wp-direct-admin-mysql-mangement.png"
+                          alt=""
+                        />
+                      </li>
+                      <li>
+                        <p>
+                          find your wordpress database (which in elzero's case
+                          was elzerone_mywp) ,click the checkbox on the far
+                          right, then click the download button on it's right
+                        </p>
+                        <img
+                          src="images/wp-direct-admin-mysql-db-download.png"
+                          alt=""
+                        />
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h5>phpMyAdmin (localhost)</h5>
+                    <ol>
+                      <li>
+                        in the url type
+                        <a href="http://localhost/phpMyAdmin"
+                          >http://localhost/phpMyAdmin</a
+                        >
+                      </li>
+                      <li>
+                        <p>
+                          on the left hand side find your wordpress database
+                          (which in my case was "wordpress") and click on it
+                        </p>
+                        <img
+                          src="images/wp-phpmyadmin-wordpress-db.png"
+                          alt=""
+                        />
+                      </li>
+                      <li>
+                        at the top bar click on <span class="cb">export</span>
+                      </li>
+                      <li>
+                        the
+                        <a
+                          href="https://youtu.be/_zu9ss2RX-0?si=OihzO_kizTzEj_NF"
+                        >
+                          tutorial
+                        </a>
+                        I found for "how to backup wordpress phpmyadmin" chose
+                        the
+                        <span class="cb">
+                          Quick - display only the minimal options
+                        </span>
+                        and hit <span class="cb">export</span> at the bottom
+                        left
+                      </li>
+                    </ol>
+                    <p>
+                      also check the
+                      <a
+                        href="https://youtu.be/_zu9ss2RX-0?si=OihzO_kizTzEj_NF"
+                      >
+                        tutorial
+                      </a>
+                      video as he explained another 2 ways
+                    </p>
+                    <ul>
+                      <li>
+                        one with a plugin called "updraft" which seems to be the
+                        industry standard and he explained how to make the
+                        plugin automatically backup your website on daily,
+                        weekly bases
+                      </li>
+                      <li>
+                        the other one is with the command line which can also be
+                        automated and free
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    you can also find the database on your pc in that route
+                    <span class="cb">C:\xampp\mysql\data\wordpress</span> maybe
+                    you can just copy those I don't know
+                  </li>
+                </ol>
+              </div>
+              <div>
+                <h4>file backup</h4>
+                <ol>
+                  <li>
+                    <h5>filzilla</h5>
+                    <p>again that is elzero's proccess on the hosted website</p>
+                    <ol>
+                      <li>
+                        <p>
+                          on the left hand side (his pc files) he chose the
+                          folder he wanted to download the files in
+                        </p>
+                        <img src="images/wp-filzilla-backup-1.png" alt="" />
+                      </li>
+                      <li>
+                        <p>
+                          from the right hand side (his server files) he chose
+                          the wordpress files
+                        </p>
+                        <img src="images/wp-filzilla-backup-2.png" alt="" />
+                      </li>
+                      <li>
+                        <p>
+                          select or the wordpress files, right click and choose
+                          download
+                        </p>
+                        <img src="images/wp-filzilla-backup-3.png" alt="" />
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <h5>localhost</h5>
+                    <p>
+                      well I deduced since the files are already on your pc in
+                      case of localhost just go to
+                      <span class="cb">C:\xampp\htdocs\wordpress</span> and you
+                      either copy all the files in there to your backup folder
+                      or you just go to the htdocs and copy the wordpress folder
+                      itself
+                    </p>
+                  </li>
+                </ol>
+              </div>
+              <p>
+                elzero mentioned that there is a backup option for the whole
+                website in the control panel but that would backup alot more
+                files than just wordpress database and files so unless you only
+                have the wordpress on your website this option is not
+                recommended
+              </p>
+            </div>
+
+            <div>
+              <h3>#29 - Plugins and How to Activate Akismet</h3>
+              <div>
+                <p>
+                  the plugin page is where you will find your added plugins
+                  (activated and not activated) and where you can add new plugin
+                </p>
+                <p>
+                  if you open the plugin page for the first time you will find 2
+                  plugins that come by default with wordpress
+                </p>
+                <ul>
+                  <li>
+                    hello dolly: not important just a test plugin that puts
+                    qoute for you at the top right of every dashboard page
+                  </li>
+                  <li>
+                    akismet: used to catch spam comments and elzero activated it
+                  </li>
+                </ul>
+                <p>under the name of the plugin you will find 2 options</p>
+                <ul>
+                  <li>
+                    either activate & delete options if the plugin is not
+                    activated yet
+                  </li>
+                  <li>
+                    or settings & deactivate options if the plugin is activated
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>activate aksmit</h4>
+                <p>
+                  when you click on activate under aksmit it will ask you for
+                  your api key and show you a button to sign up in their. Follow
+                  the process and chose the personal or free plan
+                </p>
+                <p>
+                  on the donation page that is showed in the image below just
+                  drag the slider all the way to the left and the payment form
+                  will disappear
+                </p>
+                <img src="images/wp-aksmit-doniation.png" alt="" />
+                <p>
+                  get your api key and then go back to wordpress and choose
+                  <span class="cb">manually enter api key</span> and it will be
+                  activated
+                </p>
+                <p>
+                  in case of elzero's since his website is hosted aksmit
+                  detected that and asked him for some info of his website so he
+                  doesn't have do add the api manually
+                </p>
+                <img src="images/wp-aksmit-settings.png" alt="" />
+                <p>
+                  it will open you the settings page of the plugin to set the
+                  preferences you like and as you can notice at the end of the
+                  first section of the page you can
+                  <span class="cb">disconnect this account</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  to add a new plugin just click the
+                  <span class="cb">add new plugin</span> button at the top left
+                  of the page
+                </p>
+                <p>
+                  the first thing you will see at the very top of the page an
+                  alert to remind you of the plugins your installed theme
+                  requires (if there any and you didn't install them)
+                </p>
+                <p>
+                  under that you will find four tabs (featured, popular,
+                  recommended, favorites)
+                </p>
+                <p>
+                  and on the left of that you will find a search bar with a
+                  search filter on it's left to etiher search with a keyword,
+                  author, or tag
+                </p>
+                <p class="bg-second-color">
+                  under each plugin you will find the star rating of it and at
+                  the right hand side of that rating you will find either
+                  <span class="cb"
+                    >Compatible with your version of WordPress</span
+                  >
+                  or <span class="cb">not tested on your version yet</span> you
+                  have to be attention for that in order not to missing anything
+                  up by adding an untested plugin
+                </p>
+                <p>
+                  on the right side of the plugin icon you will find under
+                  install
+                  <span class="cb">show details</span> which will take you to
+                  the plugin page on wp to know more about it and see the
+                  reviews
+                </p>
+                <p>
+                  <span class="second-color">also</span> at the very top of the
+                  page you will find
+                  <span class="cb">upload plugin</span> button in case you
+                  created a plugin yourself and want to add it
+                </p>
+              </div>
+              <div>
+                <p>
+                  mostly when you install any new plugin it adds pages to the
+                  settings tab on the left bar and my add options in the
+                  customize, appearance tabs etc...
+                </p>
+                <p>
+                  you can find the plugins' files in wp folder under
+                  <span class="cb">wp-content</span> >
+                  <span class="cb">plugins</span>
+                </p>
+              </div>
+              <div>
+                <p>
+                  the third tab in plugins page is
+                  <span class="cb">plugin file editor</span> which enables you
+                  to modify the plugin codes just like we did in the theme file
+                  editor
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#30 - Users Management</h3>
+              <div>
+                <p>
+                  from the users page on the left bar of the dashboard you can
+                  manage all the users of your website either if they're
+                  (editors, subscribers, conteributers, etc...)
+                </p>
+                <p>
+                  to add a new user click on the
+                  <span class="cb">add new user</span> button on the top left of
+                  the page
+                </p>
+                <p>the process of adding a new user is straight forward</p>
+                <p>
+                  if you didn't notice you can change the generated password of
+                  the new user
+                </p>
+              </div>
+              <div>
+                <p>
+                  if you click on your name in the users page it will take you
+                  to the third tab under users in the left bar which is
+                  <span class="cb">profile</span> where you can:
+                </p>
+                <ul>
+                  <li>choose to enable/disable visual editor</li>
+                  <li>enable/disable syntax highlight</li>
+                  <li>change the dashboard color scheme</li>
+                  <li>
+                    enable/disable keyboard shortcuts while managing comments
+                  </li>
+                  <li>show/hide toolbar while viewing the site</li>
+                  <li>
+                    <span class="cb">
+                      set the language of the dashboard (for you only not for
+                      all users)
+                    </span>
+                  </li>
+                  <li>
+                    <p>
+                      choose your name that will be displayed whenever you make
+                      a public action in the website
+                    </p>
+                    <ul>
+                      <li>like the author name when you write a post</li>
+                      <li>and in the comments</li>
+                    </ul>
+                    <img src="images/wp-change-admin-name.png" alt="" />
+                    <p class="bg-second-color">
+                      when I changed my name it was immediately changed in the
+                      posts I wrote but it wasn't changed in the comments I
+                      typed, however it was changed when I made new comment
+                      after I changed the name
+                    </p>
+                    <p>
+                      elzero said the <span class="cb">username</span> (the one
+                      you log into the admin dashboard with) is disabled to
+                      change as it's important in many other places
+                    </p>
+                  </li>
+                </ul>
+                <p>
+                  at the very bottom of the profile page under account
+                  management you will find
+                  <span class="cb">sessions</span> showing you where and when
+                  did you log into the dashboard to help you idintify any
+                  unkonwn places and thus know if you're hacked or something
+                </p>
+                <p>
+                  in case of finding unkonw sessions click the
+                  <span class="cb">log out everywhere else</span> (in case of
+                  only the current session you're at exists the button will be
+                  disabled)
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#31 - Tools Press This, Import and Export</h3>
+              <div>
+                <p>
+                  elzero started by talking about
+                  <span class="cb">press it</span> tool which is a tool you pin
+                  to your browser bookmark bar and when clicking on it while you
+                  have any article or post (that is not on your website) it
+                  takes the image and first paragraph of the post and put them
+                  in a post editing for you (a quick way to copy someones post)
+                </p>
+                <p>
+                  but it looks like it has been removed as I can't find it in my
+                  versoin
+                </p>
+              </div>
+              <div>
+                <h4>import</h4>
+                <p>
+                  the import page is made for migration from other platforms
+                </p>
+                <ul>
+                  <li>
+                    you get your posts and media exported from the platform you
+                    are at
+                  </li>
+                  <li>
+                    then you import that from the import page in wordpress and
+                    walla you migrated your website to wordpress
+                  </li>
+                </ul>
+                <p>
+                  the import page offers you to import from many platforms like
+                  (blogger, livejournal, tumbler, etc...)
+                </p>
+                <p>it also offers to import posts from rss feeds</p>
+                <p>
+                  it also offers import from wordpress in case you want to move
+                  content between wp websites
+                </p>
+              </div>
+              <div>
+                <h4>export</h4>
+                <p>
+                  this page offers to download your posts, media ,etc.. so you
+                  can either import them in another platform or to different wp
+                  website
+                </p>
+                <p>you have two options in export:</p>
+                <ul>
+                  <li>
+                    <span class="cb">all content:</span> contain your posts,
+                    pages, comments, custom fields, categories, and tags, terms,
+                    navigation menus, and custom posts.
+                  </li>
+                  <li>or choose certain pieces (posts,pages,media)</li>
+                </ul>
+                <p class="bg-second-color">
+                  when you try to import an export wp will tell you "choose a
+                  wxr file to import" wxr stands for wordpress extended rss it's
+                  not a special format or anything just xml file like any other
+                  export file
+                </p>
+              </div>
+              <div>
+                <h4>backup vs export</h4>
+                <p>
+                  the export uses the links of your content not the actual
+                  content so if that content is not live on the internet it
+                  won't get imported (wheather or not the imported content
+                  sticks with you after you delete the original one that's
+                  something I don't konw yet)
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#32 - WordPress Settings Part 1</h3>
+              <div>
+                <h4>general settings</h4>
+                <ul>
+                  <li>site title: the name of your website</li>
+                  <li>
+                    <p>tagline: the small sentence under the site title</p>
+                    <img src="images/wp-site-title-tagline.png" alt="" />
+                  </li>
+                  <li>
+                    wordpress url: the path of the wordpress installation on
+                    your website
+                  </li>
+                  <li>
+                    <h5>wordpress url vs site address</h5>
+                    <p>
+                      as far as I understood you can change the url of your
+                      website (like instead of "elzero.net/wordpress" to
+                      "elzro.net") and it will still take you to the wordpress
+                      installation, and he mentioned that it is good for
+                      security as it wouldn't reveal your wp installation path
+                    </p>
+                  </li>
+                  <li>membership: rather or not anyone can register</li>
+                  <li>
+                    new user default rule:
+                    <p class="bg-danger-color">never make it adminstrator</p>
+                  </li>
+                  <li>site language</li>
+                  <li>time zone</li>
+                  <li>preferred date format</li>
+                  <li>
+                    time format: at the bottom you will notice a documentaion
+                    link in case you want to make custom time format
+                  </li>
+                  <li>the day to which the week starts</li>
+                </ul>
+              </div>
+              <div>
+                <h4>writing settings</h4>
+                <ul>
+                  <li>
+                    Default Post Category: elzero said it's better to leave it
+                    uncategorized
+                  </li>
+                  <li>
+                    Default Post Format: again elzero said it's better to leave
+                    it standard and let the author choose the format while
+                    typing the post
+                  </li>
+                  <li>
+                    <p>
+                      post via email: a functionality that allows you to email
+                      the post you want to your website and it will be posted
+                    </p>
+                    <p>
+                      althought elzero showed in some sort of documentation that
+                      the built-in post via email is depricated it still shows
+                      at my wp version 7 years later so I don't know if it's
+                      really depricated or not
+                    </p>
+                    <p>
+                      the documentation elzero showed also suggested using
+                      plugins for that job instead of the built-in
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>reading settings</h4>
+                <ul>
+                  <li>
+                    choose what your home page displays (rather its your latest
+                    posts or a static page you choose from your pages)
+                  </li>
+                  <li>number of posts at the blog Page</li>
+                  <li>
+                    the number of posts you want to send in your websites RSS
+                  </li>
+                  <li>
+                    wheather to show the post's full text or just its excerption
+                  </li>
+                  <li>
+                    wheather or not you want your page to be listed (found) in
+                    search engines or not
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3>#33 - WordPress Settings Part 2</h3>
+              <div>
+                <h4>discussion settings</h4>
+                <ul>
+                  <li>
+                    Default post settings: (notify any blogs linked to from the
+                    post, allow pingbacks and trackbacks on new posts, Allow
+                    people to submit comments on new posts)
+                  </li>
+                  <li>
+                    Other comment settings:
+                    <ul>
+                      <li>Comment author must fill out name and email</li>
+                      <li>Users must be registered and logged in to comment</li>
+                      <li>
+                        Automatically close comments on posts older than {set
+                        number} of days
+                      </li>
+                      <li>
+                        Show comments cookies opt-in checkbox, allowing comment
+                        author cookies to be set (I don't know what that is
+                        right now)
+                      </li>
+                      <li>
+                        Enable threaded (nested) comments {set number} deep
+                      </li>
+                      <li>
+                        Break comments into pages with {number} top level
+                        comments per page and the {last/first} page displayed by
+                        default Comments should be displayed with the
+                        {older/newst} comments at the top of each page
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Email me whenever:
+                    <ul>
+                      <li>Anyone posts a comment</li>
+                      <li>A comment is held for moderation</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Before a comment appears
+                    <ul>
+                      <li>Comment must be manually approved</li>
+                      <li>
+                        Comment author must have a previously approved comment
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Comment Moderation:
+                    <ul>
+                      <li>
+                        Hold a comment in the queue if it contains {number} or
+                        more links. (A common characteristic of comment spam is
+                        a large number of hyperlinks.)
+                      </li>
+                      <li>
+                        When a comment contains any of these words in its
+                        content, author name, URL, email, IP address, or
+                        browser’s user agent string, it will be held in the
+                        moderation queue. One word or IP address per line. It
+                        will match inside words, so “press” will match
+                        “WordPress”.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Disallowed Comment Keys: When a comment contains any of
+                    these words in its content, author name, URL, email, IP
+                    address, or browser’s user agent string, it will be put in
+                    the Trash. One word or IP address per line. It will match
+                    inside words, so “press” will match “WordPress”.
+                  </li>
+                  <li>
+                    Avatars:
+                    <ul>
+                      <li>Show Avatars</li>
+                      <li>
+                        Maximum Rating: how propriate or impropriate you allow
+                        the avatrs to be
+                      </li>
+                      <li>
+                        Default Avatar: choose either just an anonymous avatr or
+                        choose among some avatar genterators
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>media settings</h4>
+                <ul>
+                  <li>Thumbnail size</li>
+                  <li>Medium size</li>
+                  <li>Large size</li>
+                  <li>
+                    Organize my uploads into month- and year-based folders
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4>Permalink Settings</h4>
+                <p>
+                  let's you choose the link format of the posts (wheather it's
+                  your base link followed by the post name, or followed by the
+                  post date then name or etc...)
+                </p>
+                <img src="images/wp-permlink.png" alt="" />
+                <p>
+                  you can also make your custom structre at the section that is
+                  at the very bottom of that page
+                </p>
+              </div>
+              <div>
+                <h4>privacy</h4>
+                <p>
+                  a page where you set your privacy policy (or you can use wp's
+                  privacy policy)
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#34 - Files and Directories Structure</h3>
+              <div>
+                <h4>wordpress version</h4>
+                <p>
+                  you can know the wp version by going to wp folder on your pc
+                  or your server > <span class="cb">wp-includes</span> >
+                  <span class="cb">version.php</span>
+                </p>
+                <img src="images/wp-version.png" alt="" />
+              </div>
+              <div>
+                <h4>why would you need to know wp version</h4>
+                <p>
+                  in case of the website got hacked and you want to setup a new
+                  clean wp installment you need the version to download it
+                </p>
+              </div>
+              <div>
+                <p>
+                  also the <span class="cb">wp-includes</span> contains the
+                  <span class="cb">widgets</span> folder
+                </p>
+                <p>
+                  the <span class="cb">wp-admin</span> is for the dashboard
+                  files
+                </p>
+              </div>
+              <div>
+                <h4>wp-content</h4>
+                <p>contains</p>
+                <ul>
+                  <li>languages: the site installed languages</li>
+                  <li>plugins</li>
+                  <li>themes</li>
+                  <li>
+                    upgrade: as far as I understood from elzero it contains
+                    files that help the wp version update then get deleted
+                  </li>
+                  <li>
+                    upgrade-temp-backup: no idea what that is and it wasn't at
+                    elzero's
+                  </li>
+                  <li>uploads: contains all your media</li>
+                </ul>
+              </div>
+              <div>
+                <h4>why to know the folder structure</h4>
+                <p>
+                  according to elzero: in case wp can't add something like a
+                  plugin or a theme, etc... due to premissions you can go to the
+                  folders on the pc or the server and add them yourself
+                </p>
+                <p>
+                  elzero said as long as you are in the
+                  <span class="cb">wp-content</span> it's ok to create folders
+                  and add stuff
+                </p>
+              </div>
+              <div>
+                <h4>
+                  having a blank page when transferring wp website from place to
+                  place?
+                </h4>
+                <p>
+                  elzero said it may be from the plugins to solve this problem
+                  you change the name of one plugin and see if still blank get
+                  the name back and change another's name and so on until you
+                  find the one causing the problem
+                </p>
+              </div>
+              <p>
+                finally elzero talked about the
+                <span class="cb">.htaccess</span> file and said it was wp
+                configurations for the servers
+              </p>
+            </div>
+
+            <div>
+              <h3>#035 - Step Into Developing Theme</h3>
+              <div>
+                <p>
+                  elzero said you should pay very good attention to
+                  <a href="https://codex.wordpress.org/Main_Page"
+                    >wordpress codex</a
+                  >
+                </p>
+                <p>
+                  to make a basic theme you have to have some pages (at elzero's
+                  they were stuff like style.css, rtl.css, index.php,
+                  comments.php, etc...)
+                </p>
+                <p>
+                  but when I opend the
+                  <a href="https://codex.wordpress.org/Theme_Development">
+                    codex: theme development
+                  </a>
+                  they said files like (header.php, footer.php, widgets.php,
+                  index.php, etc...)
+                </p>
+                <p>
+                  elzero's codex said that
+                  <i
+                    >the minimum files to make a theme were style.css and
+                    index.php</i
+                  >
+                  but that doesn't show in my codex plus elzero said it's not
+                  really a useful info
+                </p>
+                <p>
+                  he also talked about an image that summaryes the relation
+                  between pages and said you shouldn't neccessary understand it
+                  right now but once you made all these pages it will come handy
+                </p>
+                <img src="images/wp-temp-hierarchy.webp" alt="" />
+              </div>
+              <div>
+                <p>
+                  notice that wp has
+                  <a
+                    href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/"
+                  >
+                    coding standard
+                  </a>
+                  in writing
+                  <a
+                    href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/"
+                  >
+                    css </a
+                  >,
+                  <a
+                    href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/html/"
+                  >
+                    html </a
+                  >,
+                  <a
+                    href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/"
+                  >
+                    javascript </a
+                  >, and
+                  <a
+                    href="https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/"
+                  >
+                    php
+                  </a>
+                  as well as accessability standards. Make you sure you give
+                  these a look
+                </p>
+                <p>
+                  elzero also explained that these standards are actually an
+                  industry standard not just for wp so you better understand
+                  them well
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#036 - Create Theme Directories and Files</h3>
+              <div>
+                <p>to make a new theme of your own</p>
+                <ul>
+                  <li>
+                    go to <span class="cb">wordpress</span> >
+                    <span class="cb">wp-content</span> >
+                    <span class="cb">themes</span>
+                  </li>
+                  <li>make a new folder with the theme name you like</li>
+                  <li>
+                    <p>inside that folder create 2 files</p>
+                    <ul>
+                      <li><span class="cb">style.css</span></li>
+                      <li><span class="cb">index.php</span></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p>
+                  at this point if you go to your themes in your dashboard you
+                  will find a blank theme with the name you set for the new
+                  folder
+                </p>
+                <p class="bg-danger-color">
+                  note that you will see a message on the top of your new theme
+                  "new version available, update now" if you click on update now
+                  it will delete all the files inside the folder of the new
+                  theme so don't click on it
+                </p>
+              </div>
+              <div>
+                <p>to include the header inside your new theme:</p>
+                <ul>
+                  <li>open index.php</li>
+                  <li>
+                    <p>
+                      type
+                      <span class="cb">&lt;?php get_header(); ?&gt;</span> which
+                      will load your website logo and tagline
+                    </p>
+                    <img src="images/wp-new-theme-header.png" alt="" />
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <p>
+                  to include the footer type
+                  <span class="cb">&lt;?php get_footer(); ?&gt;</span>
+                </p>
+                <p class="bg-second-color">
+                  note that elzero said you MUST always include the footer even
+                  if you didn't have footer of your own, as the footer has all
+                  the scripts that wp operates with in it and without you'll
+                  have alot of problems with your website
+                </p>
+              </div>
+              <p>
+                then elzero added a side bar widget using
+                <span class="cb">&lt;?php get_sidebar(); ?&gt;</span>
+              </p>
+              <p>
+                and also added searh using
+                <span class="cb">&lt;?php get_search_form(); ?&gt;</span>
+              </p>
+              <p>
+                and said that you will find all the get() functinos you need in
+                codex
+              </p>
+              <p class="bg-second-color">
+                in case you encoutner a wp function that you don't konw what it
+                does go to
+                <a href="https://wordpress.org/">wordpress.org</a> and search
+                for it
+              </p>
+              <p>
+                elzero also said to pay a good attention to
+                <span class="cb">user contributed notes</span>
+              </p>
+              <p>
+                also said to always type comments in your code it's not wrong
+                for comments to be long and thorough
+              </p>
+              <img src="images/wp-php-comment.png" alt="" />
+            </div>
+
+            <div>
+              <h3>#037 - Dig Deep Into Bloginfo Function</h3>
+              <div>
+                <p>
+                  to add an image to your theme (usually a screen shot of how
+                  the theme looks like) you go to your theme folder and place
+                  the image there naming it <span class="cb">screenshot</span>
+                </p>
+                <p class="bg-second-color">
+                  note the image's name must be screenshot otherwise it won't
+                  show up
+                </p>
+                <img src="images/wp-theme-main-image.png" alt="" />
+              </div>
+              <div>
+                <p>
+                  elzero talked about a function called
+                  <span class="cb">bloginfo({string})</span> where the string
+                  can be any of the options I will list below
+                </p>
+                <p>
+                  this function is used to display information about the current
+                  website
+                </p>
+                <img src="images/wp-bloginfo-options.png" alt="" />
+                <p>
+                  there are alot more of options you can find them in the
+                  <a
+                    href="https://developer.wordpress.org/reference/functions/bloginfo/"
+                  >
+                    function doc page
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3>#038 - Create the Header Php File</h3>
+              <p>
+                he started coding the html boiler plate in a file he created
+                called
+                <span class="cb">header.php</span> in the theme files
+                <span class="cb">
+                  except he didn't type the closing tag of &lt;html&gt;
+                </span>
+                and said "of course we won't close the html tag" which I don't
+                konw why
+              </p>
+              <p>
+                the boiler plate is pretty much the same except for some static
+                values he used dynamic values instead
+              </p>
+              <ul class="big-items">
+                <li>
+                  <p>
+                    instead of &lt;html <span class="cb">lang="en"</span>&gt;
+                    attribute in the html tag he used &lt;html &lt;?php
+                    <span class="cb">language_attributes(); ?&gt; &gt;</span>
+                  </p>
+                  <p>
+                    this function includes the both the language of the website
+                    and the direction of that language
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    instead of
+                    <span class="cb">&lt;meta charset='utf-8' /&gt;</span> he
+                    used &lt;meta charset='&lt;?php
+                    <span class="cb">bloginf('charset')</span>?&gt;' /&gt;
+                  </p>
+                </li>
+                <li>
+                  inside the title tags he would've used
+                  <span class="cb">wp_title()</span> but he said it has some
+                  advance in it and at this point if you use it won't echo
+                  anything so we will use
+                  <span class="cb">bloginf('name')</span> for now
+                </li>
+                <li>
+                  <p>
+                    then he added what I believe allows the pingback for your
+                    posts
+                    <span class="cb">
+                      &lt;link rel="pingback" href="&lt;?php
+                      bloginf('pingback_url') ?&gt;" /&gt;
+                    </span>
+                  </p>
+                </li>
+              </ul>
+              <p>
+                elzero emphasized that you never add the style or the script of
+                the theme by yourself (like &lt;link rel="stylesheet"
+                href="style.css" /&gt;) and that he will show the proper way to
+                add these later
+              </p>
+              <p>
+                then before the <span class="cb">head</span> closing tag you
+                should add <span class="cb">&lt;?php wp_head(); ?&lt;</span> as
+                it includes wp scripts and styles (I think are for dashboard)
+              </p>
+              <p class="bg-second-color">
+                the first thing you will notice when you show your theme that
+                the website title and tagline are not there anymore and that's
+                because the <span class="cb">get_header();</span> in the
+                <span class="cb">index.php</span> calls a default wp header if
+                it doesn't find <span class="cb">header.php</span> but once you
+                create your header.php it includes it instead
+              </p>
+              <p>
+                but notice if you had a missed up header.php the website will be
+                missed up it won't fall back to the dafault wp header
+              </p>
+            </div>
+
+            <div>
+              <h3>#039 - Create the Functions Php File</h3>
+              <p>
+                he created a css, js, fonts folder and added the css, js, fonts
+                of bootstrap and fontawesome (and any other library you gonna
+                use)
+              </p>
+              <p>
+                currently I'm not using bootstrap I'm using tailwind and it's
+                not that straight forward to just download it and find your css,
+                js files so follow the steps in
+                <a href="#tailwind-in-wordpress">taliwind in wordpress</a>
+              </p>
+              <p>
+                he also created <span class="cb">functinos.php</span> where all
+                your functions go including these which call the styles and
+                scripts of your theme
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- =============================
+      elzero 2016 course ends
+    ================================== -->
+      </div>
+    </article>
+
+    <article>
+      <div class="container">
+        <h2 class="main-heading">salla</h2>
+        <section>
+          <h3>install salla cli</h3>
+          <ul>
+            <li>
+              go to
+              <a href="https://github.com/SallaApp/Salla-CLI"
+                >salla-cli github</a
+              >
+            </li>
+            <li>
+              copy the installation command
+              <span class="cb">npm install @salla.sa/cli -g</span>
+            </li>
+            <li>
+              <p class="bg-danger-color">
+                note that you should paste it in only in the cmd not the
+                terminal of vs code and not the powershell they both will throw
+                you an error
+              </p>
+            </li>
+          </ul>
+          <p>you can also read salla-cli commands in the same repo</p>
+        </section>
+
+        <section>
+          <h3 class="main-heading">problem solved</h3>
+          <div>
+            <h4 class="yellow">couldn't connect my github</h4>
+            <p>
+              whenever I opened the settings coulnd't find the normal options it
+              only showed the protection and security.
+            </p>
+            <p>
+              the problem was from the permissions as I had an employee account
+              so the employer had to change my permissons
+            </p>
+          </div>
+        </section>
+      </div>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>

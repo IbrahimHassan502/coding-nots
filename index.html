@@ -24,7 +24,7 @@
           <ul>
             <li><a href="css.html">css</a></li>
             <li><a href="js.html">JS</a></li>
-            <li><a href="wordpress.html">wordpress</a></li>
+            <li><a href="platforms.html">wordpress</a></li>
             <li><a href="building-the-web.html">building the web</a></li>
             <li><a href="upwork.html">building the web</a></li>
           </ul>
@@ -60,6 +60,7 @@
                 type.
               </p>
             </li>
+
             <li>
               <p>
                 to make an element <span class="second-color">editable</span> by
@@ -68,6 +69,7 @@
                 element
               </p>
             </li>
+
             <li>
               to make google (or other password managers) offer to
               <span class="second-color">save password</span> add the
@@ -1063,7 +1065,7 @@
             </li>
           </ul>
         </section>
-        
+
         <section>
           <h3>
             docs for
@@ -1079,7 +1081,66 @@
                 performance but string interpolation is only supported in
                 double-quoted strings.
               </li>
+
               <li>Operators (and, or, not) are case sensitive.</li>
+
+              <li>
+                <p>you can iterate over objects using:</p>
+                <pre class="cb">
+                  {% set sizes = {
+                        xs: 34,
+                        s:  36,
+                        m:  38,
+                        l:  40,
+                        xl: 42,
+                    } %}
+
+                    {% for k, v in sizes|filter(v => v > 38) -%}
+                        {{ k }} = {{ v }}
+                    {% endfor %}
+                    {# output l = 40 xl = 42 #}
+                </pre>
+                this example is from the
+                <a href="https://twig.symfony.com/doc/3.x/filters/filter.html">
+                  fliter docs
+                </a>
+              </li>
+
+              <li>
+                <h3>number to string/text</h3>
+                <pre class="cb">
+                  {# twelve point three four five #}
+                  {{ '12.345'|format_number(style='spellout') }}
+                </pre>
+              </li>
+
+              <li>
+                <p>
+                  you can add a second paramter to the
+                  <span class="cb">join()</span> filter that will be used to
+                  seperate between the last two items
+                </p>
+                <pre class="cb">
+                  {{ [1, 2, 3]|join(', ', ' and ') }}
+                  {# outputs 1, 2 and 3 #}
+                </pre>
+              </li>
+
+              <li>
+                <p>
+                  If you want to ensure that some values are defined in a
+                  mapping (by given default values), reverse the two elements in
+                  the call:
+                </p>
+                <pre class="cb">
+                {% set items = {'apple': 'fruit', 'orange': 'fruit'} %}
+
+                {% set items = {'apple': 'unknown'}|merge(items) %}
+
+                {# items now contains {'apple': 'fruit', 'orange': 'fruit'} #}
+              </pre
+                >
+              </li>
             </ul>
           </section>
 
@@ -1166,6 +1227,19 @@
               <img src="images/twig-filter-batch.png" alt="" />
               <p>full code in the <a href="">docs</a> and the image below</p>
               <img src="images/twig-filter-batch-example.png" alt="" />
+              <p>
+                so in case of the code that is writtin in the painted figure
+                (the first image) it will return 2 rows with one containing 3
+                items and the other containing only 2
+              </p>
+              <p>
+                but in case of the code in the above image when you add a second
+                paramater it fills the empty items with that paramater
+              </p>
+              <p class="bg-second-color">
+                note that there's also a third paramater but you better check it
+                from the docs
+              </p>
             </div>
             <div>
               <h5 class="yellow">column</h5>
@@ -1181,6 +1255,278 @@
                 {# fruits now contains ['apple', 'orange'] #}
               </pre>
             </div>
+          </section>
+
+          <section>
+            <h4>escaping (skipping/disable) automatic scape</h4>
+            <pre class="cb">
+              {% autoescape 'html' %}
+              {{ var|escape(strategy)|raw }} {# won't be double-escaped #}
+              {% endautoescape %}
+            </pre>
+            <p>
+              that code was used in the
+              <a href="https://twig.symfony.com/doc/3.x/filters/escape.html"
+                >escape</a
+              >
+              documentation while explaining that using a variable as the
+              escaping startegy inside of
+              <span class="cb">autoescape</span> while result in double escaping
+              so if you do use the variable you should skip the auotescaping for
+              that line to avoid double escaping
+            </p>
+          </section>
+
+          <section>
+            <h4 class="yellow">html to markdown</h4>
+            <pre class="cb">
+              {% apply html_to_markdown %}
+                  <html>
+                      <h1>Hello!</h1>
+                  </html>
+              {% endapply %}
+            </pre>
+            <pre class="cb">
+              {{ include('some_template.html.twig')|html_to_markdown }}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">inline css</h4>
+            <p>
+              read the
+              <a
+                href="https://twig.symfony.com/doc/3.x/filters/inline_css.html"
+              >
+                docs
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h4 class="yellow">json encode</h4>
+            <p>
+              the json_encode filter returns the JSON representation of a value:
+            </p>
+            <p class="cb">{{ data|json_encode() }}</p>
+          </section>
+
+          <section>
+            <h4 class="yellow">keys</h4>
+            <p>
+              The keys filter returns the keys of a sequence or a mapping. It is
+              useful when you want to iterate over the keys of a sequence or a
+              mapping:
+            </p>
+            <pre class="cb">
+              {% for key in [1, 2, 3, 4]|keys %}
+                  {{ key }}
+              {% endfor %}
+              {# outputs: 1 2 3 4 #}
+
+              {% for key in {a: 'a_value', b: 'b_value'}|keys %}
+                  {{ key }}
+              {% endfor %}
+              {# outputs: a b #}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">map</h4>
+            <p>
+              The map filter applies an arrow function to the elements of a
+              sequence or a mapping. The arrow function receives the value of
+              the sequence or mapping:
+            </p>
+            <pre class="cb">
+              {% set people = [
+                  {first: "Bob", last: "Smith"},
+                  {first: "Alice", last: "Dupond"},
+              ] %}
+
+              {{ people|map(p => "#{p.first} #{p.last}")|join(', ') }}
+              {# outputs Bob Smith, Alice Dupond #}
+            </pre>
+            <p>
+              The arrow function also receives the key as a second argument:
+            </p>
+            <pre class="cb">
+              {% set people = {
+                  "Bob": "Smith",
+                  "Alice": "Dupond",
+              } %}
+
+              {{ people|map((value, key) => "#{key} #{value}")|join(', ') }}
+              {# outputs Bob Smith, Alice Dupond #}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">nl2br</h4>
+            <p>
+              The nl2br filter inserts HTML line breaks before all newlines in a
+              string:
+            </p>
+            <pre class="cb">
+              {{ "I like Twig.\nYou will like it too."|nl2br }}
+              {# outputs
+
+                  I like Twig.<br />
+                  You will like it too.
+
+              #}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">raw</h4>
+            <p>
+              The raw filter marks the value as being "safe", which means that
+              in an environment with automatic escaping enabled this variable
+              will not be escaped if raw is the last filter applied to it:
+            </p>
+            <pre class="cb">
+              {% autoescape %}
+                {{ var|raw }} {# var won't be escaped #}
+              {% endautoescape %}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">reduce</h4>
+            <p>
+              The reduce filter iteratively reduces a sequence or a mapping to a
+              single value using an arrow function, so as to reduce it to a
+              single value. The arrow function receives the return value of the
+              previous iteration and the current value and key of the sequence
+              or mapping:
+            </p>
+            <pre class="cb">
+              {% set numbers = [1, 2, 3] %}
+                {{ numbers|reduce((carry, v, k) => carry + v * k) }}
+              {# output 8 #}
+            </pre>
+            <p>
+              The reduce filter takes an initial value as a second argument:
+            </p>
+            <pre class="cb">
+              {{ numbers|reduce((carry, v, k) => carry + v * k, 10) }}
+              {# output 18 #}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">replace</h4>
+            <p>
+              The replace filter replaces placeholders in a string (the
+              placeholder format is free-form):
+            </p>
+            <pre class="cb">
+              {{ "I like %this% and %that%."|replace({'%this%': fruit, '%that%': "oranges"}) }}
+              {# if the "fruit" variable is set to "apples", #}
+              {# it outputs "I like apples and oranges" #}
+
+              {# using % as a delimiter is purely conventional and optional #}
+              {{ "I like this and --that--."|replace({'this': fruit, '--that--': "oranges"}) }}
+              {# outputs "I like apples and oranges" #}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">slug</h4>
+            <p>
+              The slug filter transforms a given string into another string that
+              only includes safe ASCII characters.
+            </p>
+            <pre class="cb">
+              {{ 'Wôrķšƥáçè ~~sèťtïñğš~~'|slug }}
+              Workspace-settings
+            </pre>
+            <p>
+              The default separator between words is a dash (-), but you can
+              define a selector of your choice by passing it as an argument:
+            </p>
+            <pre class="cb">
+              {{ 'Wôrķšƥáçè ~~sèťtïñğš~~'|slug('/') }}
+              Workspace/settings
+            </pre>
+            <p>
+              The slugger automatically detects the language of the original
+              string, but you can also specify it explicitly using the second
+              argument:
+            </p>
+            <pre class="cb">
+              {{ '...'|slug('-', 'ko') }}
+            </pre>
+            <p>
+              it requires an extension to work so check the
+              <a href="https://twig.symfony.com/doc/3.x/filters/slug.html">
+                docs
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h4 class="yellow">striptags</h4>
+            <p>
+              The striptags filter strips SGML/XML tags and replaces adjacent
+              whitespace characters by one space:
+            </p>
+            <p class="cb">{{ some_html|striptags }}</p>
+            <p>You can also provide tags which should not be stripped:</p>
+            <p>{ some_html|striptags('&lt;br&gt;&lt;p&gt;') }}</p>
+          </section>
+
+          <section>
+            <h4 class="yellow">url_encode</h4>
+            <p>
+              The url_encode filter percent encodes a given string as URL
+              segment or a mapping as query string:
+            </p>
+            <pre class="cb">
+              {{ "path-seg*ment"|url_encode }}
+              {# outputs "path-seg%2Ament" #}
+
+              {{ "string with spaces"|url_encode }}
+              {# outputs "string%20with%20spaces" #}
+
+              {{ {'param': 'value', 'foo': 'bar'}|url_encode }}
+              {# outputs "param=value&foo=bar" #}
+            </pre>
+          </section>
+
+          <section>
+            <h4 class="yellow">[function] block</h4>
+            <p>
+              it can be used to make templates with replacable chunks of
+              content, these chunks can be replaced by the child
+            </p>
+            <p>there're couple forms of syntax</p>
+            <p class="cb"><title>{% block title %}{% endblock %}</title></p>
+            <p>
+              <span class="cb"> block</span> is the keyword while title can be
+              any word like docTitle or whatever you want
+            </p>
+            <p>
+              anything between the <span class="cb">{...} {...}</span> can be
+              replaced by the child (or used and another content added to it)
+              more details in the <a href="">extend</a> explaination
+            </p>
+            <p>another form may be</p>
+            <p class="cb">&lt;h1&gt;{{ block('title') }}&lt;/h1&gt;</p>
+            <p>
+              Use the defined test to check if a block exists in the context of
+              the current template:
+            </p>
+            <pre class="cb">
+              {% if block("footer") is defined %}
+                  ...
+              {% endif %}
+
+              {% if block("footer", "common_blocks.twig") is defined %}
+                  ...
+              {% endif %}
+            </pre>
           </section>
         </section>
       </div>
