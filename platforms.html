@@ -2729,6 +2729,121 @@
                 scripts of your theme
               </p>
             </div>
+
+            <div>
+              <h3>#040 - WP Enqueue Style Function</h3>
+              <p>
+                in this lesson he explains how to add your style and script
+                files and they're added on two steps
+              </p>
+              <ul>
+                <li>
+                  making a custom function which uses wp function to add the
+                  style/script
+                </li>
+                <li>
+                  calling this function using what's called a hook or an action
+                </li>
+              </ul>
+              <p>
+                in this lesson he only expalins the first part which is creating
+                a custom function with the wp function in it
+              </p>
+              <ul>
+                <li>
+                  creating a custom function is exaxtly like in js
+                  <span class="cb">function add-my-custom-styles() {....}</span>
+                </li>
+                <li>
+                  to include the style file we use a wp function called
+                  <span class="cb">
+                    wp_enqueue_style($handle, $src, $dependancies or $deps,
+                    $version or $ver, $media)
+                  </span>
+                  <ul>
+                    <li>
+                      <span class="second-color">$handle:</span> the name of the
+                      stylesheet you're including (and according to the
+                      <a
+                        href="https://developer.wordpress.org/reference/functions/wp_enqueue_style/"
+                      >
+                        docs
+                      </a>
+                      it must be unique) but it doesn't have to be the same name
+                      on the file so you can be including a file with a name
+                      bootstrap.min.css but you give it a name of
+                      bootstrap-style
+                    </li>
+                    <li>
+                      <span class="second-color">$src</span>: the source of the
+                      file you're including and it consists of two parts
+                      <ul>
+                        <li>
+                          the path up to the theme folder and this one you get
+                          using
+                          <span class="cb">get_template_directory_uri()</span>
+                        </li>
+                        <li>
+                          the path of the file from that point so it can be
+                          somethign like that
+                          <span class="cb">/css/bootstrap.min.css</span>
+                        </li>
+                        <li>
+                          and you type the two by concatination so you should
+                          type something like that in $src paramater
+                          <span class="cb">
+                            get_template_directory_uri() .
+                            '/css/bootstrap.min.css'
+                          </span>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <span class="second-color">$deps</span>: An array of
+                      registered stylesheet handles this stylesheet depends on.
+                    </li>
+                    <li>
+                      <span class="second-color">$ver</span>: stylesheet version
+                      number, if it has one, which is added to the URL as a
+                      query string so it is recognized as a new version in case
+                      of caching
+                      <p>
+                        If version is set to false, a version number is
+                        automatically added equal to current installed WordPress
+                        version. If set to null, no version is added.
+                      </p>
+                    </li>
+                    <li>
+                      <span class="second-color">$media</span>: just like css
+                      media it defines The media for which this stylesheet has
+                      been defined.
+                      <p>
+                        the default value is <span class="cb">all</span> but it
+                        can be <span class="cb">print</span>,
+                        <span class="cb">screen</span>, or
+                        <span class="cb">(max-width: 640px)</span> just like the
+                        css
+                      </p>
+                    </li>
+                  </ul>
+                  <p class="bg-second-color">
+                    just the handle and src are the required params the others
+                    are optional
+                  </p>
+                </li>
+              </ul>
+              <p>so the end resault should look like this</p>
+              <pre class="cb">
+                function add-styles() {
+                wp_enqueue_style('main-style', get_template_directory_uri(). '/public/output.css');
+                }
+              </pre>
+              <p>
+                to add another style you use
+                <span class="cb">wp_enqueue_style()</span> again within the
+                custom function
+              </p>
+            </div>
           </div>
         </section>
         <!-- =============================
