@@ -252,6 +252,40 @@
                   <img src="images/wp-include-tw-output-css.png" alt="" />
                 </li>
               </ol>
+              <p class="bg-second-color">
+                the first time I added a tailwind class the output.css version
+                on wordpress didn't update although it was updated on pc so you
+                might have to hold shift on keyboard while refreshing or clear
+                browser cache or just give it a little time
+              </p>
+            </div>
+
+            <div id="google-fonts-in-wordpress">
+              <h3>google fonts in wordpress</h3>
+              <p>
+                the problem with adding google fonts is that two styles have
+                <span class="cb"> rel='preconnect' </span> and one of them even
+                have an attribute <span class="cb">crossorigin</span> while the
+                default when enqueueing a style is
+                <span class="cb">rel='stylesheet'</span> so I used this piece of
+                code I found on
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/style_loader_tag/"
+                >
+                  apply_filters() docs
+                </a>
+                from a user contribute notes
+              </p>
+              <pre class="cb">
+                add_filter( 'style_loader_tag', 'wpdocs_remove_https_styles', 10, 2 );
+                function wpdocs_remove_https_styles( $html, $handle ) {
+                  $handles = array( 'twentysixteen-fonts', 'open-sans' );
+                  if ( in_array( $handle, $handles ) ) {
+                    $html = str_replace( 'https:', '', $html );
+                  }
+                  return $html;
+                }
+              </pre>
             </div>
           </div>
         </section>
@@ -2724,7 +2758,7 @@
                 <a href="#tailwind-in-wordpress">taliwind in wordpress</a>
               </p>
               <p>
-                he also created <span class="cb">functinos.php</span> where all
+                he also created <span class="cb">functions.php</span> where all
                 your functions go including these which call the styles and
                 scripts of your theme
               </p>
@@ -2748,6 +2782,10 @@
               <p>
                 in this lesson he only expalins the first part which is creating
                 a custom function with the wp function in it
+              </p>
+              <p>
+                the following functions go in
+                <span class="cb">functions.php</span>
               </p>
               <ul>
                 <li>
@@ -2842,6 +2880,391 @@
                 to add another style you use
                 <span class="cb">wp_enqueue_style()</span> again within the
                 custom function
+              </p>
+            </div>
+
+            <div>
+              <h3>#041 - WP Enqueue Script Function</h3>
+              <p>
+                in this lesson he used the wp function of including scripts
+                <span class="cb">wp_enqueue_script()</span> and it takes the
+                same params as the style funciton except instead of $media
+                there's a param called $args which includes 2 options
+              </p>
+              <ul>
+                <li>
+                  <span class="cb">strategy</span> which can be either
+                  <span class="cb">async</span> or <span class="cb">defer</span>
+                </li>
+                <li>
+                  and <span class="cb">in_footer</span> which can be
+                  <span class="cb">true</span> or
+                  <span class="cb">false</span> in case of true scripts are
+                  included just before the closing tag of the body which is in
+                  most cases the right palce for them
+                </li>
+              </ul>
+              <p class="bg-second-color">
+                if you don't have to specify both strategy and in_footer you can
+                just type the value you want like true or async you don't have
+                to put them in an array
+              </p>
+              <p>so the end result should be something like that</p>
+              <pre class="cb">
+                function add-scripts() {
+                wp_enqueue_script('main-script', get_template_directory_uri(). '/js/script.js', array(), false, true);
+                }
+              </pre>
+              <p>
+                note that you have to put the default value of the deps and ver
+                to set the value of the in_footer to true
+              </p>
+            </div>
+
+            <div>
+              <h3>#042 - Add Action and Enqueue Scripts</h3>
+              <p>
+                after creating two functions to include our styles and scripts
+                just like in the js it won't work until it's called so in
+                today's lesson we will call them using what's called hook or an
+                action and it's like the
+                <span class="cb">addEventListner</span> in the js
+              </p>
+              <pre>
+                add_action($hook, $function)
+              </pre>
+              <p>
+                $hook is the name of the event you want to call the function
+                with like the 'on-click' in js here we will use
+                <span class="cb">wp_enqueue_scripts</span>
+              </p>
+              <p class="bg-second-color">
+                notice how this one is scripts with an 's' unlike the handle
+                used to enqueue the scripts which was just script
+              </p>
+              <p>this hook is used to enqueue both styles and scripts</p>
+            </div>
+
+            <div>
+              <h3>#043 - WP_Enqueue vs WP_Register</h3>
+              <p>
+                (as much as I understood) it's a function used to load a script:
+                <span class="cb">wp_register_script()</span> or a style
+                <span class="cb">wp_register_style()</span> to make them
+                available (like a variable) so in case you needed to enqueue
+                them multiple times wordpress doens't have to look for them
+                every time it just gets the loaded (registered version)
+              </p>
+              <p>
+                just like in js when you create a loop depeneding on the array's
+                length you but the length in a variable so the interpreter
+                doesn't calculate the length every time the code in the loop
+                runs
+              </p>
+              <p>
+                also registered scripts/styles are recognized just by the name
+                so (since jquery is registered by wp by default) this code will
+                work just fine
+                <span class="cb">wp_enqueue_script('jquery')</span> otherwise
+                (in case it wasn't registered) it shouldn't be working (I didn't
+                really test it)
+              </p>
+              <p>
+                also registered scripts can be used as
+                <span class="cb">$deps</span> like
+                <span class="cb">
+                  wp_enqueue_script('bootstrap-js',
+                  get_template_directory_uri(). '/js/bootstrap.js',
+                  array('jquery'), false, true)
+                </span>
+                note that you just type the name of the script (just jquery) and
+                it will be loaded
+              </p>
+              <p class="bg-second-color">
+                but in case of the code above jquery is loaded in the
+                <span class="cb">head</span> which is not the right place for
+                scripts in the next lesson elzero will show how to put it the
+                right place before the body closing tag
+              </p>
+              <p>
+                of course 'jquery' is the <span class="cb">$handle</span> of the
+                script which is unique and you can find a list of the
+                regiestered scripts by default from wp and their
+                <span class="cb">$handle</span> at
+                <a
+                  href="https://developer.wordpress.org/reference/functions/wp_register_script/"
+                >
+                  wp_register_script() docs
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <h3>#044 - Enqueue jQuery From WordPress</h3>
+              <p>
+                to solve the problem of a dependancy being loaded in the head
+                instead of bofore the closing tage of the body you do it on
+                three steps
+              </p>
+              <ol>
+                <li>
+                  <span class="second-color">deregister:</span> the problem is
+                  that it's registered with the
+                  <span class="cb">$in_footer</span> being false so we
+                  deregister it then register it again with the
+                  <span class="cb">$in_footer</span> being true
+                  <span class="cb">wp_deregister_script('jquery')</span>
+                </li>
+                <li>
+                  <span class="second-color">register:</span>
+                  <span class="cb"
+                    >wp_register_script('jquery',
+                    includes_url('/js/jquery/jquery.js'), arra(), false,
+                    true)</span
+                  >
+                  <p>
+                    as for the <span class="cb">includes_url()</span> without
+                    anything between the () it returns the path to the
+                    <span class="cb">wp-includes</span> folder in which you will
+                    find the regiesterd jquery version hence the the path
+                    between the ()
+                    <span class="cb"> '/js/jquery/jquery.js' </span>
+                  </p>
+                  <p>
+                    for some reason elzero typed the last three params as
+                    <span class="cb">false, '', true</span> which for the first
+                    two it's not the right default values
+                  </p>
+                </li>
+                <li>
+                  <span class="second-color">enqueue:</span>
+                  <span class="cb">wp_enqueue_script('jquery')</span>
+                  <p>
+                    notice how we just put 'jquery' as it's recognized becasue
+                    it has been registered already
+                  </p>
+                </li>
+              </ol>
+            </div>
+
+            <div>
+              <h3>#045 - Add Footer and Main Css Style</h3>
+              <p>
+                he created <span class="cb">footer.php</span> and added these
+                lines of code
+              </p>
+              <pre class="cb">
+                    &lt;?php wp_footer(); ?&gt;
+                  &lt;/body&gt;
+                &lt;/html&gt;
+              </pre>
+              <p>
+                note that you have to add the
+                <span class="cb"> &lt;?php wp_footer(); ?&gt; </span> otherwise
+                all the scripts that are supposed to be before the closing tag
+                of the body won't be added
+              </p>
+              <p>
+                I added google fonts if you have a problem adding them see
+                <a href="#google-fonts-in-wordpress">
+                  google-fonts-in-wordpress
+                </a>
+              </p>
+            </div>
+            <div>
+              <h3>#046 - Add Data To Scripts After</h3>
+              <p>
+                in this lesson we use
+                <span class="cb">wp_script_add_data()</span> to add
+                <span class="cb">conditional comments</span> like that one for
+                bootstrap
+              </p>
+              <img src="images/bootstrap-conditional-comment.png" alt="" />
+              <p>
+                simply you add the following in your custom function that
+                enqueues your scripts
+              </p>
+              <pre class="cb">
+                wp_enqueue_script( 'wpdemo-html5shiv',get_template_directory_uri().'/js/html5shiv.js');
+                wp_script_add_data( 'wpdemo-html5shiv', 'conditional', 'lt IE 9' );
+              </pre>
+              <p>
+                in case of multiple scripts you have to write the above code for
+                each one
+              </p>
+            </div>
+            <div>
+              <h3>#047 - Register and Add Menu Feature</h3>
+              <p>
+                in all themes there's a <span class="cb">menu</span> page (that
+                you can find in the main side bar in the admin dashboard)
+              </p>
+              <p>to add this feature to your theme</p>
+              <pre class="cb">
+                function register_my_custom_menu() {
+                  register_nav_menu($location, __($description))
+                }
+              </pre>
+              <p>
+                <span class="cb">$location:</span> a string that can be anything
+                you want so let's call it (navbar)
+              </p>
+              <p>
+                <span class="cb">$description:</span> a text description to the
+                menu let's say (main navigation bar that goes in the header)
+              </p>
+              <p class="bg-second-color">
+                notice that this is just a function it won't work unless you
+                call, to call it
+              </p>
+              <span class="cb"
+                >add_aciton('init', 'register_my_custom_menu')</span
+              >
+              <p>
+                <span class="cb">init</span> is a wp action handler which stands
+                for initialize to know all the available action handlers you can
+                chekout
+                <a
+                  href="https://developer.wordpress.org/apis/hooks/action-reference/"
+                >
+                  action reference
+                </a>
+              </p>
+              <pre class="cb">
+                function register_my_custom_menu()
+                {
+                    register_nav_menu('navbar', __('navigation bar'));
+                }
+                add_action('init', 'register_my_custom_menu');
+              </pre>
+              <p>
+                to make sure it worked hover over
+                <span class="cb">appearance</span> on the main side bar in the
+                admin dashboard and you will find
+                <span class="cb">menus</span> under it (it won't be there if you
+                don't add that code)
+              </p>
+              <p class="bg-scond-color">
+                notice that there's
+                <span class="cb">register_nav_menus()</span> with an 's' for
+                adding more than one custom menu
+              </p>
+            </div>
+            <div>
+              <h3>#048 - Add Bootstrap Navigation Bar</h3>
+              <p>to show the navigation menu you have to do 2 steps</p>
+              <ol>
+                <li>
+                  create a custom funciton that calls wp function for showing
+                  the navigation menu
+                </li>
+                <li>call the custom function wherever you want in the html</li>
+              </ol>
+              <pre class="cb">
+                function show_my_navigation() {
+                  wp_nav_menu();
+                }
+              </pre>
+              <p>
+                since we want that navigation menu in the header we go to
+                <span class="cb">header.php</span>, open the body tag and call
+                the custom function
+              </p>
+              <img src="images/wp-nav-menu-html.png" alt="" />
+              <p>
+                now it will show you a list of links of navigation bar which you
+                set earlier from <span class="cb">appearnce</span> &lt;
+                <span class="cb">customize</span> &lt;
+                <span class="cb">menus</span> &lt;
+                <span class="cb">main navigation bar</span>
+              </p>
+            </div>
+            <div>
+              <h3>#049 - Add Bootstrap Navigation Bar</h3>
+              <p>
+                when you call the <span class="cb">wp_nav_menu()</span> without
+                its arguments it shows the default menu (which I descripted
+                where you can find just above this lesson) which is simpely a
+                list of the pages of your website (of course you can customize
+                it but this is still the default menu)
+              </p>
+              <p>
+                you can have more than one menu in your website so when you call
+                <span class="cb">wp_nav_menu()</span> how do you make it know
+                which menu to show
+              </p>
+              <img src="images/wp-menus.png" alt="" />
+              <p>
+                let's say we created another menu called 'short menu' to create
+                a new menu you click on the
+                <span class="cb">create a new menu</span> which is right below
+                the two tabs of <span class="cb">edit menus</span> and
+                <span class="cb">manage location</span>
+              </p>
+              <p>so to show this 'short menu' you have to do 2 steps</p>
+              <ol>
+                <li>
+                  <p>assign a location to it</p>
+                  <img src="images/wp-menu-location.png" alt="" />
+                  <p>
+                    remember that this 'navigation bar' location is added by you
+                    using <span class="cb">wp_register_menu()</span> so it can
+                    be called 'my navigation bar' or whatever the $description
+                    of the $location has nothing to do with where it goes or any
+                    functionality of the menu it's just for the adming of the
+                    website
+                  </p>
+                  <p>
+                    remember that you can make more than one location so let's
+                    make another one
+                  </p>
+                  <pre class="cb">
+                    function register_my_custom_menus()
+                    {
+                        register_nav_menu(array(
+                          'navbar' => 'navigation bar'
+                          'footer menu' => 'footer'
+                        ));
+                    }
+                  </pre>
+                  <img src="images/wp-menu-location-multi.png" alt="" />
+                  <p>
+                    as you can see the description is what is shown in the
+                    dashboard
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    now that we assigned 'short menu' to 'navigation bar' we
+                    have to tell the <span class="cb">wp_nav_menu()</span> the
+                    <span class="cb">$location</span> of the 'short menu' to
+                    show it
+                  </p>
+                  <pre class="cb">
+                    function show_navigation()
+                    {
+                        wp_nav_menu(array(
+                            'theme_location' => 'navbar'
+                        ));
+                    }
+                  </pre>
+                  <p>
+                    note that <span class="cb">theme_location</span> is a wp
+                    argument for wp_nav_menu() function you can see all
+                    available arguments
+                    <a
+                      href="https://developer.wordpress.org/reference/functions/wp_nav_menu/"
+                    >
+                      here
+                    </a>
+                  </p>
+                </li>
+              </ol>
+              <p>
+                so let's say you called the funciton with the location of
+                'navbar' but you assigned the 'short menu' to the 'footer'
+                location then the function will show the dafault menu as it
+                found no menu in the location you provided
               </p>
             </div>
           </div>
