@@ -325,7 +325,105 @@
         <!-- =============================
       solved problems ends
     ================================== -->
+        <!-- =============================
+      salla starts
+    ================================== -->
+        <article>
+          <div class="container">
+            <h2 class="main-heading">salla</h2>
+            <section>
+              <h3>install salla cli</h3>
+              <ul>
+                <li>
+                  go to
+                  <a href="https://github.com/SallaApp/Salla-CLI"
+                    >salla-cli github</a
+                  >
+                </li>
+                <li>
+                  copy the installation command
+                  <span class="cb">npm install @salla.sa/cli -g</span>
+                </li>
+                <li>
+                  <p class="bg-danger-color">
+                    note that you should paste it in only in the cmd not the
+                    terminal of vs code and not the powershell they both will
+                    throw you an error
+                  </p>
+                </li>
+              </ul>
+              <p>you can also read salla-cli commands in the same repo</p>
+            </section>
 
+            <section>
+              <h3>upload your theme logo</h3>
+              <ul>
+                <li>from the left icon find stores then demo stores</li>
+                <li>
+                  on the right of the demo store you're testing on click on
+                  dashboard url
+                </li>
+                <li>
+                  scroll down to 'إعدادات المتجر' then choose 'الإعدادات
+                  الرئيسية'
+                </li>
+                <li>click on the image and choose the logo you want</li>
+                <li>
+                  if it shows that the image is too small you can click on
+                  'تغيير الحجم' from the top bar and enter the minimum width or
+                  height you want
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h4 class="yellow">most used command lines</h4>
+              <div>
+                <span class="cb">sall theme create</span>: to create a new theme
+              </div>
+              <div>
+                <span class="cb">salla theme p</span>: (make sure the terminal
+                is inside the theme folder) to preview theme
+              </div>
+              <div>
+                <span class="cb">salla theme d</span>: to delete a theme (you
+                choose from a list it shows you after you hit enter)
+              </div>
+            </section>
+
+            <section>
+              <h3 class="main-heading">problems solved</h3>
+
+              <div>
+                <h4 class="yellow">couldn't connect my github</h4>
+                <p>
+                  whenever I opened the settings coulnd't find the normal
+                  options it only showed the protection and security.
+                </p>
+                <p>
+                  the problem was from the permissions as I had an employee
+                  account so the employer had to change my permissons
+                </p>
+              </div>
+
+              <div>
+                <h4 class="yellow">
+                  can't delete theme because it's github repo doesn't exsit
+                  anymore
+                </h4>
+                <p>
+                  simply create another theme with the exact same name from the
+                  cli making it create identical repo to the one you deleted and
+                  now you can delete both themes (the original one and the one
+                  you just created)
+                </p>
+              </div>
+            </section>
+          </div>
+        </article>
+        <!-- =============================
+      salla ends
+    ================================== -->
         <!-- =============================
       elzero 2016 course starts
     ================================== -->
@@ -3347,7 +3445,280 @@
             </div>
             <div>
               <h3>#053 - Design Blog Posts Part 2</h3>
-              <p>continued with the styling of posts so no notes taken</p>
+              <p>
+                he add a feature that allows you to choose a thumbnail to the
+                posts which is shown in the themes as
+                <span class="cb">featured image</span>
+                <span class="cb">add_theme_feature('post-thumbnails')</span>
+              </p>
+              <img src="images/wp-featured-image.png" alt="" />
+              <p>
+                according to the
+                <a
+                  href="https://developer.wordpress.org/reference/functions/add_theme_support/"
+                >
+                  docs
+                </a>
+                it Must be called in the theme's functions.php file to work.
+              </p>
+            </div>
+            <div>
+              <h3>#054 - Posts Loop - Structure and Title</h3>
+              <p>
+                for further details you can visit
+                <a href="https://codex.wordpress.org/The_Loop"> the loop </a>
+                and
+                <a href="https://codex.wordpress.org/The_Loop_in_Action">
+                  the loop in action
+                </a>
+                docs
+              </p>
+              <p>
+                the below code is a basic piece of code that iterates over all
+                the posts you have in your wp website and prints it's title and
+                it's placed in the <span class="cb">index.php</span>
+              </p>
+              <pre class="cb">
+                if(have_posts()){
+                  while (have_posts()) {
+                    the_post();
+                    the_title(); 
+                }
+              }
+              </pre>
+              <img src="images/wp-basic-post-title-loop.png" alt="" />
+              <p>
+                the <span class="cb">the_post()</span> is used to make the
+                information of the post available and according to the
+                <a href="https://codex.wordpress.org/The_Loop_in_Action"
+                  >docs</a
+                >
+                <i>
+                  The function the_post() takes the current item in the
+                  collection of posts and makes it available for use inside this
+                  iteration of The Loop. Without the_post(), many of the
+                  Template Tags used in your theme would not work.
+                </i>
+              </p>
+              <p>
+                the <span class="cb">template tags</span> are the functions that
+                displays the post's info like
+                <span class="cb">the_title()</span> or
+                <span class="cb">the_ID()</span> etc...
+              </p>
+              <p>
+                note that <span class="cb">the_title()</span> has to arguments
+                the <span class="cb">$before</span> and
+                <span class="cb">$after</span> which you can use to place
+                anything before and after the title
+                <span class="bg-second-color">even it it's an html tag</span>
+                the_title("&lt;h2&gt;", "/&lt;h2&gt;");
+              </p>
+              <img src="images/wp-basic-post-title-loop-w-args.png" alt="" />
+            </div>
+            <div>
+              <h3>#055 - Posts Loop - Time, Author, Categories</h3>
+              <p>he showed some template tags</p>
+              <ul>
+                <li>
+                  <span class="cb">the_permalink()</span>: returns url of the
+                  post
+                </li>
+                <li>
+                  <spna class="cb">the_autoher_posts_link()</spna>: returns an
+                  html link to the post's author page
+                  <p class="bg-second-color">
+                    notice it returns a tag with the href being the link to the
+                    author's page unlike the
+                    <span class="cb">the_permalink()</span> which returns just
+                    the url and you have to place it in the href youreslf
+                  </p>
+                </li>
+                <li>
+                  <span class="cb">the date()</span>: reutrns the date at which
+                  the post was written
+                  <p>
+                    notice that it has different formats that go between the
+                    braces so visit it's docs to see them
+                  </p>
+                  <p>
+                    also in the docs <span class="cb">the_time()</span> was used
+                    to display the date beside being used to dispaly the time
+                    (like hours and minutes) but in the example they wanted to
+                    show both the date and the time together they used
+                    <span class="cb">the_date()</span> for the date and
+                    <span class="cb">the_time()</span> for the time
+                  </p>
+                </li>
+                <li>
+                  <span class="cb">the_category($separator)</span>: returns the
+                  category list of the post
+                  <p>
+                    separator can be like "," or "|" just add them in qoutes
+                  </p>
+                  <p class="bg-second-color">
+                    note that if you don't provide a separator the categories
+                    are added in a <span class="cb"> ul </span> of links whereas
+                    if you do provide a separator they're added as links
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>#056 - Posts Loop - Comments Count</h3>
+              <p>
+                for all template tags available visist<a
+                  href="https://codex.wordpress.org/Template_Tags"
+                  >template tags docs</a
+                >
+              </p>
+              <p>
+                <span class="cb"
+                  >comments_popup_link($zero, $one, $more, $css_class,
+                  $none):</span
+                >
+                shows the number of comments with the post name something like
+                "2 comments on html5 latest news"
+              </p>
+              <ul>
+                <li>
+                  <b>zero:</b> you can add a specific string to be shown when
+                  there's zero comments on the post
+                </li>
+                <li>
+                  <b>one:</b> you can add a specific string to be shown when
+                  there's one comment on the post
+                </li>
+                <li>
+                  <b>more:</b> you can add a specific string to be shown when
+                  there's multiple comments on the post
+                  <p>
+                    if you want to display the number of the comments you use %
+                    so "% comments" will be translate to "5 comments" for
+                    example
+                  </p>
+                </li>
+                <li>
+                  <b>css_class:</b> you can add a class to the html link element
+                </li>
+                <li>
+                  <b>none:</b> you can add a specific string to be shown when
+                  comments are dispaled for the post
+                  <p>
+                    to disable comments on a post to test go to
+                    <span class="cb">posts</span> from the left bar, click on
+                    <span class="cb">quick edit</span> then remove the check
+                    from <span class="cb">allow comments</span> and
+                    <span class="cb">allow pings</span> if you remove the check
+                    from just allow comments it won't be disabled
+                  </p>
+                  <img src="images/wp-disable-comments.png" alt="" />
+                </li>
+              </ul>
+              <p>
+                in case you want to skip parameters (like you just want to add a
+                class without setting string to the rest of the parameters) use
+                <span class="cb">false</span>
+                <span class="cb">
+                  comments_popup_link(false, false, false, 'text-gray-400',
+                  false)
+                </span>
+                except for the css_class use empty qoutes
+                <span class="cb">''</span>
+              </p>
+            </div>
+            <div>
+              <h3>#057 - Posts Loop - Post Thumbnail</h3>
+              <p>
+                to add the post thumbnail image use
+                <span class="cb">
+                  &lt;?php the_post_thumbnail($size, $att) ?&gt;
+                </span>
+              </p>
+              <p>the size:</p>
+              <img src="images/wp-thumbnail-sizes.png" alt="" />
+              <p>
+                the attr is an indexed array where you can add any attributes
+                like class or title etc...
+              </p>
+              <span class="cb">
+                &lt;?php the_post_thumbnail('', ['class' => 'w-full rounded-md',
+                'title' => 'my very cool image']) ?&gt;
+              </span>
+            </div>
+            <div>
+              <h3>#058 - Posts Loop - Content and Read</h3>
+              <p>
+                to show the content of the post use
+                <span class="cb">
+                  &lt;?php the_content($read-more-link-text, $after) ?&gt;
+                </span>
+              </p>
+              <p>
+                in case you just use <span class="cb">the_content()</span> it
+                will show literally the whole post content including images
+              </p>
+              <img src="images/wp-the-content-no-read-more.png" alt="" />
+              <p>which obviously ruins the visuals</p>
+              <p>we solve that from the page where we're writing the post</p>
+              <img src="images/wp-adding-read-more.png" alt="" />
+              <p>
+                let's say we want just the text before the red line to be shown
+                on the post card while the rest of the content (including
+                images) gets hidden so that when the user clicks on read more it
+                takes them to the post page
+              </p>
+              <p>
+                you just place the cursor before the content you want to be
+                hidden and click the <span class="cb">more</span> icon and it
+                will even place you a line to show you which content will be
+                hidden
+              </p>
+              <img src="images/wp-read-more.png" alt="" />
+              <p>
+                the default read more link will be showng as
+                <span class="cb">(more...)</span> and you can change it like
+                this <span class="cb"> the_content('learn more') </span> then
+                the text will be learn more instead of (more...)
+              </p>
+              <p>
+                also you can have a custom text for each post by simply clicking
+                on the 'Read More' text in the middle of the line in the post
+                and start typing
+              </p>
+              <img src="images/wp-custom-read-more-per-post.png" alt="" />
+            </div>
+            <div>
+              <h3>#059 - Posts Loop - The Excerpt</h3>
+              <p>
+                if you use the
+                <span class="cb">&lt;?php the_excerpt() ?&gt;</span> it shows
+                you the first 55 words of the content of the post followed by
+                '[...]' and unlike '(more...)' it's not clickable
+              </p>
+              <img src="images/wp-the-excerpt.png" alt="" />
+              <p>
+                to manually set the excerpt you like you set it from the edit
+                post page
+              </p>
+              <img src="images/wp-manual-excerpt.png" alt="" />
+              <p>
+                and in the case of manually setting the excerpt it doens't show
+                you the [...] at the end of it
+              </p>
+              <p>
+                notice that the read more trick is called quick tag and below is
+                a comparison between the excerpt and quick tage
+              </p>
+              <h4>the excerpt vs quicktag</h4>
+              <ul>
+                <li>the excerpt doesn't take styling or images</li>
+                <li>
+                  when in case you use the_excerpt() instead the_content() in
+                  the single post page it doens't show you the whole content it
+                  keeps showing the excerpt
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -3357,97 +3728,6 @@
       </div>
     </article>
 
-    <article>
-      <div class="container">
-        <h2 class="main-heading">salla</h2>
-        <section>
-          <h3>install salla cli</h3>
-          <ul>
-            <li>
-              go to
-              <a href="https://github.com/SallaApp/Salla-CLI"
-                >salla-cli github</a
-              >
-            </li>
-            <li>
-              copy the installation command
-              <span class="cb">npm install @salla.sa/cli -g</span>
-            </li>
-            <li>
-              <p class="bg-danger-color">
-                note that you should paste it in only in the cmd not the
-                terminal of vs code and not the powershell they both will throw
-                you an error
-              </p>
-            </li>
-          </ul>
-          <p>you can also read salla-cli commands in the same repo</p>
-        </section>
-
-        <section>
-          <h3>upload your theme logo</h3>
-          <ul>
-            <li>from the left icon find stores then demo stores</li>
-            <li>
-              on the right of the demo store you're testing on click on
-              dashboard url
-            </li>
-            <li>
-              scroll down to 'إعدادات المتجر' then choose 'الإعدادات الرئيسية'
-            </li>
-            <li>click on the image and choose the logo you want</li>
-            <li>
-              if it shows that the image is too small you can click on 'تغيير
-              الحجم' from the top bar and enter the minimum width or height you
-              want
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h4 class="yellow">most used command lines</h4>
-          <div>
-            <span class="cb">sall theme create</span>: to create a new theme
-          </div>
-          <div>
-            <span class="cb">salla theme p</span>: (make sure the terminal is
-            inside the theme folder) to preview theme
-          </div>
-          <div>
-            <span class="cb">salla theme d</span>: to delete a theme (you choose
-            from a list it shows you after you hit enter)
-          </div>
-        </section>
-
-        <section>
-          <h3 class="main-heading">problems solved</h3>
-
-          <div>
-            <h4 class="yellow">couldn't connect my github</h4>
-            <p>
-              whenever I opened the settings coulnd't find the normal options it
-              only showed the protection and security.
-            </p>
-            <p>
-              the problem was from the permissions as I had an employee account
-              so the employer had to change my permissons
-            </p>
-          </div>
-
-          <div>
-            <h4 class="yellow">
-              can't delete theme because it's github repo doesn't exsit anymore
-            </h4>
-            <p>
-              simply create another theme with the exact same name from the cli
-              making it create identical repo to the one you deleted and now you
-              can delete both themes (the original one and the one you just
-              created)
-            </p>
-          </div>
-        </section>
-      </div>
-    </article>
     <script src="script.js"></script>
   </body>
 </html>

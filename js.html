@@ -1564,6 +1564,34 @@
           </p>
           <img src="images/object-from-entries.png" alt="" />
         </section>
+
+        <section>
+          <h3>conditional property</h3>
+          <p>
+            note that I didn't do much of searching about this method I just
+            used it in
+            <a href="https://ibrahimhassan502.github.io/car-zone/">
+              car-zone
+            </a>
+            while I was implementing
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+            >
+              intersection observer api
+            </a>
+          </p>
+          <pre class="cb">
+            const options = {
+              ...(condition && { property }),
+            };
+          </pre>
+          <p>for an example:</p>
+          <pre class="cb">
+            const options = {
+              ...(screen.width > 768 && { threshold: 0.35 }),
+            };
+          </pre>
+        </section>
       </div>
     </article>
     <!-- ======== object ends ======== -->
@@ -2824,7 +2852,7 @@
           <p>reducer function takes 2 parameters</p>
           <ol>
             <li>
-              callback functoin (the actual function that makes the reductoin)
+              callback functoin (the actual function that makes the reduction)
             </li>
             <li>initial value</li>
           </ol>
@@ -7872,8 +7900,8 @@
           <ul class="big-items">
             <li>
               <p>
-                SFC (single file component) is a defining feature of Vue and is the recommended way to
-                author Vue components
+                SFC (single file component) is a defining feature of Vue and is
+                the recommended way to author Vue components
               </p>
               <p>
                 A Vue SFC, as the name suggests, encapsulates the component's
@@ -8482,17 +8510,17 @@ methods: {
               can use the nextTick() global API
             </p>
             <pre class="cb">
-import { nextTick } from 'vue'
+              import { nextTick } from 'vue'
 
-export default {
-  methods: {
-    async increment() {
-      this.count++
-      await nextTick()
-      // Now the DOM is updated
-    }
-  }
-}
+              export default {
+                methods: {
+                  async increment() {
+                    this.count++
+                    await nextTick()
+                    // Now the DOM is updated
+                  }
+                }
+              }
             </pre>
           </div>
           <div>
@@ -8514,6 +8542,216 @@ export default {
       </div>
     </article>
     <!-- ======== vue docs end ======== -->
+
+    <!-- ======== trigger animatino on scroll start ======== -->
+    <article>
+      <div class="container">
+        <h2 class="main-heading">
+          trigger animation on scroll / when element is within the view /
+          intersection observer api
+        </h2>
+        <img src="images/js-intersection-observer-example.png" alt="" />
+        <p>
+          according to the
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+          >
+            docs
+          </a>
+          The Intersection Observer API provides a way to asynchronously observe
+          changes in the intersection of a target element with an father
+          (ancestor) element or with a top-level document's viewport.
+        </p>
+        <p>
+          The Intersection Observer API lets code register a callback function
+          that is executed whenever a particular element enters or exits an
+          intersection with another element (or the viewport), or when the
+          intersection between two elements changes by a specified amount. This
+          way, sites no longer need to do anything on the main thread to watch
+          for this kind of element intersection, and the browser is free to
+          optimize the management of intersections as it sees fit.
+        </p>
+        <p class="cb">
+          const observer = new IntersectionObserver(callback, options);
+        </p>
+        <ul>
+          <li>
+            <b>callback:</b> the function that is called when the element
+            intersects it's specified root (the parent you want to watch the
+            element intersectio with)
+            <p class="bg-second-color">
+              notice that while the observation itself occures asyncrounsly (as
+              far as I understood),
+              <i>
+                your callback is executed on the main thread. It should operate
+                as quickly as possible; if anything time-consuming needs to be
+                done, use Window.requestIdleCallback().
+              </i>
+            </p>
+          </li>
+          <li>
+            <b>options:</b>
+            <i>
+              "The options object passed into the
+              <span class="cb">IntersectionObserver()</span>
+              constructor let you control the circumstances under which the
+              observer's callback is invoked"
+            </i>
+            the default behavior like:
+            <ul>
+              <li>
+                <b>root:</b> The element that is used as the viewport for
+                checking visibility of the target. Must be the ancestor of the
+                target. Defaults to the browser viewport if not specified or if
+                null.
+              </li>
+              <li>
+                <b>rootMargin:</b> Margin around the root. A string of one to
+                four values similar to the CSS margin property, e.g. "10px 20px
+                30px 40px".
+                <p class="bg-second-color">
+                  The values can only be absolute lengths or percentages.
+                </p>
+                <p>
+                  This set of values serves to grow or shrink each side of the
+                  root element's bounding box before computing intersections
+                  (you can use negative values)
+                </p>
+                <p>
+                  Positive values grow the box, while negative values shrink it.
+                </p>
+              </li>
+              <li>
+                <b>threshold:</b> Either a single number or an array of numbers
+                which indicate at what percentage of the target's visibility the
+                observer's callback should be executed.
+                <p>
+                  If you only want to detect when visibility passes the 50%
+                  mark, you can use a value of 0.5
+                </p>
+                <p>
+                  The default is 0 (meaning as soon as even one pixel is
+                  visible, the callback will be run).
+                </p>
+                <p>
+                  you can also set an array of threshold (the callback is called
+                  everytime the element passes one of them) let's say you want
+                  the callback to run every time visibility passes another 25%,
+                  you would specify the array [0, 0.25, 0.5, 0.75, 1].
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div>
+          <h3>terms of intersection observer</h3>
+          <ul>
+            <li>
+              <b>target:</b> the element that's being watched for intersection
+              (the child element)
+            </li>
+            <li>
+              <b>root:</b> the element's ancestor (the father) that's either one
+              of the element ancestors or the <span class="cb">viewport</span>
+              <p>
+                if the target element isn't a descendant of a scrollable
+                element, the root is (automatcially) the viewport.
+              </p>
+              <p class="bg-second-color">
+                but if the element is a decendant and you want to manually set
+                the root to be the view port specify
+                <span class="cb">null</span> for the
+                <span class="cb">root</span> option
+              </p>
+              <p class="bg-second-color">
+                <i>
+                  Also, note that if you specified the root option, the target
+                  must be a descendant of the root element.
+                </i>
+              </p>
+            </li>
+            <li>
+              <b>threshold:</b> it's one of the observer
+              <span class="cb">options</span> and it is used to call the
+              observer callback function (for our purpose adding an animation
+              class) when the set amount of the elemnt intersects the root and
+              it's used in the name <span class="cb">threshold</span>
+              <p>
+                it varies from 0.0 to 1.0 for an example of you set
+                <span class="cb">{threshold: 0.5}</span> the function won't be
+                called unless half of the watched element is intersected
+                (visible relateive to the parent element) with the parent
+                element
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>syntax</h3>
+          <pre class="cb">
+             observer = new IntersectionObserver($callback, $options);
+             observer.observe($element-to-watch);
+          </pre>
+          <p>
+            in case you want to watch multiple element according to the docs
+            it's done by
+            <i>
+              "by calling observer.observe() for each of those elements, if we
+              wanted to do so."
+            </i>
+          </p>
+          <p>
+            the callback function recieves to parameters (by default which means
+            you don't have to send anything)
+          </p>
+          <ul>
+            <li>
+              <b>entries:</b>
+              <i>
+                The list of entries received by the callback includes one entry
+                for each threshold-crossing event — multiple entries can be
+                received at a time, either from multiple targets or from a
+                single target crossing multiple thresholds in a short amount of
+                time.
+              </i>
+              <p>
+                <i>
+                  The entries are dispatched using a queue, so they should be
+                  ordered by the time they were generated, but you should
+                  preferably use
+                  <span class="cb"> IntersectionObserverEntry.time </span> to
+                  correctly order them.
+                </i>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>entry properties</h3>
+          <p>
+            below are the most useful/to be used ones for further properties
+            visit
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry"
+            >
+              IntersectionObserverEntry docs
+            </a>
+          </p>
+          <ul>
+            <li>
+              <span clas="cb">.isIntersecting:</span> a boolean value that's
+              true if the element intersection passes the threshold
+            </li>
+            <li>
+              <span class="cb">.intersectionRatio:</span> returns the percentage
+              of the element intersection (make tests to be sure if it is
+              affected by the threshold or not)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <!-- ======== trigger animatino on scroll end ======== -->
 
     <script src="script.js"></script>
   </body>
